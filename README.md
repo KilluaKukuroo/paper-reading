@@ -9,3 +9,8 @@
 实验是基于预训练的transformer在NLP里的event extraction task上面做的，但是思想可以很容易的扩展到其他通用领域。
 
 2. 
+
+
+
+## 优化方法
+1. Fast Exact Multiplication by the Hessian
