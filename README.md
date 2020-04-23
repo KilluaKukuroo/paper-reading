@@ -22,6 +22,26 @@
 ## 多模态 multi-modal
 1. [Multi-modal Approach for Affective Computing](https://arxiv.org/pdf/1804.09452.pdf)<br>
 本文发表在 IEEE 40th International Engineering in Medicine and Biology Conference (EMBC) 2018， 作者来自 UC san diego。
+
+
+
+
+
+## NLP and web, knowledge graph
+1.[Correcting Knowledge Base Assertions](https://arxiv.org/pdf/2001.06917.pdf)<br>
+本文2018年发表在2020WWW的oral，作者来自Oxford, Tencent, University of Oslo. <br>
+Problem: knowledge bases(KB) 在搜索引擎，问答系统，common sense reasoning, machine learning等领域起到了重要的作用，but KB is suffering from quality issues, e.g.,
+constraint violations and erroneous assertions.  <br>
+SoA: 现有工作在KB quality上主要包含：error detection and assessment, quality improvement via completion, canonicalization.<br>
+Opportunity: 现有的工作大都是检测出 KB中的错误之后就将错误去除，而不是去更正这些错误。所以更正检测出的erroneous assertions is a new opportunity; 关于correction，现有工作在忽视了assertion的上下文语义信息；
+关于quality improvement，现有工作没有提出一个general correction method；<br>
+Challenges: 
+Contributions: 1-提出了可以用于更正错误的entity assertions and literal assertions的通用框架；2-利用了semantic embedding and observed features捕捉局部的上下文信息；3-soft property constraint;
+4-在meidcal KB验证entity assertions correction, 在DPpedia验证literal assertions correction;  <br>
+
+
+
+
 ## 集成学习
 ### [review]
 [Ensemble methods in Machine Learning](https://web.engr.oregonstate.edu/~tgd/publications/mcs-ensembles.pdf)<br>
