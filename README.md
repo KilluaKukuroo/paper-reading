@@ -23,6 +23,42 @@
 1. [Multi-modal Approach for Affective Computing](https://arxiv.org/pdf/1804.09452.pdf)<br>
 [code](https://github.com/zhanghang1989/ResNeSt)<br>
 本文发表在 IEEE 40th International Engineering in Medicine and Biology Conference (EMBC) 2018， 作者来自 UC san diego。<br>
+
+
+## Mobile
+1.[Mobile Cyber-Physical Systems for Smart Cities](https://dl.acm.org/doi/abs/10.1145/3366424.3382121)<br>
+2020年WWW发表，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
+**problem**：城市化面临的问题：congestion，energy consumption需要CPS（IoT）来解决；现有的CPS方法大都是针对single infrastructure and single domain data, 限制了对mobility建模的能力。所以，
+针对现在城市的发展可以获得的多种数据，本文介绍作者已经做的*cross-domain interaction*的研究，和潜在的研究方向。
+**特点**: 文章非常简短；主要总结了作者自己在CPS领域的工作;
+**future work**：1)Measuring and predicting mobility by mobility models; 2)Intervening and altering mobility by city services;
+
+## privacy
+## scholars
+- [Cynthia Dwork](https://scholar.google.com/citations?user=y2H5xmkAAAAJ&hl=zh-CN), distinguished scientist in **Microsoft Research**, citation>30,000;
+- [Aaron Roth](https://scholar.google.com/citations?user=kLUQrrYAAAAJ&hl=zh-CN), Associate professor in **U Pennsylvania**, citation > 7,000;
+- 
+
+1.[Plausible Deniability for Privacy Preserving Data Synthesis](http://www.vldb.org/pvldb/vol10/p481-bindschaedler.pdf)<br>
+2017 VLDB, 作者来自UIUC(Vincent Bindschaedler, Carl A.Gunter), Cornell Tech(Reza Shokri). 目前引用次数61. <br>
+**problem**: 一方面很多场景都涉及到数据的分享，另一方面数据的隐私往往得不到很好的保护；
+**SoA**:传统的两种保护数据隐私的方法：data de-identification需要对对手有背景知识的了解，exponential mechanism for differential privacy面对高维数据计算量太大；
+**Opportunity**: 本文提出一种privacy-preserving 的方法来生成synthetic data;
+**Challenges**:
+**Contributions**:
+
+
+2.[Data Synthesis based on Generative Adversarial Networks](http://www.vldb.org/pvldb/vol11/p1071-park.pdf)<br>
+2018年VLDB, 作者来自UNCC, Georgy Mason Unviersity, ETRI(South Korea), 目前引用=24. 提出tableGAN生成假的table数据，在保证数据隐私性的同时满足数据分享质量的要求。<br>
+**problem**: 
+**SoA**:
+**opportunity**:
+**challenges**:
+**contribution**:
+
+## deep learning && neural network
+1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
+发表于2020年 arxiv，作者来自 Amason, UC Davis, 包括 Hang Zhang, Mu Li. 网上传言史上最强resnet魔改版。 <br>
 **Problem**：目前大部分视觉的任务, e.g., obeject detection and semantic segmentation 还是使用ResNet的变体作为backbone，因为网络结构的简单和结构化。但是ResNet是为了image classification设计，
 在CV的其他下游任务性能不是很好，可能因为limited receptive-field and lack of cross-channel interaction. 并且resnet的各种变体往往只能在特定的任务上取得较好性能。而且，最近的cross-channel information
 在下游任务被证明很有效，而image classification的模型大都缺乏cross-channel interation，所以本文提出一种带有cross-channel representation的网络模型，目标是*打造一个versatile backbone with universally 
@@ -34,19 +70,18 @@ GoogleNet(muiti-path representation) --> ResNeXt(group convolution) --> SE-Net(c
 **future work**: 通过神经网络结构搜索寻找不同硬件上对应得低延时low latency model; 不同的超参数(radix, cardinality, width)组合调优，可能会在不同的具体任务上取得更好的结果；
 增加图片的size 可以提高acc；
 
-## Mobile
+2.[Backpropagation and the Brain](https://www.nature.com/articles/s41583-020-0277-3.pdf)<br>
+发表在2020年《nature reviews|neuroscience》, 作者包括Geoffrey Hinton. <br>
+大脑皮层如何修改突触，从而实现学习是一个很神秘的问题。几十年前，backpropagation 被认为是可以用来解释大脑学习机制的一个可能方法，但是由于反向传播机制没有带来很好的网络学习效果，
+并且反向传播缺乏生物学上的可解释性，反向传播的意义被忽视。但是，随着近年算力的提升，NN在多个领域以反向传播为学习方法的基础上取得了很好的成绩，我们认为 backpropagation offers
+a conceptualframework for understanding how the cortex learns. <br>
+**contribution**：
+**特点**：通过比较大脑神经元和人工神经网络，介绍了很多关于 learning algorithm的基础概念，e.g., backpropagation, supervised learning, error encoding, auto encoder.
 
-
-
-
-
-## deep learning && neural network
-1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
-发表于2020年 arxiv，作者来自 Amason, UC Davis, 包括 Hang Zhang, Mu Li. 网上传言史上最强resnet魔改版。 <br>
 
 ## NLP and web, knowledge graph
 1.[Correcting Knowledge Base Assertions](https://arxiv.org/pdf/2001.06917.pdf)<br>
-本文2018年发表在2020WWW的oral，作者来自Oxford, Tencent, University of Oslo. <br>
+本文发表在2020WWW的oral，作者来自Oxford, Tencent, University of Oslo. <br>
 **Problem**: knowledge bases(KB) 在搜索引擎，问答系统，common sense reasoning, machine learning等领域起到了重要的作用，but KB is suffering from quality issues, e.g.,
 constraint violations and erroneous assertions.  <br>
 SoA: 现有工作在KB quality上主要包含：error detection and assessment, quality improvement via completion, canonicalization.<br>
