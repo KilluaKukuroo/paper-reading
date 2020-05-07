@@ -27,7 +27,7 @@
 
 ## Mobile
 1.[Mobile Cyber-Physical Systems for Smart Cities](https://dl.acm.org/doi/abs/10.1145/3366424.3382121)<br>
-2020年WWW发表，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
+2020年WWW workshop，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
 **problem**：城市化面临的问题：congestion，energy consumption需要CPS（IoT）来解决；现有的CPS方法大都是针对single infrastructure and single domain data, 限制了对mobility建模的能力。所以，
 针对现在城市的发展可以获得的多种数据，本文介绍作者已经做的*cross-domain interaction*的研究，和潜在的研究方向。
 **特点**: 文章非常简短；主要总结了作者自己在CPS领域的工作;
@@ -56,6 +56,9 @@
 **challenges**:
 **contribution**:
 
+
+## 联邦学习
+
 ## deep learning && neural network
 1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
 发表于2020年 arxiv，作者来自 Amason, UC Davis, 包括 Hang Zhang, Mu Li. 网上传言史上最强resnet魔改版。 <br>
@@ -78,6 +81,9 @@ a conceptualframework for understanding how the cortex learns. <br>
 **contribution**：
 **特点**：通过比较大脑神经元和人工神经网络，介绍了很多关于 learning algorithm的基础概念，e.g., backpropagation, supervised learning, error encoding, auto encoder.
 
+
+3.[宽度学习-Broad Learning System: An Effective and Efficient Incremental Learning System Without the Need for Deep Architecture](https://ieeexplore.ieee.org/document/7987745)<br>
+2017年发表在《IEEE Transactions on Neural Networks and Learning Systems》，作者来自澳门科技大学；
 
 ## NLP and web, knowledge graph
 1.[Correcting Knowledge Base Assertions](https://arxiv.org/pdf/2001.06917.pdf)<br>
