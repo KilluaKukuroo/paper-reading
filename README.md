@@ -25,13 +25,25 @@
 本文发表在 IEEE 40th International Engineering in Medicine and Biology Conference (EMBC) 2018， 作者来自 UC san diego。<br>
 
 
-## Mobile
+## Mobile && smart city
+## scholars
+- [Alex 'Sandy' Pentland - MIT media lab](https://scholar.google.com/citations?hl=zh-CN&user=P4nfoKYAAAAJ&view_op=list_works&sortby=pubdate)<br>
+- [Yu Zheng - JD.COM](https://scholar.google.com/citations?hl=zh-CN&user=juUcdgYAAAAJ&view_op=list_works&sortby=pubdate)<br>
+
 1.[Mobile Cyber-Physical Systems for Smart Cities](https://dl.acm.org/doi/abs/10.1145/3366424.3382121)<br>
 2020年WWW workshop，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
 **problem**：城市化面临的问题：congestion，energy consumption需要CPS（IoT）来解决；现有的CPS方法大都是针对single infrastructure and single domain data, 限制了对mobility建模的能力。所以，
 针对现在城市的发展可以获得的多种数据，本文介绍作者已经做的*cross-domain interaction*的研究，和潜在的研究方向。
 **特点**: 文章非常简短；主要总结了作者自己在CPS领域的工作;
 **future work**：1)Measuring and predicting mobility by mobility models; 2)Intervening and altering mobility by city services;
+
+2.[Data Sets, Modeling and Decision Making in Smart Cities: A Survey](https://www.cs.virginia.edu/~stankovic/psfiles/Smart_City_Survey%20(002).pdf)<br>
+2019 《ACM Transactions on Cyber-Physical Systems》,作者MEIYI MA, SARAH M. PREUM, and MOHSIN Y. AHMED, ABDELTAWAB HENDAWI and JOHN A. STANKOVIC(University of Virginia),WILLIAM TÄRNEBERG (Lund University, Sweden).<br>
+**summary**: 综述了数据集和modeling，decision-making相关的文章，并且从这两个角度介绍了相应的研究方向和面临解决的问题；<br>
+
+3.[Urban Computing: Concepts, Methodologies, and Applications](https://dl.acm.org/doi/pdf/10.1145/2629592)<br>
+2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,
+
 
 ## privacy
 ## scholars
@@ -58,6 +70,12 @@
 **methods**：1)*table-GAN*改编自DCGAN，比传统的GAN多了一个模块，包括generator,discriminator,classifier(提高生成数据的semantic integrity，让生成的数据更加合理)；2)在原始的loss基础上，
 添加information loss(保证生成数据在统计意义上和原始数据一致), classification loss(保证生成数据的semantic integrity);3）从data utility（包括statistical analysis,model compatibility(classification and regression)）, 
 privacy两个角度验证生成的数据；
+
+3.[Trajectory Recovery From Ash: User Privacy Is NOT Preserved in Aggregated Mobility Data](https://arxiv.org/pdf/1702.06270.pdf)<br>
+2017 WWW.
+
+4.[De-anonymization of Mobility Trajectories: Dissecting the Gaps between Theory and Practice](https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_06B-3_Wang_paper.pdf)<br>
+2018 NDSS. 
 
 
 ## 联邦学习
