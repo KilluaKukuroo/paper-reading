@@ -29,6 +29,7 @@
 ## scholars
 - [Alex 'Sandy' Pentland - MIT media lab](https://scholar.google.com/citations?hl=zh-CN&user=P4nfoKYAAAAJ&view_op=list_works&sortby=pubdate)<br>
 - [Yu Zheng - JD.COM](https://scholar.google.com/citations?hl=zh-CN&user=juUcdgYAAAAJ&view_op=list_works&sortby=pubdate)<br>
+- [Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU<br>
 
 1.[Mobile Cyber-Physical Systems for Smart Cities](https://dl.acm.org/doi/abs/10.1145/3366424.3382121)<br>
 2020年WWW workshop，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
@@ -45,11 +46,22 @@
 2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,
 
 
+4.[DeepTransport: Prediction and Simulation of Human Mobility and Transportation Mode at a City wide Level](https://www.ijcai.org/Proceedings/16/Papers/372.pdf)<br>
+2016 IJCAI, Xuan Song, Hiroshi Kanasugi and Ryosuke Shibasaki (The university of Tokyo). citation = 109; <br>
+
+**contribution**: 第一个将深度学习用来对city-wide 的 human mobility and transportation mode建模，做prediction and simulation; <br>
+**problem**: traffic congestion 是一个越来越严重的问题，造成了经济等方面的大量损失，所以为了减小损失需要研究traffic congestion的预测，从而需要理解human mobility and transportation mode; <br>
+**SoA**: The existing studies mainly rely on **simulation techniques** or **complex network theory** to model trafﬁc congestion dynamics in a small-scale network; <br>
+**Opportunity**: 深度学习在语音、图像等多个领域取得了很好的成绩；可以收集大量的除了GPS之外的异构数据；<br>
+**method**: 基于LSTM的深层multi-task learning network, 输出是 mobility output + transportation mode output; <br>
+
+
+
 ## privacy
 ## scholars
 - [Cynthia Dwork](https://scholar.google.com/citations?user=y2H5xmkAAAAJ&hl=zh-CN), distinguished scientist in **Microsoft Research**, citation>30,000;
 - [Aaron Roth](https://scholar.google.com/citations?user=kLUQrrYAAAAJ&hl=zh-CN), Associate professor in **U Pennsylvania**, citation > 7,000;
-- 
+- [Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU<br>
 
 1.[Plausible Deniability for Privacy Preserving Data Synthesis](http://www.vldb.org/pvldb/vol10/p481-bindschaedler.pdf)<br>
 2017 VLDB, 作者来自UIUC(Vincent Bindschaedler, Carl A.Gunter), Cornell Tech(Reza Shokri). 目前引用次数61. <br>
@@ -78,7 +90,40 @@ privacy两个角度验证生成的数据；
 2018 NDSS. 
 
 
+
+
+
+
 ## 联邦学习
+## scholars
+- [Jakub Konečný](https://scholar.google.co.uk/citations?hl=en&user=4vq7eXQAAAAJ&view_op=list_works) P.h.D from Edinburge, research scientist in Google, proposed *federated learning*<br>
+
+1.[Federated Machine Learning: Concept and Applications](https://arxiv.org/pdf/1902.04885.pdf)
+
+
+
+5.[PMF: A Privacy-preserving Human Mobility Prediction Framework via Federated Learning](https://dl.acm.org/doi/pdf/10.1145/3381006)<br>
+2020 Ubicomp, Jie Feng(THU), Can Rong(PKU), Funing Sun and Diansheng Guo(Tencent), Yongli(THU); citation = NAN; <br>
+**contribution**:
+**method**
+**problem**:
+**SoA**:
+**Opportunity**:
+**Challenges**:
+
+
+6.[Human activity recognition using Federated learning](https://people.kth.se/~sarunasg/Papers/Sozinov2018FederatedLearning.pdf)<br>
+2018 2018 IEEE Intl Conf on Parallel & Distributed Processing with Applications, Ubiquitous Computing & Communications, Big Data & Cloud Computing, Social Computing & Networking, 
+Sustainable Computing & Communications (ISPA/IUCC/BDCloud/SocialCom/SustainCom). <br>
+citation = NAN, Konstantin Sozinov, Vladimir Vlassov, Sarunas Girdzijauskas (**KTH**). <br>
+**summary**: 将federated learning引入到动作识别（running, walking, biking, etc.）（但不是第一个做这个工作的文章）,与传统的centrelized learning对比；没有评估**privacy**; <br>
+**contribution**: 1)构建了softmax regression model and deep NN,分别用联邦学习（分布式训练）和集中训练的方法训练； 2）评估了communication cost and performance; 3)检测了corrupted data; <br>
+**method** 
+**problem**:  Human activity recognition 在 healthcare等领域用途很多； <br>
+**SoA**: 已经有工作将联邦学习结合进来； <br>
+**Opportunity**: --
+**Challenges**:
+
 
 ## deep learning && neural network
 1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
@@ -105,6 +150,13 @@ a conceptualframework for understanding how the cortex learns. <br>
 
 3.[宽度学习-Broad Learning System: An Effective and Efficient Incremental Learning System Without the Need for Deep Architecture](https://ieeexplore.ieee.org/document/7987745)<br>
 2017年发表在《IEEE Transactions on Neural Networks and Learning Systems》，作者来自澳门科技大学；
+
+
+## 小样本学习 && 类别不均衡
+1.[decoupling representation AND classifier FOR LONG-TAILED RECOGNITION](https://arxiv.org/pdf/1910.09217.pdf)<br>
+2020 ICLR, Bingyi Kang, Saining Xie, Marcus Rohrbach, Zhicheng Yan, Albert Gordo, Jiashi Feng, Yannis Kalantidis 来自Facebook AI and NUS; <br>
+
+
 
 ## NLP and web, knowledge graph
 1.[Correcting Knowledge Base Assertions](https://arxiv.org/pdf/2001.06917.pdf)<br>
