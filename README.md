@@ -118,11 +118,14 @@ Sustainable Computing & Communications (ISPA/IUCC/BDCloud/SocialCom/SustainCom).
 citation = NAN, Konstantin Sozinov, Vladimir Vlassov, Sarunas Girdzijauskas (**KTH**). <br>
 **summary**: 将federated learning引入到动作识别（running, walking, biking, etc.）（但不是第一个做这个工作的文章）,与传统的centrelized learning对比；没有评估**privacy**; <br>
 **contribution**: 1)构建了softmax regression model and deep NN,分别用联邦学习（分布式训练）和集中训练的方法训练； 2）评估了communication cost and performance; 3)检测了corrupted data; <br>
-**method** 
+**method**: 异常数据检测：在local端对数据测试，将acc低的数据通过阈值去除; 通过对比加入异常数据和没有异常数据，以及利用算法检测去除异常数据三种方法的实验结果，来说明检测异常数据点很重要；<br>
 **problem**:  Human activity recognition 在 healthcare等领域用途很多； <br>
 **SoA**: 已经有工作将联邦学习结合进来； <br>
 **Opportunity**: --
 **Challenges**:
+
+7.[Reliable Federated learning for Mobile networks](https://arxiv.org/abs/1910.06837)<br>
+2020 IEEE Wireless Communications , Jiawen Kang, Zehui Xiong, Dusit Niyato, Fellow, IEEE, Yuze Zou, Yang Zhang, Mohsen Guizani, Fellow, IEEE (NTU, HUST, Qatar University), citation = 10;<br>
 
 
 ## deep learning && neural network
