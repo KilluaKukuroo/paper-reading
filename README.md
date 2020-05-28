@@ -55,7 +55,24 @@
 **Opportunity**: 深度学习在语音、图像等多个领域取得了很好的成绩；可以收集大量的除了GPS之外的异构数据；<br>
 **method**: 基于LSTM的深层multi-task learning network, 输出是 mobility output + transportation mode output; <br>
 
+5.[Deep Multi-View Spatial-Temporal Network for Taxi Demand Prediction](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewFile/16069/15978)<br>
+2018 AAAI, Huaxiu Yao,Fei Wu(PSU), Jintao Ke(HUST), Xianfeng Tang(PSU),Yitian Jia, Siyu Lu, Pinghua Gong, Jieping Ye(Didi Chuxing), Zhenhui Li(PSU);
+citation = 216;<br>
+**summary**:
 
+**future work**: 1) 提高模型的可解释性; 2)增加可利用信息,比如POI information;<br>
+
+
+
+
+6.[Identifying Human Mobility via Trajectory Embeddings](https://www.ijcai.org/Proceedings/2017/0234.pdf)<br>
+2017,IJCAI. Qiang Gao, Fan Zhou, Kunpeng Zhang, Goce Trajcevski, Xucheng Luo, Fengli Zhang from **UESTC, U Maryland, Northwesten U**, citation = 42; <br>
+
+**summary**: 传统工作是将轨迹数据分类为不同行为，而本文提出解决trajectory user linking (TUL),将轨迹与产生轨迹的人结合起来，面对的挑战是类别数太多(人多) + 数据稀疏；为了解决这些问题，提出RNN-based semi-supervised model; <br>
+
+**method**: 1)trajectory segmentation 2)check-in embedding 3)RNN-based semi-supervised model; <br>
+
+**contribution**： 1)第一个解决TUL问题的工作； 2)提出了RNN-based 半监督模型(**获取embedding的过程是半监督**)，在两个公开数据集取得了SoA成绩； <br>
 
 ## privacy
 ## scholars
@@ -98,13 +115,21 @@ privacy两个角度验证生成的数据；
 ## scholars
 - [Jakub Konečný](https://scholar.google.co.uk/citations?hl=en&user=4vq7eXQAAAAJ&view_op=list_works) P.h.D from Edinburge, research scientist in Google, proposed *federated learning*<br>
 
+**blog** <br>
+[Federated learning: Is it really better for your privacy and security?](https://www.comparitech.com/blog/information-security/federated-learning/)<br>
+2019, 介绍了联邦学习的概念,**联邦学习的工作流程**,在GBoard, healthcare,无人驾驶车等领域的应用,隐私和安全问题,联邦学习的局限性; <br>
+
+
 1.[Federated Machine Learning: Concept and Applications](https://arxiv.org/pdf/1902.04885.pdf)
 
 
 
 5.[PMF: A Privacy-preserving Human Mobility Prediction Framework via Federated Learning](https://dl.acm.org/doi/pdf/10.1145/3381006)<br>
 2020 Ubicomp, Jie Feng(THU), Can Rong(PKU), Funing Sun and Diansheng Guo(Tencent), Yongli(THU); citation = NAN; <br>
-**contribution**:
+**summary**: 面对modelling human mobility中的隐私安全问题,本文提出基于federated learning的方法,在不明显降低acc的条件下解决数据隐私问题; 解决individual human mobility prediction;<br>
+
+**contribution**: 1) 在mobility prediction场景下,第一个提出privacy-preserving mobility prediction framework; 2)给出了mobility prediction场景中一个真实的攻击案例,并且提出了
+group optimization algorithm加速和安全训练; 3)在两个真实数据集进行了实验验证; <br>
 **method**
 **problem**:
 **SoA**:
@@ -126,6 +151,47 @@ citation = NAN, Konstantin Sozinov, Vladimir Vlassov, Sarunas Girdzijauskas (**K
 
 7.[Reliable Federated learning for Mobile networks](https://arxiv.org/abs/1910.06837)<br>
 2020 IEEE Wireless Communications , Jiawen Kang, Zehui Xiong, Dusit Niyato, Fellow, IEEE, Yuze Zou, Yang Zhang, Mohsen Guizani, Fellow, IEEE (NTU, HUST, Qatar University), citation = 10;<br>
+
+**summary**: 通过设计得multi-weight subjective logic model计算workers' reputation, 从而实现对federated learning中可信任worker的选择；实验使用MNIST数据集，貌似与标题中的mobile network无关；
+**介绍了联邦学习的很多应用场景**<br>
+**problem**: federated learning经常遇到部分worker有意或者无意的上传假数据、脏数据，影响学习的结果，所以对worker进行筛选很重要；<br>
+**contribution**: 1）引入reputation概念来(不是本文最先提出)select worker；2）提出subjective logic model计算reputation； 3)引入blockchain 进行reputation管理；<br>
+
+
+8.[Collaborative Learning between Cloud and End Devices: An Empirical Study on Location Prediction](https://www.microsoft.com/en-us/research/uploads/prod/2019/08/sec19colla.pdf)<br>
+2019, SEC '19: Proceedings of the 4th ACM/IEEE Symposium on Edge Computing. <br>
+
+**summary**: *不涉及隐私的描述*; 通过手机和云端协同训练模型RNN-based model,实现更加精准的location prediction; 首先通过云端一部分数据训练一个初始模型,然后在一个新的device加入之后自动压缩并下载模型到
+手机端,结合本地数据训练更新模型,接下来上传参数到云端,云端收集一定量的更新之后进行云端更新,新模型被分发到手机端.迭代进行;<br>
+
+
+9.[Differentially Private Federated Learning: A Client Level Perspective](https://arxiv.org/pdf/1712.07557.pdf)<br>
+2017, NIPS. Robin C. Geyer, Tassilo Klein, Moin Nabi (SAP SE, ETH Zurich). citation = 136; <br>
+
+**summary**:首先说明federated learning is vulnerable to differential attack,即识别出分布式训练中某个客户端的信息；本文的目标就是基于联邦学习，结合差分隐私，保护隐藏client所有数据的信息；通过实验表明，当client足够多，
+本文方法可以实现client-level privacy并且几乎不损失模型性能； <br>
+
+**method**:主要分为两部：random sub-sampling + distorting; 即随机选取一部分client节点，利用Gaussian mechanism打乱节点的梯度更新，从而实现防止节点信息的泄露；<br>
+**experience**: 利用cross validation grid search搜索最优的超参数；在MINIST做实验，每个节点只分到两个类别的数字，从而使得任何节点如果只使用本地数据就不可能高准确率的分类十个类别； <br>
+**contribution**: 1)not single data level, but client-level privacy could be achieved, i.e., a client's participation can be hiden during training federated model; 
+2)propose to dynamiclly adapt the differential-privacy mechanism during decentralized training,并且实验表明这样可以取得更好的效果，并给出了可能的原因;
+
+
+
+10.[Practical Secure Aggregation for Federated Learning on User-Held Data](https://arxiv.org/pdf/1611.04482.pdf)<br>
+2016 NIPS workshop, Keith Bonawitz, Vladimir Ivanov, Ben Kreuter, Antonio Marcedone, H. Brendan McMahan, Sarvar Patel, Daniel Ramage, Aaron Segal, and Karn Seth (**Google, Cornell University**). citation = 59<br>
+
+**summary**:首先定义secure aggregation: a class of secure multi-party computation algorithms. secure aggregation protocol是为了在联邦学习中保护各个节点的模型梯度隐私(因为根据梯度仍然有推测出原始数据的风险);<br>
+
+
+
+**联邦学习的安全问题**
+1.[Can You Really Backdoor Federated Learning?](https://arxiv.org/pdf/1911.07963.pdf)<br>
+2019,     <br>
+研究了联邦学习的对抗攻击，backdoor attack， 以及攻击的次数和任务的复杂程度会影响攻击的效果，并且differential privacy对防御攻击有好的效果，代码开源在Tensorflow Federated(TFF)；<br>
+backdoor attack: keep the model a good performance on overall task but let the model fail on specific task, e.g., text classification failed on specific input "what is my favorite restaurant"; <br>
+
+
 
 
 ## deep learning && neural network
