@@ -74,6 +74,20 @@ citation = 216;<br>
 
 **contribution**： 1)第一个解决TUL问题的工作； 2)提出了RNN-based 半监督模型(**获取embedding的过程是半监督**)，在两个公开数据集取得了SoA成绩； <br>
 
+
+
+7.[Mobility Prediction: A Survey on State-of-the-Art Schemes and Future Applications](https://ieeexplore.ieee.org/document/8570749)<br>
+2018, IEEE Access, Hongtao Zhang and Lingcheng Dai from **BUPT**, citation =  16; <br>
+**summary**: 本文侧重mobility prediction 的三个部分：解释movement predictability， 归类预测的输出类型，评价指标performance metrics; 介绍了在5G场景下，prediction的相关问题；<br>
+
+**method**： prediction output: *moving direction*, *transition probability*, *future location*, *user trajectory*, *next cell ID*;  <br>
+
+
+
+
+
+
+
 ## privacy
 ## scholars
 - [Cynthia Dwork](https://scholar.google.com/citations?user=y2H5xmkAAAAJ&hl=zh-CN), distinguished scientist in **Microsoft Research**, citation>30,000;
