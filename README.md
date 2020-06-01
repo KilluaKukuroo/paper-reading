@@ -1,6 +1,19 @@
 # This repo is for my brief notes when reading papers.
 
 # 论文笔记和原文
+* [优化方法](#优化方法)
+
+* [多模态](#多模态-multi-modal)
+
+* [smart city](#Mobile-&&-smart-city)
+
+* [privacy](#privacy)
+
+* [联邦学习](#联邦学习)
+
+* [deep learning and neural network](#deep-learning)
+
+
 1. Training with streaming annotation  
 [原文](https://arxiv.org/abs/2002.04165)<br>
 [笔记](https://github.com/KilluaKukuroo/paper-reading/blob/master/Training%20with%20streaming%20annotation.pdf)<br>
@@ -35,15 +48,20 @@
 2020年WWW workshop，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
 **problem**：城市化面临的问题：congestion，energy consumption需要CPS（IoT）来解决；现有的CPS方法大都是针对single infrastructure and single domain data, 限制了对mobility建模的能力。所以，
 针对现在城市的发展可以获得的多种数据，本文介绍作者已经做的*cross-domain interaction*的研究，和潜在的研究方向。
-**特点**: 文章非常简短；主要总结了作者自己在CPS领域的工作;
-**future work**：1)Measuring and predicting mobility by mobility models; 2)Intervening and altering mobility by city services;
+**特点**: 文章非常简短；主要总结了作者自己在CPS领域的工作;  <br>
+**future work**：1)Measuring and predicting mobility by mobility models; 2)Intervening and altering mobility by city services; <br>
 
 2.[Data Sets, Modeling and Decision Making in Smart Cities: A Survey](https://www.cs.virginia.edu/~stankovic/psfiles/Smart_City_Survey%20(002).pdf)<br>
-2019 《ACM Transactions on Cyber-Physical Systems》,作者MEIYI MA, SARAH M. PREUM, and MOHSIN Y. AHMED, ABDELTAWAB HENDAWI and JOHN A. STANKOVIC(University of Virginia),WILLIAM TÄRNEBERG (Lund University, Sweden).<br>
-**summary**: 综述了数据集和modeling，decision-making相关的文章，并且从这两个角度介绍了相应的研究方向和面临解决的问题；<br>
+2019 《ACM Transactions on Cyber-Physical Systems》,作者MEIYI MA, SARAH M. PREUM, and MOHSIN Y. AHMED, ABDELTAWAB HENDAWI and JOHN A. STANKOVIC(**University of Virginia**),WILLIAM TÄRNEBERG (**Lund University, Sweden**).<br>
+**summary**: 综述了*data sets*和*modeling*，*decision-making*相关的文章，并且从这两个角度介绍了相应的研究方向和面临解决的问题；介绍了智慧城市框架下细分的研究方向，**现有的工作和待解决的问题**；<br>
+**content** : <br>
+1) key data issue: （**很多待解决的问题**）heterogeneity, interdisciplinary,integrity, completeness, real timeliness, interdependencies; <br> 
+2) key decision-making issue: safety and serivce conflict, security, uncertainty, humans in the loop, and privacy; <br>
+
+
 
 3.[Urban Computing: Concepts, Methodologies, and Applications](https://dl.acm.org/doi/pdf/10.1145/2629592)<br>
-2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,
+2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,   <br>
 
 
 4.[DeepTransport: Prediction and Simulation of Human Mobility and Transportation Mode at a City wide Level](https://www.ijcai.org/Proceedings/16/Papers/372.pdf)<br>
@@ -58,7 +76,7 @@
 5.[Deep Multi-View Spatial-Temporal Network for Taxi Demand Prediction](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewFile/16069/15978)<br>
 2018 AAAI, Huaxiu Yao,Fei Wu(PSU), Jintao Ke(HUST), Xianfeng Tang(PSU),Yitian Jia, Siyu Lu, Pinghua Gong, Jieping Ye(Didi Chuxing), Zhenhui Li(PSU);
 citation = 216;<br>
-**summary**:
+**summary**:                    <br>
 
 **future work**: 1) 提高模型的可解释性; 2)增加可利用信息,比如POI information;<br>
 
@@ -84,6 +102,9 @@ citation = 216;<br>
 
 
 
+8.[Thinking about smart cities](https://dusp.mit.edu/sites/dusp.mit.edu/files/attachments/publications/Smart%20Cities%20CJRES%20021415.pdf)<br>
+2015,《Cambridge Journal of Regions, Economy and Society》,Amy Glasmeier and Susan Christopherson from **MIT and Cornell U**, citation  = 218; <br>
+**summary**: 从**非技术**细节的角度，介绍了智慧城市的goals, ethics, potential and limitations; 给出了智慧城市未来的发展规模，从不同角度对智慧城市的定义； <br>
 
 
 
@@ -96,23 +117,23 @@ citation = 216;<br>
 
 1.[Plausible Deniability for Privacy Preserving Data Synthesis](http://www.vldb.org/pvldb/vol10/p481-bindschaedler.pdf)<br>
 2017 VLDB, 作者来自UIUC(Vincent Bindschaedler, Carl A.Gunter), Cornell Tech(Reza Shokri). 目前引用次数61. <br>
-**problem**: 一方面很多场景都涉及到数据的分享，另一方面数据的隐私往往得不到很好的保护；
-**SoA**:传统的两种保护数据隐私的方法：data de-identification需要对对手有背景知识的了解，exponential mechanism for differential privacy面对高维数据计算量太大；
-**Opportunity**: 本文提出一种privacy-preserving 的方法来生成synthetic data;
-**Challenges**:
-**Contributions**:
+**problem**: 一方面很多场景都涉及到数据的分享，另一方面数据的隐私往往得不到很好的保护；   <br>
+**SoA**:传统的两种保护数据隐私的方法：data de-identification需要对对手有背景知识的了解，exponential mechanism for differential privacy面对高维数据计算量太大；<br>
+**Opportunity**: 本文提出一种privacy-preserving 的方法来生成synthetic data; <br>
+**Challenges**:          <br>
+**Contributions**:          <br>
 
 
 2.[Data Synthesis based on Generative Adversarial Networks](http://www.vldb.org/pvldb/vol11/p1071-park.pdf)<br>
 2018年VLDB, 作者来自UNCC, Georgy Mason Unviersity, ETRI(South Korea), 目前引用=24. 提出tableGAN生成假的table数据，在保证数据隐私性的同时满足数据分享质量的要求。<br>
-**problem**: 
-**SoA**:
-**opportunity**:
-**challenges**:
+**problem**:      <br>
+**SoA**:            <br>
+**opportunity**:       <br>
+**challenges**:           <br>
 **contribution**:1)设计了table-GAN,生成数据质量高并且隐私性强的数据；2）生成的数据没有一对一的关系；3)多种实验验证了生成数据的隐私性和质量；<br>
 **methods**：1)*table-GAN*改编自DCGAN，比传统的GAN多了一个模块，包括generator,discriminator,classifier(提高生成数据的semantic integrity，让生成的数据更加合理)；2)在原始的loss基础上，
 添加information loss(保证生成数据在统计意义上和原始数据一致), classification loss(保证生成数据的semantic integrity);3）从data utility（包括statistical analysis,model compatibility(classification and regression)）, 
-privacy两个角度验证生成的数据；
+privacy两个角度验证生成的数据；    <br>
 
 3.[Trajectory Recovery From Ash: User Privacy Is NOT Preserved in Aggregated Mobility Data](https://arxiv.org/pdf/1702.06270.pdf)<br>
 2017 WWW.
@@ -208,7 +229,7 @@ backdoor attack: keep the model a good performance on overall task but let the m
 
 
 
-## deep learning && neural network
+## deep learning
 1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
 发表于2020年 arxiv，作者来自 Amason, UC Davis, 包括 Hang Zhang, Mu Li. 网上传言史上最强resnet魔改版。 <br>
 **Problem**：目前大部分视觉的任务, e.g., obeject detection and semantic segmentation 还是使用ResNet的变体作为backbone，因为网络结构的简单和结构化。但是ResNet是为了image classification设计，
