@@ -13,6 +13,14 @@
 
 * [deep learning and neural network](#deep-learning)
 
+* [小样本学习 && 类别不均衡](#小样本学习-&&-类别不均衡)
+* [NLP and web, knowledge graph](NLP-and-web,-knowledge-graph)
+
+* [CV](#CV)
+
+* [集成学习](#集成学习)
+
+* [智慧电网 smart grid](#智慧电网-smart-grid)
 
 1. Training with streaming annotation  
 [原文](https://arxiv.org/abs/2002.04165)<br>
@@ -291,6 +299,8 @@ SoA: 现有工作在KB quality上主要包含：error detection and assessment, 
 Methods: 用小鼠作为实验动物，将小鼠的部分眼睛里面部分神经细胞感染，来研究小鼠眼睛的神经细胞如何对大脑皮层内部神经细胞感知
 运动(visual movement)产生影响；<br>
 **future work**: 研究在老鼠不同的运动场景下，视网膜中感应运动的细胞如何和何时发挥作用；
+
+
 ## 集成学习
 ### [review]
 [Ensemble methods in Machine Learning](https://web.engr.oregonstate.edu/~tgd/publications/mcs-ensembles.pdf)<br>
