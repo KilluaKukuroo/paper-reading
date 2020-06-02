@@ -151,6 +151,9 @@ privacy两个角度验证生成的数据；    <br>
 
 
 
+5.[Enhancing Gradient-based Attacks with Symbolic Intervals](https://arxiv.org/pdf/1906.02282.pdf)<br>
+2019 **ICML workshop** on *Security and privacy of Machine learning*, Shiqi Wang, Yizheng Chen , Ahmed Abdou, Suman Jana from **Columbia U and PSU**, citation = 4; <br>
+
 
 
 
@@ -164,8 +167,19 @@ privacy两个角度验证生成的数据；    <br>
 
 
 1.[Federated Machine Learning: Concept and Applications](https://arxiv.org/pdf/1902.04885.pdf)
+2019, 《ACM Trans. Intell. Syst. Technol》, **Qiang Yang (HUST)**, Yang Liu, Tianjian Chen (Webank), Yongxin Tong(Beihang U), citation = 202; <br>
 
+**summary**: federated learning是一种概念、一种框架，类似于privacy-preserving distributed machine learning, 但是强调的是解决两个痛点：<br>
+- data isolated,数据分散在不同的企业、部门，很难将这些数据融合来学习更好的模型; <br>
+- data privacy and security. 传统的分享数据方法风险太大; <br>
 
+**contribution**:  <br>
+1)根据sample and feature的分布，将联邦学习概念扩充，分为三类：horisontal,vertical and transfer federated learning; <br>
+2）compare federated learning with edge computing, distributed machine learning, federated database systems; <br>
+3) 介绍了联邦学习的应用场景,e.g., smart retail, multi-party database querying, smart healthcare. <br>
+4) 分析了联邦学习中的几种解决隐私问题的方法, secure multi-party computation (SMC), differential privacy, Homomorphic Encryption; <br>
+
+**limitations**: 没有介绍联邦学习在communication等方面的问题和分析; <br>
 
 5.[PMF: A Privacy-preserving Human Mobility Prediction Framework via Federated Learning](https://dl.acm.org/doi/pdf/10.1145/3381006)<br>
 2020 Ubicomp, Jie Feng(THU), Can Rong(PKU), Funing Sun and Diansheng Guo(Tencent), Yongli(THU); citation = NAN; <br>
@@ -212,7 +226,7 @@ citation = NAN, Konstantin Sozinov, Vladimir Vlassov, Sarunas Girdzijauskas (**K
 2017, NIPS. Robin C. Geyer, Tassilo Klein, Moin Nabi (SAP SE, ETH Zurich). citation = 136; <br>
 
 **summary**:首先说明federated learning is vulnerable to differential attack,即识别出分布式训练中某个客户端的信息；本文的目标就是基于联邦学习，结合差分隐私，保护隐藏client所有数据的信息；通过实验表明，当client足够多，
-本文方法可以实现client-level privacy并且几乎不损失模型性能； <br>
+本文方法可以实现client-level privacy并且几乎不损失模型性能；**introduce DP into FL to protect client-side data** by hiding clients' contribution during training.<br>
 
 **method**:主要分为两部：random sub-sampling + distorting; 即随机选取一部分client节点，利用Gaussian mechanism打乱节点的梯度更新，从而实现防止节点信息的泄露；<br>
 **experience**: 利用cross validation grid search搜索最优的超参数；在MINIST做实验，每个节点只分到两个类别的数字，从而使得任何节点如果只使用本地数据就不可能高准确率的分类十个类别； <br>
