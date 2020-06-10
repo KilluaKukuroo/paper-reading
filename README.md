@@ -50,7 +50,9 @@
 ## scholars
 - [Alex 'Sandy' Pentland - MIT media lab](https://scholar.google.com/citations?hl=zh-CN&user=P4nfoKYAAAAJ&view_op=list_works&sortby=pubdate)<br>
 - [Yu Zheng - JD.COM](https://scholar.google.com/citations?hl=zh-CN&user=juUcdgYAAAAJ&view_op=list_works&sortby=pubdate)<br>
-- [Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU<br>
+- **[Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU,  [Yong Li](http://fi.ee.tsinghua.edu.cn/~liyong/) Associate Prof in THU, *mobile computing + ML* ** <br>
+- [Lijun Sun](https://lijunsun.github.io/) AP at McGill Univ, machine learning + smart city <br>
+- [Xue (Steve) Liu](https://www.cs.mcgill.ca/~xueliu/site/intro.html) FIEEE, McGill Univ, *IoT,CPS,ML,smart energy system* <br>
 
 1.[Mobile Cyber-Physical Systems for Smart Cities](https://dl.acm.org/doi/abs/10.1145/3366424.3382121)<br>
 2020年WWW workshop，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
@@ -278,6 +280,12 @@ a conceptualframework for understanding how the cortex learns. <br>
 2017年发表在《IEEE Transactions on Neural Networks and Learning Systems》，作者来自澳门科技大学；
 
 
+
+4.**[Model Evaluation, Model Selection, and Algorithm Selection in Machine Learning]**(https://arxiv.org/pdf/1811.12808.pdf)<br>
+2018,    <br>
+
+**summary**: 总结了机器学习中的模型评估、模型选择、算法选择的问题、挑战和各种方法；介绍了k-fold cross-validation的几种用法，不同数据量场景下的选择；<br>
+
 ## 小样本学习 && 类别不均衡
 1.[decoupling representation AND classifier FOR LONG-TAILED RECOGNITION](https://arxiv.org/pdf/1910.09217.pdf)<br>
 2020 ICLR, Bingyi Kang, Saining Xie, Marcus Rohrbach, Zhicheng Yan, Albert Gordo, Jiashi Feng, Yannis Kalantidis 来自Facebook AI and NUS; <br>
@@ -314,6 +322,13 @@ Methods: 用小鼠作为实验动物，将小鼠的部分眼睛里面部分神�
 运动(visual movement)产生影响；<br>
 **future work**: 研究在老鼠不同的运动场景下，视网膜中感应运动的细胞如何和何时发挥作用；
 
+
+2.[Learning to Extract a Video Sequence from a Single Motion-Blurred Image](http://openaccess.thecvf.com/content_cvpr_2018/papers/Jin_Learning_to_Extract_CVPR_2018_paper.pdf) <br>
+2018 CVPR, Meiguang Jin, Givi Meishvili, Paolo Favaro from **University of Bern, Switzerland**. citation = 24. <br>
+**key words**: image deblur, motion deblur, blind deblur; <br>
+**summary**: 从一张模糊的图片，提取出一个带有时序关系的视频序列；**难点**：一张模糊的图片是多张图片的叠加，叠加的过程破坏了时许关系，想要逆向恢复出时序关系很难；     <br>
+**significance**：recovering texture and motion from motion blurred images can be used to understand
+the **dynamics of a scene **(e.g., in entertainment with sports or in surveillance when monitoring the traffic). <br>
 
 ## 集成学习
 ### [review]
