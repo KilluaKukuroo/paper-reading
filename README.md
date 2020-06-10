@@ -50,7 +50,7 @@
 ## scholars
 - [Alex 'Sandy' Pentland - MIT media lab](https://scholar.google.com/citations?hl=zh-CN&user=P4nfoKYAAAAJ&view_op=list_works&sortby=pubdate)<br>
 - [Yu Zheng - JD.COM](https://scholar.google.com/citations?hl=zh-CN&user=juUcdgYAAAAJ&view_op=list_works&sortby=pubdate)<br>
-- **[Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU,  [Yong Li](http://fi.ee.tsinghua.edu.cn/~liyong/) Associate Prof in THU, mobile computing + ML ** <br>
+- [Jie Feng](https://vonfeng.github.io/publications/) ** Ph.D candidate in THU,  [Yong Li](http://fi.ee.tsinghua.edu.cn/~liyong/) Associate Prof in THU, mobile computing + ML ** <br>
 - [Lijun Sun](https://lijunsun.github.io/) AP at McGill Univ, machine learning + smart city <br>
 - [Xue (Steve) Liu](https://www.cs.mcgill.ca/~xueliu/site/intro.html) FIEEE, McGill Univ, *IoT,CPS,ML,smart energy system* <br>
 
