@@ -116,7 +116,10 @@ citation = 216;<br>
 2015,《Cambridge Journal of Regions, Economy and Society》,Amy Glasmeier and Susan Christopherson from **MIT and Cornell U**, citation  = 218; <br>
 **summary**: 从**非技术**细节的角度，介绍了智慧城市的goals, ethics, potential and limitations; 给出了智慧城市未来的发展规模，从不同角度对智慧城市的定义； <br>
 
+9.[Route prediction for instant delivery](https://dl.acm.org/doi/pdf/10.1145/3351282) <br>
+2019 Ubicomp, Yan Zhang, Yunhuai Liu, Genjian Li, Yi Ding, Ning Chen, Hao Zhang, Tian He, and Desheng Zhang.    <br>
 
+**summary**: 通过对骑手路径选择的预测，制定不同的订单分发系统，从而减少平均的外卖派送时间，减少延误率； <br>
 
 
 ## privacy
@@ -155,6 +158,23 @@ privacy两个角度验证生成的数据；    <br>
 
 5.[Enhancing Gradient-based Attacks with Symbolic Intervals](https://arxiv.org/pdf/1906.02282.pdf)<br>
 2019 **ICML workshop** on *Security and privacy of Machine learning*, Shiqi Wang, Yizheng Chen , Ahmed Abdou, Suman Jana from **Columbia U and PSU**, citation = 4; <br>
+
+
+6.[A Data Mining Approach to Assess Privacy Risk in Human Mobility Data]() <br>
+[paper slides](https://pdfs.semanticscholar.org/5711/dc77a4fa972e3c4781397fa51e9689a03bd2.pdf) <br>
+2017 ACM Transactions on Intelligent Systems and Technology, Roberto Pellungrini, Luca  Pappalardo ,Francesca  Pratesi, Anna  Monreale from ***University of Pisa, Italy***, citation=13;<br>
+**summary**: 通过攻击模型构建车辆GPS数据集individual privacy risk level 标签，基于random forest对隐私风险进行分类；   <br>
+
+**datasets**:    <br>
+- GPS data covering two Italian cities, i.e., Florence (9715 individuals) and Pisa (2280 individuals) ; <br>
+- 利用多种攻击方法，得出individual的离散隐私风险，进一步将离散风险归类到6个区间，形成六分类问题的标签；<br>
+
+**problem**: 没有读懂文章用的是什么data mining 的方法来做分类 ---> 更正：用的random forest classifier； <br>
+
+**contribution** : <br>
+- 对比传统判断隐私风险的文章，本文客服了传统方法计算开销大的问题，提出利用data mining分类方法，基于individual数据分类该用户的隐私风险； <br>
+- 探讨了用户的mobility pattern 和隐私风险之间的关系； <br>
+- 基于随机森林，对mobility feature进行了重要性分析，探讨不同feature对于隐私风险的贡献程度，发现the most visited place是最高风险的特征； <br> 
 
 
 
