@@ -91,7 +91,7 @@ citation = 216;<br>
 **future work**: 1) 提高模型的可解释性; 2)增加可利用信息,比如POI information;<br>
 
 
-
+### mobility embedding
 
 6.[Identifying Human Mobility via Trajectory Embeddings](https://www.ijcai.org/Proceedings/2017/0234.pdf)<br>
 2017,IJCAI. Qiang Gao, Fan Zhou, Kunpeng Zhang, Goce Trajcevski, Xucheng Luo, Fengli Zhang from **UESTC, U Maryland, Northwesten U**, citation = 42; <br>
@@ -101,6 +101,24 @@ citation = 216;<br>
 **method**: 1)trajectory segmentation 2)check-in embedding 3)RNN-based semi-supervised model; <br>
 
 **contribution**： 1)第一个解决TUL问题的工作； 2)提出了RNN-based 半监督模型(**获取embedding的过程是半监督**)，在两个公开数据集取得了SoA成绩； <br>
+
+[MPE: A Mobility Pattern Embedding Model for Predicting Next Locations](https://arxiv.org/pdf/2003.07782.pdf)<br>
+2020 WWW, Meng Chen · Xiaohui Yu (**York University**) · Yang Liu. citation = 9;   <br>
+**keywork**: human mobility modeling, embedding learning, next location prediction, **traffic trajectory data**;   <br>
+**summary**: 使用embedding（没有使用神经网络）对交通轨迹数据进行分析，可以运用到next location prediction, visualization; <br>
+**contribution**: <br>
+- 第一个使用embedding method to model mobility pattern from **traffic trajectory data**;    
+- ocnsidering sequential, temporal and personal information when embedding data into vector; 
+- VPR data and taxi trajectory data 数据集上取得了很好的成绩； 
+
+
+[Personalized Ranking Metric Embedding for Next New POI Recommendation](https://www.ijcai.org/Proceedings/15/Papers/293.pdf)<br>
+2015 IJCAI, Shanshan Feng,1 Xutao Li,2 Yifeng Zeng,3 Gao Cong,2 Yeow Meng Chee,4 Quan Yuan from **NTU**;  <br>
+
+
+[A General Multi-Context Embedding Model for Mining Human Trajectory Data](https://ieeexplore.ieee.org/document/7447767)<br>
+2016, TKDE.     <br>
+
 
 
 
@@ -120,6 +138,49 @@ citation = 216;<br>
 2019 Ubicomp, Yan Zhang, Yunhuai Liu, Genjian Li, Yi Ding, Ning Chen, Hao Zhang, Tian He, and Desheng Zhang.    <br>
 
 **summary**: 通过对骑手路径选择的预测，制定不同的订单分发系统，从而减少平均的外卖派送时间，减少延误率； <br>
+
+
+
+10.[Learning to Estimate the Travel Time](https://dl.acm.org/doi/pdf/10.1145/3219819.3219900)<br>
+2018 KDD, Zheng Wang, Kun Fu, Jieping Ye from **DiDi Chuxing**; <br>
+**summary**: 将车辆从A到B的estimated time of arrival(ETA) 转化为机器学习的回归问题，利用大量的历史数据，设计 Wide-Deep-Recurrent (WDR) learning model预测旅行时间，并且在DIDI上验证了这个方法； <br>
+
+**method**: <br>
+- feature extraction: spatial info, temporal info, traffic info, personalized info (driver profile, etc.), augmented info (whether condition, traffic restriction, etc.); <br>
+- transform ETA as a machine learning problem, design loss function; <br>
+- wide-deep-recurrent learning model design; <br>
+
+11.[Travel Time Estimation without Road Networks: An Urban Morphological Layout Representation Approach](https://lanwuwei.github.io/IJCAI19_Travel_Time_Estimation.pdf)<br>
+2019 IJCAI, Wuwei Lan (Ohio State U), Yanyan Xu (UC Berkerly), Binzhao(Wisense AI, Jinan, China). citation = 3. <br>
+**keywork**: ETA, deep learning, multi task, image; <br>
+**summary**：以前的ETA估计方法分为两类，一：将路径划分成为多个子路径，计算子路径时间进行叠加；二：利用深度学习进行端到端学习；本文假设：local traffic condition is closely related with the landuse and 
+built environment, i.e., metro station, intersections, etc. 并且交通情况和这些局部环境的关系是时变的，太过复杂；所以，本文提出一个多任务深度学习框架，从**built environment images**学习travel time,不适用road network信息；
+并且在两个城市的数据集取得SoA；*与下面2018 AAAI 的论文框架类似，不过本文是直接利用图片数据*<br>
+
+**method**: 1) image representation: learning feature patterns from morphological layout images using CNN; 2)multitask prediction: **哪些task？**   <br>
+
+12.[WhenWill You Arrive? Estimating Travel Time Based on Deep Neural Networks](http://urban-computing.com/pdf/travel%20time%20estimation-AAAI%202018-Zheng.pdf)<br>
+2018 AAAI, Dong Wang (Duke U), Junbo Zhang (Microsoft Research), Wei Cao and Jian Li (THU), **Yu Zheng** (Microsoft Research, XiDian, Chinese Academy of Science) ; <br>
+**keywords**: ETA    <br>
+**summary**: 以前的ETA估计方法是：将路径划分成为多个子路径，计算子路径时间进行叠加。但是这样不准确，因为没有考虑road intersection/traffic light等情况。所以本文提出一种end-to-end模型，直接预测到达时间; <br>
+
+**datasets**: chengdu dataset (1.4 billion GPS records) + beijing dataset (0.45 billion GPS records); 没说明是公开的还是自己的数据,应该是自己采集的数据; <br>
+
+**methods**:  1) transform GPS sequence to feature maps, to capture local spatial correlations;   <br>
+
+
+13.[TEMP-A Simple Baseline for Travel Time Estimation using Large-Scale Trip Data](https://arxiv.org/pdf/1512.08580.pdf)<br>
+[short version](https://dl.acm.org/doi/pdf/10.1145/2996913.2996943)<br>
+**keywork**: ETA;    <br>
+2016 SIGSPATIAL,    citation=51; <br>
+
+
+
+
+[ Urban Computing: Building Intelligent Cities Using Big Data and AI](http://urban-computing.com/pdf/urban%20computing-AAAI%202019.pdf)<br>
+2019 AAAI keynote, PDF tutorial, Yu Zheng from **JD.com**, citation = 8; <br>
+
+
 
 
 ## privacy
@@ -163,7 +224,7 @@ privacy两个角度验证生成的数据；    <br>
 6.[A Data Mining Approach to Assess Privacy Risk in Human Mobility Data]() <br>
 [paper slides](https://pdfs.semanticscholar.org/5711/dc77a4fa972e3c4781397fa51e9689a03bd2.pdf) <br>
 2017 ACM Transactions on Intelligent Systems and Technology, Roberto Pellungrini, Luca  Pappalardo ,Francesca  Pratesi, Anna  Monreale from ***University of Pisa, Italy***, citation=13;<br>
-**summary**: 通过攻击模型构建车辆GPS数据集individual privacy risk level 标签，基于random forest对隐私风险进行分类；   <br>
+**summary**: 通过攻击模型构建车辆GPS数据集individual privacy risk level 标签，基于random forest对**隐私风险进行分类**；   <br>
 
 **datasets**:    <br>
 - GPS data covering two Italian cities, i.e., Florence (9715 individuals) and Pisa (2280 individuals) ; <br>
