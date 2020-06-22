@@ -429,7 +429,7 @@ a conceptualframework for understanding how the cortex learns. <br>
 方法发现了SoA的深度学习框架在现实世界数据库上的很多*错误行为*(找出能够出发DNN错误的test case,e.g., a special image)；<br>
 **methods**: 本文主要解决两个挑战 <br>
 - How to generate test cases that trigger erronous behavior of DNN? -- neuron covarge <br>
-- ‘如何在没有标签的情况下发现DNN系统的错误'？ -- 利用multiple DNNs with similar functionality; <br>
+- ‘如何在没有标签的情况下发现DNN系统的错误？‘ -- 利用multiple DNNs with similar functionality; <br>
 **limitations**: <br>
 - differential testing要求至少两个有相同功能的DNN系统；而且，如果两个相同功能的DNN只有很小的区别（few neurons difference），系统需要很长时间寻找differential-inputs; <br>
 - differential testing只能在至少有一个DNN做出不一样的结果的时候检测出错误，如果所有DNN都犯同样的错，则检测不出来对应的test case；
@@ -453,6 +453,7 @@ a conceptualframework for understanding how the cortex learns. <br>
 ## NLP and web, knowledge graph
 1.[Correcting Knowledge Base Assertions](https://arxiv.org/pdf/2001.06917.pdf)<br>
 本文发表在2020WWW的oral，作者来自Oxford, Tencent, University of Oslo. <br>
+**summary**: 检测并且更正knowledge base中的错误；<br>
 **Problem**: knowledge bases(KB) 在搜索引擎，问答系统，common sense reasoning, machine learning等领域起到了重要的作用，but KB is suffering from quality issues, e.g.,
 constraint violations and erroneous assertions.  <br>
 SoA: 现有工作在KB quality上主要包含：error detection and assessment, quality improvement via completion, canonicalization.<br>
