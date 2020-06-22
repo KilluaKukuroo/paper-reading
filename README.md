@@ -13,6 +13,8 @@
 
 * [deep learning and neural network](#deep-learning)
 
+* [transfer learning](#transfer-learning)
+
 * [小样本学习 && 类别不均衡](#小样本学习-&&-类别不均衡)
 * [NLP and web, knowledge graph](NLP-and-web,-knowledge-graph)
 
@@ -47,12 +49,15 @@
 
 
 ## Mobile && smart city
-## scholars
+### scholars
 - [Alex 'Sandy' Pentland - MIT media lab](https://scholar.google.com/citations?hl=zh-CN&user=P4nfoKYAAAAJ&view_op=list_works&sortby=pubdate)<br>
 - [Yu Zheng - JD.COM](https://scholar.google.com/citations?hl=zh-CN&user=juUcdgYAAAAJ&view_op=list_works&sortby=pubdate)<br>
 - [Jie Feng](https://vonfeng.github.io/publications/) ** Ph.D candidate in THU **,  [Yong Li](http://fi.ee.tsinghua.edu.cn/~liyong/) ** Associate Prof in THU, mobile computing + ML ** <br>
 - [Lijun Sun](https://lijunsun.github.io/) AP at McGill Univ, machine learning + smart city <br>
 - [Xue (Steve) Liu](https://www.cs.mcgill.ca/~xueliu/site/intro.html) FIEEE, McGill Univ, *IoT,CPS,ML,smart energy system* <br>
+- [Xiaohui Yu](http://www.yorku.ca/xhyu/) Associate Prof, York University, *data mining, transportation,location-based services,social network*<br>
+
+### review
 
 1.[Mobile Cyber-Physical Systems for Smart Cities](https://dl.acm.org/doi/abs/10.1145/3366424.3382121)<br>
 2020年WWW workshop，research overview, 作者Desheng Zhang来自Rutgers CS. <br>
@@ -74,8 +79,23 @@
 2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,   <br>
 
 
+4.[Urban Computing: Building Intelligent Cities Using Big Data and AI](http://urban-computing.com/pdf/urban%20computing-AAAI%202019.pdf)<br>
+2019 AAAI keynote, PDF tutorial, Yu Zheng from **JD.com**, citation = 8; <br>
+
+5.[Mobility Prediction: A Survey on State-of-the-Art Schemes and Future Applications](https://ieeexplore.ieee.org/document/8570749)<br>
+2018, IEEE Access, Hongtao Zhang and Lingcheng Dai from **BUPT**, citation =  16; <br>
+**summary**: 本文侧重mobility prediction 的三个部分：解释movement predictability， 归类预测的输出类型，评价指标performance metrics; 介绍了在5G场景下，prediction的相关问题；<br>
+**method**： prediction output: *moving direction*, *transition probability*, *future location*, *user trajectory*, *next cell ID*;  <br>
+
+
+6.[Thinking about smart cities](https://dusp.mit.edu/sites/dusp.mit.edu/files/attachments/publications/Smart%20Cities%20CJRES%20021415.pdf)<br>
+2015,《Cambridge Journal of Regions, Economy and Society》,Amy Glasmeier and Susan Christopherson from **MIT and Cornell U**, citation  = 218; <br>
+**summary**: 从**非技术**细节的角度，介绍了智慧城市的goals, ethics, potential and limitations; 给出了智慧城市未来的发展规模，从不同角度对智慧城市的定义； <br>
+
+
+
 4.[DeepTransport: Prediction and Simulation of Human Mobility and Transportation Mode at a City wide Level](https://www.ijcai.org/Proceedings/16/Papers/372.pdf)<br>
-2016 IJCAI, Xuan Song, Hiroshi Kanasugi and Ryosuke Shibasaki (The university of Tokyo). citation = 109; <br>
+2016 IJCAI, Xuan Song, Hiroshi Kanasugi and Ryosuke Shibasaki (**The university of Tokyo**). citation = 109; <br>
 
 **contribution**: 第一个将深度学习用来对city-wide 的 human mobility and transportation mode建模，做prediction and simulation; <br>
 **problem**: traffic congestion 是一个越来越严重的问题，造成了经济等方面的大量损失，所以为了减小损失需要研究traffic congestion的预测，从而需要理解human mobility and transportation mode; <br>
@@ -122,17 +142,7 @@ citation = 216;<br>
 
 
 
-7.[Mobility Prediction: A Survey on State-of-the-Art Schemes and Future Applications](https://ieeexplore.ieee.org/document/8570749)<br>
-2018, IEEE Access, Hongtao Zhang and Lingcheng Dai from **BUPT**, citation =  16; <br>
-**summary**: 本文侧重mobility prediction 的三个部分：解释movement predictability， 归类预测的输出类型，评价指标performance metrics; 介绍了在5G场景下，prediction的相关问题；<br>
 
-**method**： prediction output: *moving direction*, *transition probability*, *future location*, *user trajectory*, *next cell ID*;  <br>
-
-
-
-8.[Thinking about smart cities](https://dusp.mit.edu/sites/dusp.mit.edu/files/attachments/publications/Smart%20Cities%20CJRES%20021415.pdf)<br>
-2015,《Cambridge Journal of Regions, Economy and Society》,Amy Glasmeier and Susan Christopherson from **MIT and Cornell U**, citation  = 218; <br>
-**summary**: 从**非技术**细节的角度，介绍了智慧城市的goals, ethics, potential and limitations; 给出了智慧城市未来的发展规模，从不同角度对智慧城市的定义； <br>
 
 9.[Route prediction for instant delivery](https://dl.acm.org/doi/pdf/10.1145/3351282) <br>
 2019 Ubicomp, Yan Zhang, Yunhuai Liu, Genjian Li, Yi Ding, Ning Chen, Hao Zhang, Tian He, and Desheng Zhang.    <br>
@@ -177,10 +187,52 @@ built environment, i.e., metro station, intersections, etc. 并且交通情况�
 
 
 
-[ Urban Computing: Building Intelligent Cities Using Big Data and AI](http://urban-computing.com/pdf/urban%20computing-AAAI%202019.pdf)<br>
-2019 AAAI keynote, PDF tutorial, Yu Zheng from **JD.com**, citation = 8; <br>
 
 
+
+
+### location and trajectory prediction
+[NLPMM: a Next Location Predictor with Markov Modeling](https://arxiv.org/pdf/2003.07037.pdf)<br>
+2020,    citation=64; <br>
+**keywords**: moving pattern, next location prediction, time factor;  <br>
+
+
+[Where will you go? Mobile Data Mining for Next Place Prediction](https://www.idiap.ch/project/mdc/publications/files/nov13_08_nextPlace-dawak2013.pdf)<br>
+2013, Jo˜ao B´artolo Gomes, Clifton Phua, Shonali Krishnaswamy from **A Star**, citation=47; <br>
+**summary**: 基于手机GPS和其他信息(e.g., accelerometer,bluetooth and call/sms logs),在单个用户的数据上预测该用户下一个位置(不关心semantic location,i.e., tagged as home,etc.)；<br>
+**data**: Nokia Mobile Data Challenge (MDC):70 users for one year smartphone data; <br>
+**contribution**: <br>
+- privacy preserving: 对每个用户只使用他们自己的数据在本地（手机）训练模型，不需要将数据分享出去；<br>
+- rich *context information* are exploited for personalization <br>
+- 做了特征选择(based on information gain, and cross-validated best feature subset)，发现几乎所有特征都对预测有用，使用92%的特征取得了最好结果并且与使用所有特征类似；<br>
+- 历史数据可能无法获取，或者稀疏，所以只使用当前数据进行训练预测模型； 
+
+**Question**:  历史数据可能无法获取，或者稀疏，所以只使用当前数据进行训练预测模型???只使用当前数据是不是太少？使用当前多少数据？
+
+[Mining moving patterns for predicting next location](http://www.yorku.ca/xhyu/papers/infosys2015.pdf)<br>
+2015, Information Systems,  citation=44; <br>
+
+
+[A Survey of Location Prediction on Twitter](https://arxiv.org/pdf/1705.03172.pdf)<br>
+2018 TKDE,  Xin Zheng(NTU), Jialong Han(Tencent), and Aixin Sun(NTU), citation=93; <br>
+**keywords**: tweet, location prediction, home location, mentioned location, tweet location; <br>
+**summary**:本文的核心是基于tweet信息，预测三种位置信息(i.e., home tweet mentioned location)，不是预测mobility里面的下一个位置；并且简单综述了两个研究方向：semantic location,
+point-of-interest recommendation; <br>
+
+
+
+
+[Predicting the Next Location: A Recurrent Model with Spatial and Temporal Contexts](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/view/11900/11583)<br>
+2016, AAAI, citation = 315; <br>
+
+
+
+
+[Social Bridges in Urban Purchase Behavior](https://dl.acm.org/doi/pdf/10.1145/3149409)<br>
+2017 TIST, Xiaowen DONG and Yoshihiko Suhara (MIT), BURÇIN BOZKAYA (Sabancı University), VIVEK K. SINGH (Rutgers University), BRUNO LEPRI (Fondazione Bruno Kessler),
+**Alex Pentland** from MIT, citation=17; <br>
+
+**summary**: 利用social bridge的概念，对城市居民的购买力进行建模； <br>
 
 
 ## privacy
@@ -236,6 +288,10 @@ privacy两个角度验证生成的数据；    <br>
 - 对比传统判断隐私风险的文章，本文客服了传统方法计算开销大的问题，提出利用data mining分类方法，基于individual数据分类该用户的隐私风险； <br>
 - 探讨了用户的mobility pattern 和隐私风险之间的关系； <br>
 - 基于随机森林，对mobility feature进行了重要性分析，探讨不同feature对于隐私风险的贡献程度，发现the most visited place是最高风险的特征； <br> 
+
+
+7.[Private and Byzantine-Proof Cooperative Decision-Making](https://dl.acm.org/doi/pdf/10.5555/3398761.3398807)<br>
+2020, AAMAS, Abhimanyu Dubey and **Alex Pentland** from **MIT**, citation=1; <br>
 
 
 
@@ -367,10 +423,31 @@ a conceptualframework for understanding how the cortex learns. <br>
 
 **summary**: 总结了机器学习中的模型评估、模型选择、算法选择的问题、挑战和各种方法；介绍了k-fold cross-validation的几种用法，不同数据量场景下的选择；<br>
 
+5.[DeepXplore: Automated Whitebox Testing of Deep Learning Systems](https://arxiv.org/pdf/1705.06640.pdf)<br>
+2017 "Communications of the ACM", Kexin Pei, Yinzhi Cao, Junfeng Yang, Suman Jana from Columbia University, †Lehigh University.  citation=398; <br>
+**summary**: 深度学习系统第一个白盒测试框架；本方法基于differential testing (borrowed from software analysis)在不需要标签的情况下，自动的检测neuron behavior；本
+方法发现了SoA的深度学习框架在现实世界数据库上的很多*错误行为*(找出能够出发DNN错误的test case,e.g., a special image)；<br>
+**methods**: 本文主要解决两个挑战 <br>
+- How to generate test cases that trigger erronous behavior of DNN? -- neuron covarge <br>
+- ‘如何在没有标签的情况下发现DNN系统的错误'？ -- 利用multiple DNNs with similar functionality; <br>
+**limitations**: <br>
+- differential testing要求至少两个有相同功能的DNN系统；而且，如果两个相同功能的DNN只有很小的区别（few neurons difference），系统需要很长时间寻找differential-inputs; <br>
+- differential testing只能在至少有一个DNN做出不一样的结果的时候检测出错误，如果所有DNN都犯同样的错，则检测不出来对应的test case；
+
+
+## transfer learning
+
+
+
+
 ## 小样本学习 && 类别不均衡
 1.[decoupling representation AND classifier FOR LONG-TAILED RECOGNITION](https://arxiv.org/pdf/1910.09217.pdf)<br>
 2020 ICLR, Bingyi Kang, Saining Xie, Marcus Rohrbach, Zhicheng Yan, Albert Gordo, Jiashi Feng, Yannis Kalantidis 来自Facebook AI and NUS; <br>
 
+
+
+2.[Generalizing from a Few Examples: A Survey on Few-Shot Learning](https://arxiv.org/pdf/1904.05046.pdf)<br>
+2020 , Yaqing Wang (HKUST and Baidu Research), Quanming Yao (4Paradigm), JAMES T. KWOK and LIONEL M. NI (HKUST);   <BR>
 
 
 ## NLP and web, knowledge graph
