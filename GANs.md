@@ -89,7 +89,7 @@
 [Improved Techniques for Training GANs](https://arxiv.org/abs/1606.03498)<br>
 2016, citation= 3500; <br>
 
-[Image-to-Image Translation with Conditional Adversarial Networks]
+[Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/pdf/1611.07004.pdf)<br>
 2018, citation=5600; <br>
 **summary**: pixel2pixel, 图像-->图像生成。本文认为任何图像到图像的变换都可以用GAN得到同样的效果，借助CGAN的结构，提出通用的图片转换模型。
 **method**: <br>
@@ -97,9 +97,25 @@
 **contribution**: <br>
 - 不同的任务需要不同的loss function, **本文提出可以使用一个通用的方法处理多个任务**：图片上色，synthesize photos from label maps;
 
+[Classification Accuracy Score for Conditional Generative Models](https://papers.nips.cc/paper/9393-classification-accuracy-score-for-conditional-generative-models.pdf)<br>
+2019 NIPS, citation = 22; <br>
+**summary**: 本文设计一个基于分类的方法，验证一个假设：deep generative models（VAE,autogressive model, GANs）学习到了数据的分布，生成的数据可以很好的用于下游任务。得到了令人惊讶的
+结果；<br>
+**core idea**: 如果模型生成的数据很好，那么train on synthetic data test on real data应该会有很好的结果(if the model capture the data distribution, performance on the downstream
+task should be similar whether using original or synthesize data)；
+**contribution**: <br>
+- 用BigGAN-deep生成数据，用resnet50做分类器，发现top-1, top-5 acc分别下降27.9%,41.6 compared with original data;
+- 本文发现，传统的IS，FID等evaluation metric，既不能预测classification accuracy score, 也不能用于除了GAN之外的其他生成模型；
 
+[Measures to Evaluate Generative Adversarial Networks Based on Direct Analysis of Generated Images](https://arxiv.org/ftp/arxiv/papers/2002/2002.12345.pdf)<br>
+2020, citation=0; <br>
+**summary**: 和传统的IS(using classification performance)，FID(statistical metrics)不一样，本文直接分析GAN生成的图片来评估GAN模型，而不是把生成的图片输入到其他分类器。
+**contribution**: <br>
+- 提出了三种评估生成GAN生成图片的标准：creativity (不是复制原始图片), Inheritance(生成图片和原始图片某种意义上类似), diversity(生成图片彼此不一样); 
 
-
+[A Classification–Based Study of Covariate Shift in GAN Distributions](http://proceedings.mlr.press/v80/santurkar18a/santurkar18a.pdf)<br>
+2018 ICML,  citation = 17; <br>
+**summary**: 提出一种基于分类的方法，评估the diversity of GAN; <br>
 
 ## time series generation
 
