@@ -107,7 +107,6 @@
 2018 AAAI, Huaxiu Yao,Fei Wu(PSU), Jintao Ke(HUST), Xianfeng Tang(PSU),Yitian Jia, Siyu Lu, Pinghua Gong, Jieping Ye(Didi Chuxing), Zhenhui Li(PSU);
 citation = 216;<br>
 **summary**:                    <br>
-
 **future work**: 1) 提高模型的可解释性; 2)增加可利用信息,比如POI information;<br>
 
 
@@ -116,10 +115,9 @@ citation = 216;<br>
 6.[Identifying Human Mobility via Trajectory Embeddings](https://www.ijcai.org/Proceedings/2017/0234.pdf)<br>
 2017,IJCAI. Qiang Gao, Fan Zhou, Kunpeng Zhang, Goce Trajcevski, Xucheng Luo, Fengli Zhang from **UESTC, U Maryland, Northwesten U**, citation = 42; <br>
 
-**summary**: 传统工作是将轨迹数据分类为不同行为，而本文提出解决trajectory user linking (TUL),将轨迹与产生轨迹的人结合起来，面对的挑战是类别数太多(人多) + 数据稀疏；为了解决这些问题，提出RNN-based semi-supervised model; <br>
-
+**summary**: 传统工作是将轨迹数据分类为不同行为，而本文提出解决trajectory user linking (TUL),将轨迹与产生轨迹的人结合起来，面对的挑战是类别数太多(人多) + 数据稀疏；为了解决这些问题，提出RNN-based semi-supervised 
+model; <br>
 **method**: 1)trajectory segmentation 2)check-in embedding 3)RNN-based semi-supervised model; <br>
-
 **contribution**： 1)第一个解决TUL问题的工作； 2)提出了RNN-based 半监督模型(**获取embedding的过程是半监督**)，在两个公开数据集取得了SoA成绩； <br>
 
 [MPE: A Mobility Pattern Embedding Model for Predicting Next Locations](https://arxiv.org/pdf/2003.07782.pdf)<br>
@@ -140,21 +138,17 @@ citation = 216;<br>
 2016, TKDE.     <br>
 
 
-
-
-
-
 9.[Route prediction for instant delivery](https://dl.acm.org/doi/pdf/10.1145/3351282) <br>
 2019 Ubicomp, Yan Zhang, Yunhuai Liu, Genjian Li, Yi Ding, Ning Chen, Hao Zhang, Tian He, and Desheng Zhang.    <br>
 
 **summary**: 通过对骑手路径选择的预测，制定不同的订单分发系统，从而减少平均的外卖派送时间，减少延误率； <br>
 
 
-
+### ETA estimation of time of arrival
 10.[Learning to Estimate the Travel Time](https://dl.acm.org/doi/pdf/10.1145/3219819.3219900)<br>
 2018 KDD, Zheng Wang, Kun Fu, Jieping Ye from **DiDi Chuxing**; <br>
-**summary**: 将车辆从A到B的estimated time of arrival(ETA) 转化为机器学习的回归问题，利用大量的历史数据，设计 Wide-Deep-Recurrent (WDR) learning model预测旅行时间，并且在DIDI上验证了这个方法； <br>
-
+**summary**: 将车辆从A到B的estimated time of arrival(ETA) 转化为机器学习的回归问题，利用大量的历史数据，设计 Wide-Deep-Recurrent (WDR) learning model预测旅行时间，
+并且在DIDI上验证了这个方法； <br>
 **method**: <br>
 - feature extraction: spatial info, temporal info, traffic info, personalized info (driver profile, etc.), augmented info (whether condition, traffic restriction, etc.); <br>
 - transform ETA as a machine learning problem, design loss function; <br>
@@ -172,10 +166,9 @@ built environment, i.e., metro station, intersections, etc. 并且交通情况�
 12.[WhenWill You Arrive? Estimating Travel Time Based on Deep Neural Networks](http://urban-computing.com/pdf/travel%20time%20estimation-AAAI%202018-Zheng.pdf)<br>
 2018 AAAI, Dong Wang (Duke U), Junbo Zhang (Microsoft Research), Wei Cao and Jian Li (THU), **Yu Zheng** (Microsoft Research, XiDian, Chinese Academy of Science) ; <br>
 **keywords**: ETA    <br>
-**summary**: 以前的ETA估计方法是：将路径划分成为多个子路径，计算子路径时间进行叠加。但是这样不准确，因为没有考虑road intersection/traffic light等情况。所以本文提出一种end-to-end模型，直接预测到达时间; <br>
-
+**summary**: 以前的ETA估计方法是：将路径划分成为多个子路径，计算子路径时间进行叠加。但是这样不准确，因为没有考虑road intersection/traffic light等情况。所以本文提出
+一种end-to-end模型，直接预测到达时间; <br>
 **datasets**: chengdu dataset (1.4 billion GPS records) + beijing dataset (0.45 billion GPS records); 没说明是公开的还是自己的数据,应该是自己采集的数据; <br>
-
 **methods**:  1) transform GPS sequence to feature maps, to capture local spatial correlations;   <br>
 
 
@@ -184,7 +177,9 @@ built environment, i.e., metro station, intersections, etc. 并且交通情况�
 **keywork**: ETA;    <br>
 2016 SIGSPATIAL,    citation=51; <br>
 
-
+14.[Doing in One Go: Delivery Time Inference Based on Couriers’ Trajectories]<br>
+2020 KDD, Sijie Ruan(XD), Zi Xiong(Wuhan U), Cheng Long(NTU), Yiheng Chen(JD), Jie Bao(JD), Tianfu He(HIT), **Ruiyuan Li(XD)**, 
+Shengnan Wu(JD), Zhongyuan Jiang(XD), **Yu Zheng(XD)**;<br>
 
 
 
@@ -221,17 +216,17 @@ point-of-interest recommendation; <br>
 
 
 
-
 [Predicting the Next Location: A Recurrent Model with Spatial and Temporal Contexts](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/view/11900/11583)<br>
 2016, AAAI, citation = 315; <br>
 
 
+[Hybrid Spatio-Temporal Graph Convolutional Network: Improving Traffic Prediction with Navigation Data](https://arxiv.org/pdf/2006.12715.pdf)<br>
+2020 KDD, Rui Dai, Shenkun Xu, Qian Gu, Chenguang Ji, Kaikui Liu from **Alibaba Gaode**; <br>
 
 
 [Social Bridges in Urban Purchase Behavior](https://dl.acm.org/doi/pdf/10.1145/3149409)<br>
 2017 TIST, Xiaowen DONG and Yoshihiko Suhara (MIT), BURÇIN BOZKAYA (Sabancı University), VIVEK K. SINGH (Rutgers University), BRUNO LEPRI (Fondazione Bruno Kessler),
 **Alex Pentland** from MIT, citation=17; <br>
-
 **summary**: 利用social bridge的概念，对城市居民的购买力进行建模； <br>
 
 
@@ -277,13 +272,10 @@ privacy两个角度验证生成的数据；    <br>
 [paper slides](https://pdfs.semanticscholar.org/5711/dc77a4fa972e3c4781397fa51e9689a03bd2.pdf) <br>
 2017 ACM Transactions on Intelligent Systems and Technology, Roberto Pellungrini, Luca  Pappalardo ,Francesca  Pratesi, Anna  Monreale from ***University of Pisa, Italy***, citation=13;<br>
 **summary**: 通过攻击模型构建车辆GPS数据集individual privacy risk level 标签，基于random forest对**隐私风险进行分类**；   <br>
-
 **datasets**:    <br>
 - GPS data covering two Italian cities, i.e., Florence (9715 individuals) and Pisa (2280 individuals) ; <br>
 - 利用多种攻击方法，得出individual的离散隐私风险，进一步将离散风险归类到6个区间，形成六分类问题的标签；<br>
-
 **problem**: 没有读懂文章用的是什么data mining 的方法来做分类 ---> 更正：用的random forest classifier； <br>
-
 **contribution** : <br>
 - 对比传统判断隐私风险的文章，本文客服了传统方法计算开销大的问题，提出利用data mining分类方法，基于individual数据分类该用户的隐私风险； <br>
 - 探讨了用户的mobility pattern 和隐私风险之间的关系； <br>
@@ -294,6 +286,10 @@ privacy两个角度验证生成的数据；    <br>
 2020, AAMAS, Abhimanyu Dubey and **Alex Pentland** from **MIT**, citation=1; <br>
 
 
+[PATE-GAN: GENERATING SYNTHETIC DATA WITH DIFFERENTIAL PRIVACY GUARANTEES](https://openreview.net/pdf?id=S1zk9iRqF7)<br>
+2019 ICLR, citation=22; <br>
+**summary**: 首先将*private aggregation of teacher ensembles (PATE)*引入到GANs，得到可以生成很强隐私性的GAN；接下来用一种新的角度评估生成的数据：在生成数据上训练测试算法
+应该和在原始数据上得到同样的效果；
 
 
 ## 联邦学习
@@ -434,6 +430,29 @@ a conceptualframework for understanding how the cortex learns. <br>
 - differential testing要求至少两个有相同功能的DNN系统；而且，如果两个相同功能的DNN只有很小的区别（few neurons difference），系统需要很长时间寻找differential-inputs; <br>
 - differential testing只能在至少有一个DNN做出不一样的结果的时候检测出错误，如果所有DNN都犯同样的错，则检测不出来对应的test case；
 
+
+6.[ResNet](https://arxiv.org/abs/1512.03385)<br>
+[分析residual block博文](https://shuzhanfan.github.io/2018/11/ResNet/)<br>
+2016 CVPR best paper, Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun from **Microsoft Research**, citation=48900; <br>
+**summary**: 本文针对深度神经网络难以训练网络退化的问题，提出了resnet来简化深层网络的训练，并在图片分类目标检测等任务取得了SoA；<br>
+**problem**: <br>
+1)为什么假设residual mapping(f(x)) is easier to optimize than H(x)?
+- before adding shortcut connection, we learn underlying mapping H(x) --> adding shortcut connection we learn F(x), H(x)=F(x)+x;
+- 当网络acc饱和或者深层导致acc下降，学习的任务变成让后面深层复制浅层网络，即恒等映射，H(x)=x; 但是经过卷积和激活函数等非线性函数学习H(x)=x不容易，转变为学习F(x)=0,H(x)=F(x)+x;
+i.e., x -> weight1 -> ReLU -> weight2 -> ReLU ... -> 0，因为直接将所有参数设为0就可以实现； <br>
+2)本文解决的是什么问题？ --> 本文解决网络退化问题(degradation problem) <br>
+- 最近很多论文比如VGG都加深了网络层数，所以很自然有一个问题：“Is learning better networks as easy as stacking more layers?”但是当网络层数增多，会出现**梯度消失和梯度爆炸**的问题。
+正则化**normalization**解决了这个问题；
+- 当可以训练深层网络的时候，出现了新的问题(**退化degradation(of training acc)**)：随着层数的增加，acc稳定不增加了，然后剧烈下降。这是因为过拟合嘛?不是，过拟合会在training set上
+增加acc，但是现在training acc也下降。所以本文提出resnet解决这个网络退化问题，使得能够训练深层网络，提高acc；
+3)what is identity mapping 恒等映射，shortcut connection 跨层连接？
+- 恒等映射：在模型很深的时候发现了网络退化acc下降的问题。现有的方法：现在假设首先学习浅层网络已经达到了饱和的acc，然后在浅层网络上添加额外的几层恒等映射网络(y=x),这样网络的acc
+理论上起码不会下降。但是实验表明，添加了恒等映射的网络没有提高acc，有时候还会下降；所以本文要来学习F(x)而不是H(x)来解决这个问题；
+- 跨层连接：skipping one or more layers,是从highway network借鉴的思想，但是将连接中的权重去掉了，减少了参数; (为啥highway network达不到resnet的效果？理论上参数多应该模型容量更大啊？)
+- 本文通过跨层连接来实验恒等映射；
+**contribution**: <br>
+- 假设residual mapping更容易学习，并且用实验说明的确residual network更容易优化而且可以提高模型精度；
+- 在COCO目标检测上也取得很好结果，验证了深层网络对于特征提取的重要性和resnet的通用性；
 
 ## transfer learning
 
