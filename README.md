@@ -73,8 +73,6 @@
 1) key data issue: （**很多待解决的问题**）heterogeneity, interdisciplinary,integrity, completeness, real timeliness, interdependencies; <br> 
 2) key decision-making issue: safety and serivce conflict, security, uncertainty, humans in the loop, and privacy; <br>
 
-
-
 3.[Urban Computing: Concepts, Methodologies, and Applications](https://dl.acm.org/doi/pdf/10.1145/2629592)<br>
 2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,   <br>
 
@@ -92,7 +90,18 @@
 2015,《Cambridge Journal of Regions, Economy and Society》,Amy Glasmeier and Susan Christopherson from **MIT and Cornell U**, citation  = 218; <br>
 **summary**: 从**非技术**细节的角度，介绍了智慧城市的goals, ethics, potential and limitations; 给出了智慧城市未来的发展规模，从不同角度对智慧城市的定义； <br>
 
-
+7.[Human Mobility from theory to practice: Data, Models and Applications](https://dl.acm.org/doi/10.1145/3308560.3320099)<br>
+[PDF tutorial](https://dl.acm.org/doi/10.1145/3308560.3320099)<br>
+2019 WWW keynote, **Filippo Simini **(University of Bristol), Gianni Barlacchi (Uni of Trento, Italy), Roberto Pellungrini (Uni Pisa), Luca Pappalardo(ISTI-CNR, Pisa);<br>
+**summary**: 
+**content**: <br>
+- 介绍了CDR, GPS，location-based social network (LSN)等数据的特点，预处理方式，优点和缺点，公开的数据集，相关的研究文献，可以应用的场景;
+- **privacy**：
+	- why mobility data privacy is a concern? -- mobility data可以反映个人的很多信息，比如habit,health condition, religious preference; mobility data is abundant and readily 
+	avaiable; 
+**contribution**: <br>
+- preprocessin, privacy risk assessment, mobility measures and simulation,generative models
+- 开源了scikit mobility: predictive model, visualization methods, map matching, anonymization techniques;
 
 4.[DeepTransport: Prediction and Simulation of Human Mobility and Transportation Mode at a City wide Level](https://www.ijcai.org/Proceedings/16/Papers/372.pdf)<br>
 2016 IJCAI, Xuan Song, Hiroshi Kanasugi and Ryosuke Shibasaki (**The university of Tokyo**). citation = 109; <br>
