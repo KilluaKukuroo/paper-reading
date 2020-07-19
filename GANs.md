@@ -12,8 +12,17 @@
 - 多种GAN的损失函数;
 
 
+## reviews
+1.[A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications](https://arxiv.org/pdf/2001.06937.pdf)<br>
+2020 Jie Gui, Zhenan Sun, Yonggang Wen, **Dacheng Tao, Jieping Ye** from University of Michigan, Chinese Academy of Science, NTU, citation=12; <br>
 
+**content**: <br>
+- 从三个角度介绍了GAN 训练过程，对GAN文章进行分类：objective function (LSGAN, Hinge loss GAN); training skills (Improved GANs); network structure (DCGAN, SAGAN,BigGAN);  
+- 介绍了三个task driven GANs: semi-supervised learning, transfer learning, reinforcement learning; 
+- 介绍了GAN的几个应用场景：image processing and computer vision(image and video); sequantial data (NLP, Music); 
 
+2.[Generative Adversarial Networks (GANs): Challenges, Solutions, and Future Directions](https://arxiv.org/ftp/arxiv/papers/2005/2005.00065.pdf)<br>
+2020 , Divya Saxena and Jiannong Gao from ** The Hong Kong Polytechnic University**; <br> 
 
 
 ## GAN synthetic data evaluation
@@ -132,6 +141,8 @@ task should be similar whether using original or synthesize data)；
 - 用基于classification的方法measure covariate shift;
 - 验证了两种GAN带来的covariate shift：mode collapse, boundary distrotion;  
 - 本文方法需要很少的人工监督，并且可以很简单的用来在其他数据集上评估其他的GAN模型；**通过在真实数据集训练分类模型M，用M在生成数据集上推理生成标签，类似于自动annotator**；
+
+
 ## time series generation
 
 [Recurrent Conditional GANs for Time Series Sensor Modelling](http://roseyu.com/time-series-workshop/submissions/2019/timeseries-ICML19_paper_2.pdf)<br>
@@ -142,11 +153,93 @@ task should be similar whether using original or synthesize data)；
 2017,   citation=133; <br>
 
 
+[Time-series Generative Adversarial Networks](https://papers.nips.cc/paper/8789-time-series-generative-adversarial-networks.pdf)<br>
+[Supplementary material](https://www.vanderschaar-lab.com/papers/NIPS2019_TGAN_Supplementary.pdf)<br>
+2019 NIPS, Jinsung Yoon (UCLA), Daniel Jarrett and Mihaela van der Schaar (University of Cambridge), citation=9; <br>
+**summary**: 
+**method**: <br>
+- **validation**: qualitative (t-SNE,PCA可视化), quantitative(train on synthesize test on real to predict sequence); 
+
+**problem**: <br>
+- 生成了多种数据(sines,stock,energy,events)，没有把synthetic data可视化出来看看效果；画出sin原始图形之后发现数据只有24个点，不到四分之一周期，不是完整的sin波形;
+**画出sin生成图形发现波形起伏较大，不平稳**; 
+
+
+[Time Series Simulation by Conditional Generative Adversarial Net](https://arxiv.org/abs/1904.11419)<br>
+2019, Rao Fu, Jie Chen, Shutian Zeng, Yiping Zhuang, Agus Sudjianto from (Corporate Model Risk Management at **Wells Fargo**), citation=4; <br>
 
 
 
+## GAN with fancy ideas
+1.[Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://arxiv.org/abs/1710.10196)<br>
+2018 ICLR , Tero Karras, Timo Aila, Samuli Laine, Jaakko Lehtinen, citation=1834; <br>
+**summary**: a new training methodology: 通过循序渐进progressive的方法，逐步从低分辨率生成高分辨率图片;不仅加速了训练过程也使得训练更加稳定，同时可以生成更加高分辨率图片； <br>
+
+**contribution**: <br>
+- 本文简化了minibatch discrimination大学习，不用超参数和学习的参数，提高GAN生成数据的多样性；
+
+
+[Autoregressive Generative Adversarial networks](https://openreview.net/pdf?id=Hyo9zDuIz)<br>
+2018 ICLR workshop, Yasin Yazıcı, Kim-Hui Yap (**NTU**) and Stefan Winkler (**UIUC**) citation=2; <br>
+**summary**: 利用**自回归模型对latent distribution建模**，而不是传统的用D对sample进行real/fake二分类来实现； <br>
+
+[Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/pdf/1611.07004.pdf)<br>
+2018, Phillip Isola Jun-Yan Zhu Tinghui Zhou Alexei A. Efros from **UC Berkeley**,citation=5600; <br>
+**summary**: **PATCH-GAN**; 将生成图片分成很多patch，对每个patch用D判断是否是真图片；可以更好抓住局部特征（传统GAN都是对整个图片进行判断）；
+
+
+## GAN application - unsupervised learning
+1.[UNSUPERVISED REPRESENTATION LEARNING WITH DEEP CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS](https://arxiv.org/pdf/1511.06434.pdf)<br>
+2016 ICLR, Alec Radford & Luke Metz from (indico Research), Soumith Chintala from (Facebook AI), citation=6500; <br>
 
 
 
+2.[Wasserstein GAN](https://arxiv.org/pdf/1701.07875.pdf)<br>
+2017 , Martin Arjovsky, Soumith Chintala, Léon Bottou from **Courant Institute of Mathematical Science, Facebook AI**, citation=4643; <br>
+**summary**: **WGAN**; 
 
+3.[Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)<br>
+2017 NIPS, Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville from **MILA, Courant Institute of Mathematical Science, CIFAR Fellow**, 
+citation = 3051; <br>
+**summary**: **WGAN-GP**; WGAN使得GAN训练更加稳定，但是由于WGAN critic weight clipping,有时候训练不好收敛或者生成数据效果差； 本文提出一种新的clipping weight方法，使得训练更加稳定效果更好；<br>
+
+**contribution**: <br>
+- 在一些数据集上说明了为什么critic weight clipping会导致不好的结果；
+- 本文提出gradient panalty (**WGAN-GP**)使得训练更加稳定，避免了WGAN遭遇的现象；
+- 在多个GAN 的结构上验证了本文的WGAN-GP可以有更稳定的训练更好的生成效果；
+
+4.[Self-Attention Generative Adversarial Networks](https://arxiv.org/abs/1805.08318)<br>
+2018 , 2019 ICML; Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena, citation=800; <br>
+
+
+## GAN development
+**GAN**: 2014, MLP  <br>
+- 当用一类图片训练的时候，生成这一类图片，否则是混合的效果；
+- 
+
+**DCGAN**: 2015, GAN+CNN, 反卷积生成清晰的图像； 
+
+**CGAN**: 
+- 将标签向量和噪声向量拼接，生成指定标签类别的图片；
+
+**CycleGAN**: <br>
+- 两个生成器两个判别器，图像风格迁移;
+
+**CoGAN**: <br>
+- coupled GAN, 有两组GAN网络同时训练，图片生成效果比DCGAN更好；
+
+**ProGAN**: <br>
+- **core idea**: 逐步生成高分辨率图片，4\*4 --> 8\*8 --> ... --> 1024\*1024; 稳定GAN训练过程; 
+
+**WGAN**: <br>
+- 提出一种新的loss稳定GAN的训练，解决梯度消失问题；
+
+**SAGAN**： <br>
+- self attention, 引入自注意力机制，关注图片中重要的信息，传统方法只能关注局部信息; 
+
+**BigGAN** <br>
+- from DeepMind, 大型的GAN网络，以SAGAN为基础；
+
+**StyleGAN**: <br>
+- 致力于控制生成图片的风格style; 
 

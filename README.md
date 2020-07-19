@@ -15,6 +15,8 @@
 
 * [transfer learning](#transfer-learning)
 
+* [Interpretable ML](#Interpretable ML)
+
 * [小样本学习 && 类别不均衡](#小样本学习-&&-类别不均衡)
 * [NLP and web, knowledge graph](NLP-and-web,-knowledge-graph)
 
@@ -233,9 +235,18 @@ point-of-interest recommendation; <br>
 2020 KDD, Rui Dai, Shenkun Xu, Qian Gu, Chenguang Ji, Kaikui Liu from **Alibaba Gaode**; <br>
 
 
+[Collaborative Motion Prediction via Neural Motion Message Passing](https://arxiv.org/pdf/2003.06594.pdf)<br>
+2020 CVPR, Yue Hu (SJTU), Siheng Chen (**Mitsubishi Electric Research Laboratories**) and Xiao Gu (**SJTU**) ; <br> 
+**summary**:轨迹预测;
+
+[MotionNet: Joint Perception and Motion Prediction for Autonomous Driving
+Based on Bird’s Eye View Maps](https://arxiv.org/pdf/2003.06754.pdf)<br>
+2020 CVPR,Pengxiang Wu (**Rutgers**), Siheng Chen (**Mitsubishi Electric Research Laboratories**) and Dimitris Metaxas (**Rutgers**); <br>
+**summary**: 轨迹预测；自动驾驶领域利用3D点云数据，提出一个时空网络进行perception和motion prediction； 
+
 [Social Bridges in Urban Purchase Behavior](https://dl.acm.org/doi/pdf/10.1145/3149409)<br>
 2017 TIST, Xiaowen DONG and Yoshihiko Suhara (MIT), BURÇIN BOZKAYA (Sabancı University), VIVEK K. SINGH (Rutgers University), BRUNO LEPRI (Fondazione Bruno Kessler),
-**Alex Pentland** from MIT, citation=17; <br>
+**Alex Pentland** from **MIT**, citation=17; <br>
 **summary**: 利用social bridge的概念，对城市居民的购买力进行建模； <br>
 
 
@@ -299,6 +310,11 @@ privacy两个角度验证生成的数据；    <br>
 2019 ICLR, citation=22; <br>
 **summary**: 首先将*private aggregation of teacher ensembles (PATE)*引入到GANs，得到可以生成很强隐私性的GAN；接下来用一种新的角度评估生成的数据：在生成数据上训练测试算法
 应该和在原始数据上得到同样的效果；
+
+
+[Rethinking Privacy Preserving Deep Learning: How to Evaluate and Thwart Privacy Attacks](https://arxiv.org/pdf/2006.11601.pdf)<br>
+2020 under review, **Qiang Yang group** from HKUST and Webank, University of Malaya; <br>
+**summary**: **理论上证明，可以在不影响模型效果的同时，完全防御深度泄露攻击**；
 
 
 ## 联邦学习
@@ -463,9 +479,69 @@ i.e., x -> weight1 -> ReLU -> weight2 -> ReLU ... -> 0，因为直接将所有�
 - 假设residual mapping更容易学习，并且用实验说明的确residual network更容易优化而且可以提高模型精度；
 - 在COCO目标检测上也取得很好结果，验证了深层网络对于特征提取的重要性和resnet的通用性；
 
+
+7.[Confident Learning: Estimating Uncertainty in Dataset Labels](https://arxiv.org/pdf/1911.00068.pdf)<br>
+2020 ICML, Curtis G. Northcutt, Lu Jiang, Isaac L. Chuang from **MIT and Google**.<br>
+**summary**: 本文generilize confidence learning (以前可能被提出过), 提出一种框架[cleanlab](https://github.com/cgnorthcutt/cleanlab/) 来发现错误标签，表
+征标签噪声并且应用于带噪学习;虽然用CV做例子，但是可以扩展到其他领域; <br>
+
+
+8.[A Beginner's Guide to the Mathematics of Neural Networks](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.161.3556&rep=rep1&type=pdf)<br>
+1998 , A.C.C. Coolen from **Department of Mathematics, KCL**,citation=15; <br>
+**summary**: **理论**;从生物角度，神经元角度阐述了神经网络的数学机制，长文； <br>
+
+
+9.[Fundamentals of Recurrent Neural Network (RNN)
+and Long Short-Term Memory (LSTM) Network] (https://arxiv.org/pdf/1808.03314.pdf)<br>
+2020, Alex Sherstinsky from **MIT**; <br>
+
+
+10.[SKIP CONNECTIONS ELIMINATE SINGULARITIES](https://arxiv.org/pdf/1701.09175.pdf)<br>
+2018, A. Emin Orhan and Xaq Pitkow from **Rice U**; citation=78;<br>
+**summary**: 从singularity的角度解释了为什么Resnet跨层连接效果会这么好；<br>
+
+11.[Highway Networks](https://arxiv.org/pdf/1505.00387.pdf)<br>
+2015, Rupesh Kumar Srivastava, Klaus Greff, **Jurgen Schmidhuber** from **The Swiss AI Lab IDSIA**, citation=1215; <br>
+**summary**: resnet的前身，都是通过跨层链接来实现网络更容易训练，网络容量比resnet更大，但是效果却没有resnet好；<br>
+
 ## transfer learning
 
 
+## Interpretable ML
+#### scholars
+- [Synthia Rudin](https://users.cs.duke.edu/~cynthia/home.html)可解释机器学习,**Duke U**<br>
+
+1.[Do Simpler Models Exist and How Can We Find Them?](/file/Do-simpler-model-exists.pdf)<br>
+[paper link](https://dl.acm.org/doi/10.1145/3292500.3330823)<br>
+2019 KDD, **Cynthia Rudin** from Duke University, citation = ; <br>
+**summary**: 本文要解决两个问题：1）**是否存在简单的模型能代替复杂的黑盒子模型，并且可以达到类似的acc；**2）什么情况下这些模型存在；本文从对犯罪率预测的例子出发
+，表示有些情况下简单模型反而可以取得更好的效果，接着引入Rashomon set, **Rashomon Ratio（RR）**,得出在RR大的时候，很有坑会存在简单并且效果好的模型。但是RR不好求解也
+不需要求解，本文给出了一种判断RR达到大的条件：选择你熟悉的几个ML模型(Random forest,SVM,etc.)-->找几个几十个数据集跑一遍-->如果各个模型表现差不多，则说明RR大，
+存在简单模型，不用使用复杂模型；如果多模型差别大，则继续去探索复杂模型，因为这时候RR小，复杂模型效果更好；<br>
+**few words**:
+- claim: if Rashomon Set is large, --> a large-yet-accurate model is likely to exist;就像海里水越多，越有可能存在大鱼；
+- Rashomon set allows us to use a simpler model w/o lossing acc;
+**method**:
+- 如何近似的表示Rashomon Ratio？ -- 用7层随机森林，complex but not too complex, 不同层数RF表示不同复杂度的模型；
+**Q-A**：
+- 什么是RR？
+-- The true Rashomon set is the set of models with low true loss<br>
+- RR can benefit what? -- 如果RR大，你就知道可以使用一个简单模型代替当前的复杂模型；
+- 为什么复杂模型流行？ 
+-- it is profitable;
+-- it is easier to construct a complex model compared to the simpler one;
+- what is your intuition?
+-- if the datasets' feature is meaningful. the RR is tend to be large; e.g., pixel in image is not meaninful, therefore the RR is small;
+- 可否用RR提高dataaset的质量？
+-- **没想过这个问题，但是很有趣。比如挑选根据RR数据集；**
+
+2.[Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use
+Interpretable Models Instead](https://arxiv.org/pdf/1811.10154.pdf)<br>
+2019 Nature Machine Intelligence, **Cynthia Rudin** from Duke University; citataion = 355; <br>
+
+## 机器学习
+[on discriminative vs. generative classifiers a comparison of logistic regression and naive bayes](https://ai.stanford.edu/~ang/papers/nips01-discriminativegenerative.pdf)<br>
+2002, **Andrew Y.Ng and Michael Jordan**, citation = 2000; <br>
 
 
 ## 小样本学习 && 类别不均衡
@@ -516,6 +592,15 @@ Methods: 用小鼠作为实验动物，将小鼠的部分眼睛里面部分神�
 **summary**: 从一张模糊的图片，提取出一个带有时序关系的视频序列；**难点**：一张模糊的图片是多张图片的叠加，叠加的过程破坏了时许关系，想要逆向恢复出时序关系很难；     <br>
 **significance**：recovering texture and motion from motion blurred images can be used to understand
 the **dynamics of a scene **(e.g., in entertainment with sports or in surveillance when monitoring the traffic). <br>
+
+3.[HRNet-Deep High-Resolution Representation Learning
+for Visual Recognition](https://arxiv.org/pdf/1908.07919.pdf)<br>
+2019 PAMI, Jingdong Wang, Ke Sun, Tianheng Cheng, Borui Jiang, Chaorui Deng, Yang Zhao, Dong Liu, Yadong Mu,
+Mingkui Tan, Xinggang Wang, Wenyu Liu, and Bin Xiao from **Microsoft Research Beijing**, citation=47; <br>
+**summary**: HRNet (High Resolution Net), 传统的方法都是把high resolution --> low resolution --> high resolution(ResNet, VGG, etc.),本文觉得这样
+会对position-sensitive 的应用不友好；所以本文提出HRNet，把**高低resolution并行连接+不断改变高低resolution特征图的信息**，并且做了一系列下游实验比如:
+**human pose estimation, semantic segmentation, object detection, facial landmark detection**;<br>
+
 
 ## 集成学习
 ### [review]
