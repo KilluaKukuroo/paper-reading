@@ -544,6 +544,26 @@ Interpretable Models Instead](https://arxiv.org/pdf/1811.10154.pdf)<br>
 2002, **Andrew Y.Ng and Michael Jordan**, citation = 2000; <br>
 
 
+### co-training
+1.[Co-teaching: Robust Training of Deep Neural
+Networks with Extremely Noisy Labels](https://arxiv.org/abs/1804.06872)<br>
+2018 NIPS, Bo Han, Quanming Yao, Xingrui Yu, Gang Niu, Miao Xu, Weihua Hu, Ivor W. Tsang and **Masashi Sugiyama **from **U of Tokyo, **, citation = 187;<br>
+**summary**: 本文基于co-training提出了co-teaching训练范式，解决**强噪声数据集中学习的问题**；
+
+**method**:
+- 1.总共两个子网络，两个网络分别前向传播所有的samples，然后挑选small loss samples作为可能干净的数据；
+- 2.两个子网络通信，将自己选择的干净数据传递给对方；
+- 3.**根据对方传递的数据，更新自己网络的参数；**
+- 4. batch size从大到小，迭代123步骤；
+
+**Problem**：
+- 每次两个网络前向传播的数据相同吗？否则如何用对方挑选的数据更新自己的网络；
+
+2.[Combining labeled and unlabeled data with co-training](https://www.cs.cmu.edu/~avrim/Papers/cotrain.pdf)<br>
+1998, Avrim Blum and Tom Mitchell from **CMU**, citation = 5831; <br>
+
+
+
 ## 小样本学习 && 类别不均衡
 1.[decoupling representation AND classifier FOR LONG-TAILED RECOGNITION](https://arxiv.org/pdf/1910.09217.pdf)<br>
 2020 ICLR, Bingyi Kang, Saining Xie, Marcus Rohrbach, Zhicheng Yan, Albert Gordo, Jiashi Feng, Yannis Kalantidis 来自Facebook AI and NUS; <br>
