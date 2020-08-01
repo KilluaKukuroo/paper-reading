@@ -167,7 +167,18 @@ task should be similar whether using original or synthesize data)；
 
 [Time Series Simulation by Conditional Generative Adversarial Net](https://arxiv.org/abs/1904.11419)<br>
 2019, Rao Fu, Jie Chen, Shutian Zeng, Yiping Zhuang, Agus Sudjianto from (Corporate Model Risk Management at **Wells Fargo**), citation=4; <br>
+**summary**: 本文用CGAN生成金融领域的时序数据，用的是较为简单的全连接模型作为G，D；说明了CGAN可以很好的 1)learn normal or heavy tail distribution; 2)capture 
+dependent sturctures of different time series data;3)可以很好的对时序数据做预测
+ **generate conditional predictive distributions consistent with training data distributions**; 
 
+**method**:
+- 用的condition分为三种：**categorical, integer(0,1,2), continuous**; 
+
+**future work**:
+- 给CGAN不同的condition来训练，比如continuous and categorical label joint distribution 作为condition (**可以捕捉全局和局部信息**)；
+- 捕捉时序数据的second order information;
+
+**Q**： 使用CGAN，和我每次训练一种类型的数据有啥区别？？
 
 
 ## GAN with fancy ideas
@@ -186,6 +197,71 @@ task should be similar whether using original or synthesize data)；
 [Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/pdf/1611.07004.pdf)<br>
 2018, Phillip Isola Jun-Yan Zhu Tinghui Zhou Alexei A. Efros from **UC Berkeley**,citation=5600; <br>
 **summary**: **PATCH-GAN**; 将生成图片分成很多patch，对每个patch用D判断是否是真图片；可以更好抓住局部特征（传统GAN都是对整个图片进行判断）；
+
+
+
+
+
+
+## video generation
+
+[网站-video generation](https://paperswithcode.com/task/video-generation/latest)<br>
+video generation papers with code; 34篇生成video的论文(e.g., **DVD-GAN,TGAN-F**)，有生成效果在不同数据集上的排名;<br>
+
+[ImaGINator: Conditional Spatio-Temporal GAN for Video Generation](https://hal.archives-ouvertes.fr/hal-02368319/document)<br>
+
+2020, citation=2; <br>
+
+[Learning to Generate Time-Lapse Videos Using Multi-Stage
+Dynamic Generative Adversarial Networks] (https://arxiv.org/pdf/1709.07592.pdf)<br>
+2018, citation=58; 
+
+
+[MoCoGAN: Decomposing Motion and Content for Video Generation](https://arxiv.org/pdf/1707.04993.pdf)<br>
+2017, citation = 318; <br>
+
+
+[**DVD-GAN**-ADVERSARIAL VIDEO GENERATION
+ON COMPLEX DATASETS](https://arxiv.org/pdf/1907.06571.pdf)(br)
+2019, citation = 15; <br>
+
+## GAN loss functions
+
+
+
+
+
+
+## GAN application - image to image translation
+
+
+1.[Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](https://arxiv.org/pdf/1703.10593.pdf)<br>
+2017 ICCV, Jun-yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros from **UC Berkeley**, citation =5000; <br>
+**summary**: This paper solve the image to image problem without the presence of paired images. To be specific, this paper design a GAN framework
+to **transfer the style **of image set A to image set B without using paired images. TO solve the problem of 1) unpaired mapping betweeen a specific image 
+in set A and set B, 2) mode collapse during training, the authors design two mappings, G: X --> Y, and F: Y-->X;
+exploiting the idea from machine translation **"cycle translation"**, i.e., when translating 
+English into French, the algorithm should be able to translate the French back to English and  the English sentence should be the same as the original one. 
+
+
+
+
+2.[GeoGAN: A Conditional GAN with Reconstruction
+and Style Loss to Generate Standard Layer of Maps
+from Satellite Images] (https://arxiv.org/pdf/1902.05611.pdf)<br>
+2019, Swetava Ganguli, Pedro Garzon, Noa Glaser from **Stanford U**, citation = 10; <br>
+**summary**: CGAN + **style loss** ，以谷歌地图和谷歌地球的数据源来**生成地图**；
+**Question**: 
+- 生成的效果怎么样？ 图片好像看不出有啥特点？
+
+
+## GAN application - abnormal detection
+[ABNORMAL EVENT DETECTION IN VIDEOS USING GENERATIVE ADVERSARIAL NETS](https://arxiv.org/pdf/1708.09644.pdf)<br>
+2017, citation= 117; <br>
+
+[Future Frame Prediction for Anomaly Detection – A New Baseline](https://openaccess.thecvf.com/content_cvpr_2018/papers/Liu_Future_Frame_Prediction_CVPR_2018_paper.pdf)<br>
+2018 CVPR, citation = 131; <br>
+
 
 
 ## GAN application - unsupervised learning
@@ -210,6 +286,11 @@ citation = 3051; <br>
 
 4.[Self-Attention Generative Adversarial Networks](https://arxiv.org/abs/1805.08318)<br>
 2018 , 2019 ICML; Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena, citation=800; <br>
+
+
+
+
+
 
 
 ## GAN development

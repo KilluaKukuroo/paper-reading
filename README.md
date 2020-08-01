@@ -306,10 +306,42 @@ privacy两个角度验证生成的数据；    <br>
 2020, AAMAS, Abhimanyu Dubey and **Alex Pentland** from **MIT**, citation=1; <br>
 
 
+
+8.[Updates-Leak: Data Set Inference and Reconstruction Attacks in Online Learning](https://www.usenix.org/system/files/sec20summer_salem_prepub.pdf)<br>
+2019, citation=13; 
+**summary**: online learning场景下，每次查询model得到的output都不一样；是否可以根据两个结果的差值来infer data set and reconstruction? <br>
+
+10. [Deep Models Under the GAN: Information Leakage from
+Collaborative Deep Learning](https://acmccs.github.io/papers/p603-hitajA.pdf)<br>
+2017 CCS, citation=292; <br>
+
+11.[Beyond Inferring Class Representatives: User-Level
+Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)(br)
+2019 INFOCOM, citaion = 57; <br>
+
+12.[Deep Leakage from Gradients](https://papers.nips.cc/paper/9617-deep-leakage-from-gradients.pdf)<br>
+2019 NIPS, **Song Han** from MIT , citaion = 32; 
+
+13.[AttriGuard: A Practical Defense Against Attribute Inference Attacks via
+Adversarial Machine Learning](https://arxiv.org/pdf/1805.04810.pdf)<br>
+2018 **Usenix Security Symposium**, citation = 36; <br>
+
+
+14.[The Secret Revealer: Generative Model-Inversion Attacks Against Deep Neural
+Networks](https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_The_Secret_Revealer_Generative_Model-Inversion_Attacks_Against_Deep_Neural_Networks_CVPR_2020_paper.pdf)<br>
+2020 CVPR, <br>
+
+
 [PATE-GAN: GENERATING SYNTHETIC DATA WITH DIFFERENTIAL PRIVACY GUARANTEES](https://openreview.net/pdf?id=S1zk9iRqF7)<br>
 2019 ICLR, citation=22; <br>
 **summary**: 首先将*private aggregation of teacher ensembles (PATE)*引入到GANs，得到可以生成很强隐私性的GAN；接下来用一种新的角度评估生成的数据：在生成数据上训练测试算法
 应该和在原始数据上得到同样的效果；
+
+
+[Privacy Adversarial Network: Representation Learning for Mobile
+Data Privacy](https://arxiv.org/pdf/2006.06535.pdf)<br>
+2019 Ubicomp, **SICONG LIU**, Junzhao Du (**XD U**), ANSHUMALI SHRIVASTAVA and **Lin Zhong** (**Rice U**), citation = 1; <br>
+
 
 
 [Rethinking Privacy Preserving Deep Learning: How to Evaluate and Thwart Privacy Attacks](https://arxiv.org/pdf/2006.11601.pdf)<br>
@@ -561,8 +593,9 @@ Networks with Extremely Noisy Labels](https://arxiv.org/abs/1804.06872)<br>
 
 2.[Combining labeled and unlabeled data with co-training](https://www.cs.cmu.edu/~avrim/Papers/cotrain.pdf)<br>
 1998, Avrim Blum and Tom Mitchell from **CMU**, citation = 5831; <br>
-
-
+1998 "Computational Learning Theory", citaion = 
+**summary**: **co-train最早的论文**;在一个label对应两个描述角度（x1,x2）的场景下，本文提供一种学习方法，用labeled data分别利用x1,x2训练两个模型，对unlabeled data做预测，预测
+的标签用来扩充labelled data数据集；<br>
 
 ## 小样本学习 && 类别不均衡
 1.[decoupling representation AND classifier FOR LONG-TAILED RECOGNITION](https://arxiv.org/pdf/1910.09217.pdf)<br>
@@ -586,6 +619,47 @@ SoA: 现有工作在KB quality上主要包含：error detection and assessment, 
 **Challenges**: 
 **Contributions**: 1-提出了可以用于更正错误的entity assertions and literal assertions的通用框架；2-利用了semantic embedding and observed features捕捉局部的上下文信息；3-soft property constraint;
 4-在meidcal KB验证entity assertions correction, 在DPpedia验证literal assertions correction;  <br>
+
+
+
+
+2.[GPT3-Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165.pdf)<br>
+2020, Tom B. Brown et al. from **OpenAI, JHU**, citation=None; <br>
+**summary**: 现在的NLP模型通过大规模预训练已经取得了很好的效果，但是在即使是很相似的任务上还是需要大量数据进行fine-tuning，但是人类可以轻易的进行知识迁移；
+为了解决这个问题，OpenAI用10000张GPU训练了**1700亿参数,45TB training data**的GPT-3模型，不需要在特定任务上进行fine-tuning，并且在多个数据集多个任务
+（translation,QA,etc.）进行zero shot, one shot,
+few-shot learning测试，在一些任务上甚至超越了微调的SOA；同时，本文指明了在一些数据集上GPT-S效果并不好；<br>
+
+**limitations**:<br>
+- text synthesis上还有不足，比如在document level text synthesis; 
+- several structural and algorithmic limitations;
+- poor sample effitiency during pre-training, 虽然看了很多文本，但是没有人类的拓展性分析能力；
+- 模型太大了，在推理阶段both expensive and inconvenient; 
+- 和其他深度学习模型类似，模型的决策不具有**可解释性**；
+**history**：<br>
+- GPT-1: **5GB** training data;
+- GPT-2: **15亿**参数；**40GB** training data;
+
+
+3.[Embedding-based Retrieval in Facebook Search](https://arxiv.org/pdf/2006.11632.pdf)<br>
+2020 KDD, Jui-Ting Huang et al. from **Facebook**, citation = 1; <br>
+**summary**: 本文介绍了facebook基于embedding的检索技术，偏工业的一篇文章。Facebook以前都是基于对text的布尔匹配做检索，本文将embedding based method和
+社交网络的social graph 结和，做特性化的搜索，是Facebook最新的工作。
+**method**:<br>
+- 提出了 unified embedding framework；相对于传统的搜索，model 会结合搜索的time,location,social connection, etc. 信息做embedding；
+- feature engineering： 
+-- textual feature, location features, social graph;
+- **embedding ensembles**: 不同阶段用不同的目的训练模型，会使得模型有不同的特性[1]，比如first stage focuses on recall, second stage focuses on distinguishing
+similarity, 所以本文探讨了不同的ensemble embedding 集成：
+-- weighted concatenation; cascade model; 
+- Hard mining： 因为数据过于多样，为了学习到更好的embedding，设计了hard mining（以前的都是CV领域的） ；
+- 提出了很多trick，to optimize retrival system end-to-end; <br>
+**citation**:<br>
+[Hard-Aware Deeply Cascaded Embedding]做了cascaded embedding training (https://arxiv.org/abs/1611.05720)<br>
+
+**future**:<br>
+- go deep: 使用更强的model, such as BERT， 来解决特定的任务；
+- go universal: 打造一个通用的embedding model来对付不同的任务；
 
 
 ## CV
