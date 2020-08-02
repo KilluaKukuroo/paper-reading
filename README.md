@@ -44,6 +44,20 @@
 2. [Practical Gauss-Newton Optimization for Deep Learning](http://proceedings.mlr.press/v70/botev17a/botev17a.pdf)<br>
 本文是2017年的工作，引用量目前34。
 
+3.[Do We Need Zero Training Loss
+After Achieving Zero Training Error?](https://arxiv.org/pdf/2002.08709.pdf)<br>
+2020 ICLR, **Masashi Sugiyama** et al. from **The U of Tokyo, RIKEN, NEC corporation**, citation = 1; <br>
+**summary**: 本文提出一种叫做flooding的方法，在training error为0的时候，阻止training loss -->0, 从而提高了模型的泛化效果和性能;并且，实验表明flodding带来了
+test loss double descent curve (测试loss会下降两次)。
+**method**：<br>
+- **只用改动一行代码**，在loss>flooding level使用梯度下降，loss<flooding level使用梯度上升，使得training loss在flooding level附近浮动，不至于接近0；
+- J(theta)' = |J(theta) - b| + b; when J(theta) > b(flooding level), then J(theta)' is the same direction of J(theta), otherwise, opposite;<br>
+
+**problem**: <br>
+- 本文防止training loss成为0，但是training loss --> 0是否是对于训练比较好，还是一个open issue;
+
+
+
 ## 多模态 multi-modal
 1. [Multi-modal Approach for Affective Computing](https://arxiv.org/pdf/1804.09452.pdf)<br>
 [code](https://github.com/zhanghang1989/ResNeSt)<br>
@@ -607,6 +621,25 @@ Networks with Extremely Noisy Labels](https://arxiv.org/abs/1804.06872)<br>
 2020 , Yaqing Wang (HKUST and Baidu Research), Quanming Yao (4Paradigm), JAMES T. KWOK and LIONEL M. NI (HKUST);   <BR>
 
 
+
+## semi-supervised &unsupervised
+1.[DEEP SEMI-SUPERVISED ANOMALY DETECTION](https://arxiv.org/abs/1906.02694)<br>
+2020 ICLR, citation = 20; <br>
+**summary**: This paper proposes a deep semi-supervised framework for general anomaly detection (AD). Existing methods focus on unsupervised manner, they 
+
+**SoA and limitation**:(写的很精彩)<br>
+- **Shallow AD**requires feature engineering and limited scalability on large dataset; --> **deep AD**;  (unsupervised)
+- Most existing work focus on **unsupervised anomaly detection**; however --> there are often a small set of labelled data by expert annotation;
+So, we propose to utilize labelled data with semi-supervised manner;
+- most **existing semi-supervised shallow and deep models**, only focus on labeled normal data but not abnormal data; 
+- some work investigated general semi-supervised model and **utilized labeled anomalies**, however --> are domain or data-type specific;
+- **semi-supervised learning **mostly focus on classification between normal and anomaly, they assume similar data are the same type,--> this is invalid
+for anomalies because anomalies don't have to be similar to each other;
+- Therefore, we introduce the general semi-supervised, considering labeled anomalies, Deep SAD; 
+
+**Deep SADD**: 本文的前身工作，无监督做AD，原理是让神经网络来学习一个超平面C，loss：让数据集的点到C的距离最小化；用最开始forward得到的网络输出平均值作为C
+的初始值；<br>
+
 ## NLP and web, knowledge graph
 1.[Correcting Knowledge Base Assertions](https://arxiv.org/pdf/2001.06917.pdf)<br>
 本文发表在2020WWW的oral，作者来自Oxford, Tencent, University of Oslo. <br>
@@ -705,6 +738,15 @@ Mingkui Tan, Xinggang Wang, Wenyu Liu, and Bin Xiao from **Microsoft Research Be
 [Ensemble Learning: A survey](https://onlinelibrary.wiley.com/doi/pdf/10.1002/widm.1249)<br>
 本文是2018年的工作，引用量已经到100。
 
+
+[Hard-Aware Deeply Cascaded Embedding](https://arxiv.org/pdf/1611.05720.pdf)<br>
+2017 ICCV, Yuhui Yuan, Kuiyuan Yang, Chao Zhang from **PKU**, citation = 149; <br>
+**summary**: Deep metric learning因为样本空间太大，所以要寻找hard example；传统的hard example mining在hard数据上花费大量计算；因为不同模型对hard的
+判断不一样，所以本文提出了cascaded model，to ensemble models with different complexity to mine hard examples at different level;
+
+**deep metric learning**:<br>
+- 输入两个或者以上成对数据，学习一个度量距离的函数，在embedding space使得相似目标距离近，不相似距离远；应用：face recognition, RE-id, 
+- **孪生网络**，可以用来做one shot learning;
 
 ## 智慧电网 smart grid
 1. [Application of Big Data and Machine Learning in Smart Grid, and Associated Security Concerns: A Review](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8625421)<br>
