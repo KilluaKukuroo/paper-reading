@@ -270,6 +270,21 @@ Based on Bird’s Eye View Maps](https://arxiv.org/pdf/2003.06754.pdf)<br>
 - [Aaron Roth](https://scholar.google.com/citations?user=kLUQrrYAAAAJ&hl=zh-CN), Associate professor in **U Pennsylvania**, citation > 7,000;
 - [Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU<br>
 
+
+### trajectory privacy
+
+
+1.[Trajectory Recovery From Ash: User Privacy Is NOT Preserved in Aggregated Mobility Data](https://arxiv.org/pdf/1702.06270.pdf)<br>
+2017 WWW.
+
+2.[Unique in the Crowd: The privacy bounds of human mobility](https://www.nature.com/articles/srep01376)<br>
+2013 **Nature**, citation = 1252; <br>
+
+
+3.[De-anonymization of Mobility Trajectories: Dissecting the Gaps between Theory and Practice](https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_06B-3_Wang_paper.pdf)<br>
+2018 NDSS. 
+
+
 1.[Plausible Deniability for Privacy Preserving Data Synthesis](http://www.vldb.org/pvldb/vol10/p481-bindschaedler.pdf)<br>
 2017 VLDB, 作者来自UIUC(Vincent Bindschaedler, Carl A.Gunter), Cornell Tech(Reza Shokri). 目前引用次数61. <br>
 **problem**: 一方面很多场景都涉及到数据的分享，另一方面数据的隐私往往得不到很好的保护；   <br>
@@ -290,11 +305,8 @@ Based on Bird’s Eye View Maps](https://arxiv.org/pdf/2003.06754.pdf)<br>
 添加information loss(保证生成数据在统计意义上和原始数据一致), classification loss(保证生成数据的semantic integrity);3）从data utility（包括statistical analysis,model compatibility(classification and regression)）, 
 privacy两个角度验证生成的数据；    <br>
 
-3.[Trajectory Recovery From Ash: User Privacy Is NOT Preserved in Aggregated Mobility Data](https://arxiv.org/pdf/1702.06270.pdf)<br>
-2017 WWW.
 
-4.[De-anonymization of Mobility Trajectories: Dissecting the Gaps between Theory and Practice](https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_06B-3_Wang_paper.pdf)<br>
-2018 NDSS. 
+
 
 
 
@@ -346,6 +358,14 @@ Networks](https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_The_Secre
 2020 CVPR, <br>
 
 
+15.[Beyond Inferring Class Representatives: User-Level
+Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)<br>
+2019 INFOCOM, citation = 64;<br>
+**summary**: 利用multi-task GAN让D同时预测real or fake, class label, and identity of user; 在联邦学习只更新参数的场景下，不仅实现recondtruction攻击，
+也可以实现对特定用户隐私信息的重现；<br>
+
+**problem**: **如果都可以重构用户信息图片了，为什么还要单独推测用户的隐私信息？**<br>
+
 [PATE-GAN: GENERATING SYNTHETIC DATA WITH DIFFERENTIAL PRIVACY GUARANTEES](https://openreview.net/pdf?id=S1zk9iRqF7)<br>
 2019 ICLR, citation=22; <br>
 **summary**: 首先将*private aggregation of teacher ensembles (PATE)*引入到GANs，得到可以生成很强隐私性的GAN；接下来用一种新的角度评估生成的数据：在生成数据上训练测试算法
@@ -355,6 +375,10 @@ Networks](https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_The_Secre
 [Privacy Adversarial Network: Representation Learning for Mobile
 Data Privacy](https://arxiv.org/pdf/2006.06535.pdf)<br>
 2019 Ubicomp, **SICONG LIU**, Junzhao Du (**XD U**), ANSHUMALI SHRIVASTAVA and **Lin Zhong** (**Rice U**), citation = 1; <br>
+
+
+[Unique in the shopping mall: On the reidentifiability of credit card metadata](https://dspace.mit.edu/handle/1721.1/96321)<br>
+2015, **science**, citation = 408; <br>
 
 
 
@@ -624,6 +648,7 @@ Networks with Extremely Noisy Labels](https://arxiv.org/abs/1804.06872)<br>
 
 ## semi-supervised &unsupervised
 1.[DEEP SEMI-SUPERVISED ANOMALY DETECTION](https://arxiv.org/abs/1906.02694)<br>
+[openReview link](https://openreview.net/forum?id=HkgH0TEYwH)<br>
 2020 ICLR, citation = 20; <br>
 **summary**: This paper proposes a deep semi-supervised framework for general anomaly detection (AD). Existing methods focus on unsupervised manner, they 
 
