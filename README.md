@@ -119,6 +119,11 @@ test loss double descent curve (测试loss会下降两次)。
 - preprocessin, privacy risk assessment, mobility measures and simulation,generative models
 - 开源了scikit mobility: predictive model, visualization methods, map matching, anonymization techniques;
 
+
+8.[Trajectory Data Mining: An Overview](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/TrajectoryDataMining-tist-yuzheng_published.pdf)<br>
+2015, **Yu Zheng** from Microsoft Research, citaion = 1046; <br>
+
+
 4.[DeepTransport: Prediction and Simulation of Human Mobility and Transportation Mode at a City wide Level](https://www.ijcai.org/Proceedings/16/Papers/372.pdf)<br>
 2016 IJCAI, Xuan Song, Hiroshi Kanasugi and Ryosuke Shibasaki (**The university of Tokyo**). citation = 109; <br>
 
@@ -236,13 +241,16 @@ Shengnan Wu(JD), Zhongyuan Jiang(XD), **Yu Zheng(XD)**;<br>
 [A Survey of Location Prediction on Twitter](https://arxiv.org/pdf/1705.03172.pdf)<br>
 2018 TKDE,  Xin Zheng(NTU), Jialong Han(Tencent), and Aixin Sun(NTU), citation=93; <br>
 **keywords**: tweet, location prediction, home location, mentioned location, tweet location; <br>
-**summary**:本文的核心是基于tweet信息，预测三种位置信息(i.e., home tweet mentioned location)，不是预测mobility里面的下一个位置；并且简单综述了两个研究方向：semantic location,
-point-of-interest recommendation; <br>
+**summary**:本文的核心是基于tweet信息，预测三种位置信息(i.e., home tweet mentioned location)，不是预测mobility里面的下一个位置；并且简单综述了两个研究方向：
+semantic location, point-of-interest recommendation; <br>
 
 
 
 [Predicting the Next Location: A Recurrent Model with Spatial and Temporal Contexts](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/view/11900/11583)<br>
 2016, AAAI, citation = 315; <br>
+
+[Introduction to Trajectory Data Mining](https://mycourses.aalto.fi/pluginfile.php/461972/mod_folder/content/0/Lecture%204%20slides.pdf?forcedownload=1)<br>
+2017 lecture notes, Kirsi Virrantaus from **Aalto University **; <br>
 
 
 [Hybrid Spatio-Temporal Graph Convolutional Network: Improving Traffic Prediction with Navigation Data](https://arxiv.org/pdf/2006.12715.pdf)<br>
