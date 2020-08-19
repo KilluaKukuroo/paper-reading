@@ -148,21 +148,27 @@ task should be similar whether using original or synthesize data)；
 [Recurrent Conditional GANs for Time Series Sensor Modelling](http://roseyu.com/time-series-workshop/submissions/2019/timeseries-ICML19_paper_2.pdf)<br>
 2019 ICML, citation=1; <br>
 
-
 [Real-valued (Medical) Time Series Generation with Recurrent Conditional GANs](https://arxiv.org/abs/1706.02633)<br>
 2017,   citation=133; <br>
 
+[Time-series Generative Adversarial Networks](https://papers.nips.cc/paper/8789-time-series-generative-adversarial-networks.pdf)
 
-[Time-series Generative Adversarial Networks](https://papers.nips.cc/paper/8789-time-series-generative-adversarial-networks.pdf)<br>
-[Supplementary material](https://www.vanderschaar-lab.com/papers/NIPS2019_TGAN_Supplementary.pdf)<br>
+[Supplementary material](https://www.vanderschaar-lab.com/papers/NIPS2019_TGAN_Supplementary.pdf)
+
+[NIPS review](https://media.nips.cc/nipsbooks/nipspapers/paper_files/nips32/reviews/2946.html)
+
 2019 NIPS, Jinsung Yoon (UCLA), Daniel Jarrett and Mihaela van der Schaar (University of Cambridge), citation=9; <br>
 **summary**: 
 **method**: <br>
+
 - **validation**: qualitative (t-SNE,PCA可视化), quantitative(train on synthesize test on real to predict sequence); 
 
 **problem**: <br>
+
 - 生成了多种数据(sines,stock,energy,events)，没有把synthetic data可视化出来看看效果；画出sin原始图形之后发现数据只有24个点，不到四分之一周期，不是完整的sin波形;
 **画出sin生成图形发现波形起伏较大，不平稳**; 
+
+
 
 
 [Time Series Simulation by Conditional Generative Adversarial Net](https://arxiv.org/abs/1904.11419)<br>
@@ -231,6 +237,11 @@ ON COMPLEX DATASETS](https://arxiv.org/pdf/1907.06571.pdf)(br)
 
 
 
+## GAN - learning method
+1.[Self Adversarial Training for Human Pose Estimation](https://arxiv.org/pdf/1707.02439.pdf)<br>
+2017 **APSIPA ASC**, citaion=73; <br>
+**summary**: 用两个相同的网络分别作为判别器和生成器，生成器生成人体姿势的估计，判别器来distinguish generated pose from groud-truth heatmap；
+训练接收后保留生成器，就可以作为human pose estimator; <br>
 
 ## GAN application - image to image translation
 
