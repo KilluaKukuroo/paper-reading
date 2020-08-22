@@ -292,6 +292,9 @@ Based on Bird’s Eye View Maps](https://arxiv.org/pdf/2003.06754.pdf)<br>
 3.[De-anonymization of Mobility Trajectories: Dissecting the Gaps between Theory and Practice](https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_06B-3_Wang_paper.pdf)<br>
 2018 NDSS. 
 
+4.[Trajectory Privacy in Location-based Services and Data Publication](https://www.cs.cityu.edu.hk/~chiychow/papers/Explorations_2011.pdf)<br>
+2011 KDD, Chi-Yin Chow from **cityU**, Mohamed F. Mokbel from **U of Minnesota**, citation = 197; <br>
+
 
 1.[Plausible Deniability for Privacy Preserving Data Synthesis](http://www.vldb.org/pvldb/vol10/p481-bindschaedler.pdf)<br>
 2017 VLDB, 作者来自UIUC(Vincent Bindschaedler, Carl A.Gunter), Cornell Tech(Reza Shokri). 目前引用次数61. <br>
@@ -722,11 +725,40 @@ similarity, 所以本文探讨了不同的ensemble embedding 集成：
 - 提出了很多trick，to optimize retrival system end-to-end; <br>
 **citation**:<br>
 [Hard-Aware Deeply Cascaded Embedding]做了cascaded embedding training (https://arxiv.org/abs/1611.05720)<br>
-
 **future**:<br>
 - go deep: 使用更强的model, such as BERT， 来解决特定的任务；
 - go universal: 打造一个通用的embedding model来对付不同的任务；
 
+
+4.[](https://arxiv.org/pdf/2005.04118.pdf)<br>
+2020 **ACL Best paper **, Marco Tulio Ribeiro (**Microsoft Research**), **Tongshuang Wu**, Carlos Guestrin (**UW**) and Sameer Singh (**UC Irvine**),
+citation=0; <br>
+
+
+**Discussion**: <br>
+- 模型缺少泛化能力，是一个设计上的错误，还是算法本身的缺点？
+
+
+- 以后可能不需要刷SOA，只需要在测试指标中提高一个部分，就可以写论文了；
+
+**experiment**:<br>
+- case study: Microsoft Sentiment analysis, 用了5个小时，发现已经strong test的系统里面新的很多bug；
+- case study: MFT, test BERT on QQP (2h); 
+
+**QA**：<br>
+**为什么做这个工作**:<br>
+1.现在很多人都在做**模型的分析，evaluation**,追论文很累，影响做分析的研究；我们做分析是想理解具体的任务，希望有一个工具来简化我们分析的工作；
+2.可解释性只是理解模型的一个方法，我们觉得还需要从不同的角度来理解模型；就像工程领域的软件测试;
+
+**困难**：关于性能的定义；
+如何获best paper：看看大家都在做啥，就可以知道啥比较重要；<br>
+CHECKLIST可以用到CV或者其他领域的任务嘛？：你只需要一个capability列表，针对你的任务去修改capability list就行；CHECKLIST 作为一个框架是可以用到其他领域的；CV或者其他领域和NLP有不同的任务，比如pixel
+属于哪个物体等，所以可能需要一些不同的capability list; <br>
+
+首先给你一个足够小、但是有意思的方向，可操作性很强的课题，通过这个课题让你入门科研，建立自信心。然后慢慢接触更加有挑战性的问题。不要一开始就改变世界。
+
+**ultimate goal**:<br>
+- providing a shared test suite for NLP task ;
 
 ## CV
 1.[A segregated cortical stream for retinal direction selectivity](https://www.nature.com/articles/s41467-020-14643-z.pdf) <br>
