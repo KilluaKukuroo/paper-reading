@@ -32,7 +32,7 @@
 本文是Siemens Corporate Technology， UIUC， 剑桥， Information Sciences Institute的四位作者2020年2.13放在Arxiv上的文章。主要解决的问题是， 
 在带标注的数据分批次到来，并且新来的数据比以前的数据标注质量好的情况下（streaming），如何更好的利用不同质量的数据进行模型训练。实验是
 基于预训练的transformer在NLP里的event extraction task上面做的，但是思想可以很容易的扩展到其他通用领域。
- 
+
 
 
 ## 优化方法
@@ -270,6 +270,16 @@ Based on Bird’s Eye View Maps](https://arxiv.org/pdf/2003.06754.pdf)<br>
 2017 TIST, Xiaowen DONG and Yoshihiko Suhara (MIT), BURÇIN BOZKAYA (Sabancı University), VIVEK K. SINGH (Rutgers University), BRUNO LEPRI (Fondazione Bruno Kessler),
 **Alex Pentland** from **MIT**, citation=17; <br>
 **summary**: 利用social bridge的概念，对城市居民的购买力进行建模； <br>
+
+
+
+[Predicting Origin-Destination Flow via Multi-Perspective Graph Convolutional Network](https://conferences.computer.org/icde/2020/pdfs/ICDE2020-5acyuqhpJ6L9P042wmjY1p/290300b818/290300b818.pdf)
+
+ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (Google Inc.), Lingyu Zhang and Jieping Ye (DiDi Chuxing), Yong Li (Tsinghua) and Yan Liu (USC).
+
+**summary**: 利用GNN预测origin-destination flow. 
+
+
 
 
 ## privacy
