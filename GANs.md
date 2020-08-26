@@ -142,16 +142,21 @@ task should be similar whether using original or synthesize data)；
 - 验证了两种GAN带来的covariate shift：mode collapse, boundary distrotion;  
 - 本文方法需要很少的人工监督，并且可以很简单的用来在其他数据集上评估其他的GAN模型；**通过在真实数据集训练分类模型M，用M在生成数据集上推理生成标签，类似于自动annotator**；
 
-
 ## time series generation
 
-[Recurrent Conditional GANs for Time Series Sensor Modelling](http://roseyu.com/time-series-workshop/submissions/2019/timeseries-ICML19_paper_2.pdf)<br>
+### famous scholar
+
+[Zinan Lin-PhD student at CMU](http://www.andrew.cmu.edu/user/zinanl/publications/)
+
+### papers
+
+[1.Recurrent Conditional GANs for Time Series Sensor Modelling](http://roseyu.com/time-series-workshop/submissions/2019/timeseries-ICML19_paper_2.pdf)<br>
 2019 ICML, citation=1; <br>
 
-[Real-valued (Medical) Time Series Generation with Recurrent Conditional GANs](https://arxiv.org/abs/1706.02633)<br>
+[2.Real-valued (Medical) Time Series Generation with Recurrent Conditional GANs](https://arxiv.org/abs/1706.02633)<br>
 2017,   citation=133; <br>
 
-[Time-series Generative Adversarial Networks](https://papers.nips.cc/paper/8789-time-series-generative-adversarial-networks.pdf)
+[3.Time-series Generative Adversarial Networks](https://papers.nips.cc/paper/8789-time-series-generative-adversarial-networks.pdf)
 
 [Supplementary material](https://www.vanderschaar-lab.com/papers/NIPS2019_TGAN_Supplementary.pdf)
 
@@ -170,8 +175,7 @@ task should be similar whether using original or synthesize data)；
 
 
 
-
-[Time Series Simulation by Conditional Generative Adversarial Net](https://arxiv.org/abs/1904.11419)<br>
+[4.Time Series Simulation by Conditional Generative Adversarial Net](https://arxiv.org/abs/1904.11419)<br>
 2019, Rao Fu, Jie Chen, Shutian Zeng, Yiping Zhuang, Agus Sudjianto from (Corporate Model Risk Management at **Wells Fargo**), citation=4; <br>
 **summary**: 本文用CGAN生成金融领域的时序数据，用的是较为简单的全连接模型作为G，D；说明了CGAN可以很好的 1)learn normal or heavy tail distribution; 2)capture 
 dependent sturctures of different time series data;3)可以很好的对时序数据做预测
@@ -185,6 +189,30 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 - 捕捉时序数据的second order information;
 
 **Q**： 使用CGAN，和我每次训练一种类型的数据有啥区别？？
+
+[5.Generating High-fidelity, Synthetic Time Series Datasets with DoppelGANger](https://arxiv.org/abs/1909.13403)
+
+2020 IMC, with another title "**Using GANs for Sharing Networked Timeseries Data: Challenges, Initial Promise, and Open Questions**";  **[Zinan Lin](http://www.andrew.cmu.edu/user/zinanl/)**, [Alankar Jain](https://www.linkedin.com/in/alankar-jain-5835ab5a/) **CMU**, [Chen Wang](https://wangchen615.github.io/) (from **IBM**), [Giulia Fanti](https://www.andrew.cmu.edu/user/gfanti/), [Vyas Sekar](https://users.ece.cmu.edu/~vsekar/) from **CMU**;  citation=1;
+
+**summary**: Generating realisic and privacy-preserving synthetic data of both continuous (network traffic measurement) and discrete data(protocol  name, attribute) for network and system communities. 
+
+**advantages**: This paper is well written and easy to follow. The problem and challenges are clearly stated. 
+
+**data**:
+
+- Wikipedia web traffic data
+- geographically distributed broadband measurement (家庭网络使用数据)
+- compute cluster usage measurement (机房机器使用数据)
+
+[6.Learning to Simulate Human Mobility](https://dl.acm.org/doi/pdf/10.1145/3394486.3412862)
+
+2020 KDD, Jie Feng, Zeyu Yang, Fengli Xu, Haisu Yu, Mudan Wang, Yong Li from **Tsinghua University**. 
+
+
+
+
+
+
 
 
 ## GAN with fancy ideas
@@ -321,9 +349,11 @@ citation = 3051; <br>
 - coupled GAN, 有两组GAN网络同时训练，图片生成效果比DCGAN更好；
 
 **ProGAN**: <br>
+
 - **core idea**: 逐步生成高分辨率图片，4\*4 --> 8\*8 --> ... --> 1024\*1024; 稳定GAN训练过程; 
 
 **WGAN**: <br>
+
 - 提出一种新的loss稳定GAN的训练，解决梯度消失问题；
 
 **SAGAN**： <br>

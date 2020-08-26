@@ -1,70 +1,26 @@
 # This repo is for my brief notes when reading papers.
 
 # 论文笔记和原文
-* [优化方法](#优化方法)
-
-* [多模态](#多模态-multi-modal)
-
-* [smart city](#Mobile-&&-smart-city)
-
+* [smart city & mobile computing & spatial-temporal mining](#Mobile-&&-smart-city-&&-spatial-temporal-mining)
 * [privacy](#privacy)
-
+* [Graph Neural Network](#GNN)
 * [联邦学习](#联邦学习)
-
 * [deep learning and neural network](#deep-learning)
-
 * [transfer learning](#transfer-learning)
-
-* [Interpretable ML](#Interpretable ML)
-
+* [Interpretable ML](#Interpretable-ML)
 * [小样本学习 && 类别不均衡](#小样本学习-&&-类别不均衡)
 * [NLP and web, knowledge graph](NLP-and-web,-knowledge-graph)
-
 * [CV](#CV)
-
 * [集成学习](#集成学习)
-
 * [智慧电网 smart grid](#智慧电网-smart-grid)
-
-1. Training with streaming annotation  
-[原文](https://arxiv.org/abs/2002.04165)<br>
-[笔记](https://github.com/KilluaKukuroo/paper-reading/blob/master/Training%20with%20streaming%20annotation.pdf)<br>
-本文是Siemens Corporate Technology， UIUC， 剑桥， Information Sciences Institute的四位作者2020年2.13放在Arxiv上的文章。主要解决的问题是， 
-在带标注的数据分批次到来，并且新来的数据比以前的数据标注质量好的情况下（streaming），如何更好的利用不同质量的数据进行模型训练。实验是
-基于预训练的transformer在NLP里的event extraction task上面做的，但是思想可以很容易的扩展到其他通用领域。
+* [优化方法](#优化方法)
+* [多模态](#多模态-multi-modal)
+* [data processing](# data-processing)
 
 
 
-## 优化方法
-1. [Fast Exact Multiplication by the Hessian](http://www.bcl.hamilton.ie/~barak/papers/nc-hessian.pdf)<br>
-本文是Siemens Corporate Research的一位作者在1993年发表在《*Neural Computation*》上面的文章。文章关于神经网络的二阶优化的研究，也是最近重新焕发青春的一个方向。
-由于计算和存储Hessian矩阵（黑塞矩阵）巨大的开销，使得利用二阶梯度优化神经网络变得困难。本文提出一种巧妙的方法，可以方便的计算Hessian矩阵的很多性质，而不用计算
-完整的Hessian矩阵。并且在backpropagation, recurrent backpropagation, Boltzmann Machines上做了实验验证本文方法的有效性。
 
-2. [Practical Gauss-Newton Optimization for Deep Learning](http://proceedings.mlr.press/v70/botev17a/botev17a.pdf)<br>
-本文是2017年的工作，引用量目前34。
-
-3.[Do We Need Zero Training Loss
-After Achieving Zero Training Error?](https://arxiv.org/pdf/2002.08709.pdf)<br>
-2020 ICLR, **Masashi Sugiyama** et al. from **The U of Tokyo, RIKEN, NEC corporation**, citation = 1; <br>
-**summary**: 本文提出一种叫做flooding的方法，在training error为0的时候，阻止training loss -->0, 从而提高了模型的泛化效果和性能;并且，实验表明flodding带来了
-test loss double descent curve (测试loss会下降两次)。
-**method**：<br>
-- **只用改动一行代码**，在loss>flooding level使用梯度下降，loss<flooding level使用梯度上升，使得training loss在flooding level附近浮动，不至于接近0；
-- J(theta)' = |J(theta) - b| + b; when J(theta) > b(flooding level), then J(theta)' is the same direction of J(theta), otherwise, opposite;<br>
-
-**problem**: <br>
-- 本文防止training loss成为0，但是training loss --> 0是否是对于训练比较好，还是一个open issue;
-
-
-
-## 多模态 multi-modal
-1. [Multi-modal Approach for Affective Computing](https://arxiv.org/pdf/1804.09452.pdf)<br>
-[code](https://github.com/zhanghang1989/ResNeSt)<br>
-本文发表在 IEEE 40th International Engineering in Medicine and Biology Conference (EMBC) 2018， 作者来自 UC san diego。<br>
-
-
-## Mobile && smart city
+## Mobile && smart city && spatial-temporal mining
 ### scholars
 - [Alex 'Sandy' Pentland - MIT media lab](https://scholar.google.com/citations?hl=zh-CN&user=P4nfoKYAAAAJ&view_op=list_works&sortby=pubdate)<br>
 - [Yu Zheng - JD.COM](https://scholar.google.com/citations?hl=zh-CN&user=juUcdgYAAAAJ&view_op=list_works&sortby=pubdate)<br>
@@ -283,7 +239,8 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 
 
 ## privacy
-## scholars
+### scholars
+
 - [Cynthia Dwork](https://scholar.google.com/citations?user=y2H5xmkAAAAJ&hl=zh-CN), distinguished scientist in **Microsoft Research**, citation>30,000;
 - [Aaron Roth](https://scholar.google.com/citations?user=kLUQrrYAAAAJ&hl=zh-CN), Associate professor in **U Pennsylvania**, citation > 7,000;
 - [Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU<br>
@@ -409,7 +366,8 @@ Data Privacy](https://arxiv.org/pdf/2006.06535.pdf)<br>
 
 
 ## 联邦学习
-## scholars
+### scholars
+
 - [Jakub Konečný](https://scholar.google.co.uk/citations?hl=en&user=4vq7eXQAAAAJ&view_op=list_works) P.h.D from Edinburge, research scientist in Google, proposed *federated learning*<br>
 
 **blog** <br>
@@ -501,14 +459,45 @@ backdoor attack: keep the model a good performance on overall task but let the m
 
 
 
+## GNN
+
+图神经网络；graph representation learning; node classiffication; graph classification;
+
+### tutorial
+
+[A gentle introduction to graph neural networks]([https://aifrenz.github.io/present_file/A%20gentle%20introduction%20to%20graph%20neural%20networks.pdf](https://aifrenz.github.io/present_file/A gentle introduction to graph neural networks.pdf))
+
+
+
+[Graph Representation Learning](https://web.stanford.edu/class/cs246/slides/12-graphs2.pdf)
+
+[course video for this tutorial](https://www.youtube.com/watch?v=YrhBZUtgG4E)
+
+2019 by **Jure Leskovec**, from Stanford University. 
+
+
+
+[BOOK-Graph Representation Learning](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf)
+
+2020, Book, by William Hamilton from McGill University. 
+
+
+
+### papers
+
+[1.Representation Learning on Graphs: Methods and Applications](https://www-cs.stanford.edu/people/jure/pubs/graphrepresentation-ieee17.pdf)
+
+2017, e IEEE Computer Society Technical Committee on Data Engineering, by William L. Hamilton, Rex Ying and **Jure Leskovec**, citation = 687;
+
+
+
+[2.]
+
 
 ## deep learning
 1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
 发表于2020年 arxiv，作者来自 Amason, UC Davis, 包括 Hang Zhang, Mu Li. 网上传言史上最强resnet魔改版。 <br>
-**Problem**：目前大部分视觉的任务, e.g., obeject detection and semantic segmentation 还是使用ResNet的变体作为backbone，因为网络结构的简单和结构化。但是ResNet是为了image classification设计，
-在CV的其他下游任务性能不是很好，可能因为limited receptive-field and lack of cross-channel interaction. 并且resnet的各种变体往往只能在特定的任务上取得较好性能。而且，最近的cross-channel information
-在下游任务被证明很有效，而image classification的模型大都缺乏cross-channel interation，所以本文提出一种带有cross-channel representation的网络模型，目标是*打造一个versatile backbone with universally 
-improved feature representation*, 从而同时提高多个任务的性能。 <br>
+**Problem**：目前大部分视觉的任务, e.g., obeject detection and semantic segmentation 还是使用ResNet的变体作为backbone，因为网络结构的简单和结构化。但是ResNet是为了image classification设计，在CV的其他下游任务性能不是很好，可能因为limited receptive-field and lack of cross-channel interaction. 并且resnet的各种变体往往只能在特定的任务上取得较好性能。而且，最近的cross-channel information在下游任务被证明很有效，而image classification的模型大都缺乏cross-channel interation，所以本文提出一种带有cross-channel representation的网络模型，目标是*打造一个versatile backbone with universally improved feature representation*, 从而同时提高多个任务的性能。 <br>
 **SoA**：AlexNet -> NIN(1*1 convolution) -> VGG-Net(modular network design) --> Highway network(highway connection) --> ResNet(identity skip connection); NAS;
 GoogleNet(muiti-path representation) --> ResNeXt(group convolution) --> SE-Net(channel-attention) --> SK-Net(feature map attention across two network branches);<br>
 **contribution**：1）研究了带有feature map split attention 的resnet网络结构；
@@ -518,9 +507,7 @@ GoogleNet(muiti-path representation) --> ResNeXt(group convolution) --> SE-Net(c
 
 2.[Backpropagation and the Brain](https://www.nature.com/articles/s41583-020-0277-3.pdf)<br>
 发表在2020年《nature reviews|neuroscience》, 作者包括Geoffrey Hinton. <br>
-大脑皮层如何修改突触，从而实现学习是一个很神秘的问题。几十年前，backpropagation 被认为是可以用来解释大脑学习机制的一个可能方法，但是由于反向传播机制没有带来很好的网络学习效果，
-并且反向传播缺乏生物学上的可解释性，反向传播的意义被忽视。但是，随着近年算力的提升，NN在多个领域以反向传播为学习方法的基础上取得了很好的成绩，我们认为 backpropagation offers
-a conceptualframework for understanding how the cortex learns. <br>
+大脑皮层如何修改突触，从而实现学习是一个很神秘的问题。几十年前，backpropagation 被认为是可以用来解释大脑学习机制的一个可能方法，但是由于反向传播机制没有带来很好的网络学习效果，并且反向传播缺乏生物学上的可解释性，反向传播的意义被忽视。但是，随着近年算力的提升，NN在多个领域以反向传播为学习方法的基础上取得了很好的成绩，我们认为 backpropagation offers a conceptual framework for understanding how the cortex learns. <br>
 **contribution**：
 **特点**：通过比较大脑神经元和人工神经网络，介绍了很多关于 learning algorithm的基础概念，e.g., backpropagation, supervised learning, error encoding, auto encoder.
 
@@ -546,13 +533,13 @@ a conceptualframework for understanding how the cortex learns. <br>
 - differential testing要求至少两个有相同功能的DNN系统；而且，如果两个相同功能的DNN只有很小的区别（few neurons difference），系统需要很长时间寻找differential-inputs; <br>
 - differential testing只能在至少有一个DNN做出不一样的结果的时候检测出错误，如果所有DNN都犯同样的错，则检测不出来对应的test case；
 
-
 6.[ResNet](https://arxiv.org/abs/1512.03385)<br>
 [分析residual block博文](https://shuzhanfan.github.io/2018/11/ResNet/)<br>
 2016 CVPR best paper, Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun from **Microsoft Research**, citation=48900; <br>
 **summary**: 本文针对深度神经网络难以训练网络退化的问题，提出了resnet来简化深层网络的训练，并在图片分类目标检测等任务取得了SoA；<br>
 **problem**: <br>
 1)为什么假设residual mapping(f(x)) is easier to optimize than H(x)?
+
 - before adding shortcut connection, we learn underlying mapping H(x) --> adding shortcut connection we learn F(x), H(x)=F(x)+x;
 - 当网络acc饱和或者深层导致acc下降，学习的任务变成让后面深层复制浅层网络，即恒等映射，H(x)=x; 但是经过卷积和激活函数等非线性函数学习H(x)=x不容易，转变为学习F(x)=0,H(x)=F(x)+x;
 i.e., x -> weight1 -> ReLU -> weight2 -> ReLU ... -> 0，因为直接将所有参数设为0就可以实现； <br>
@@ -575,7 +562,6 @@ i.e., x -> weight1 -> ReLU -> weight2 -> ReLU ... -> 0，因为直接将所有�
 2020 ICML, Curtis G. Northcutt, Lu Jiang, Isaac L. Chuang from **MIT and Google**.<br>
 **summary**: 本文generilize confidence learning (以前可能被提出过), 提出一种框架[cleanlab](https://github.com/cgnorthcutt/cleanlab/) 来发现错误标签，表
 征标签噪声并且应用于带噪学习;虽然用CV做例子，但是可以扩展到其他领域; <br>
-
 
 8.[A Beginner's Guide to the Mathematics of Neural Networks](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.161.3556&rep=rep1&type=pdf)<br>
 1998 , A.C.C. Coolen from **Department of Mathematics, KCL**,citation=15; <br>
@@ -610,6 +596,7 @@ and Long Short-Term Memory (LSTM) Network] (https://arxiv.org/pdf/1808.03314.pdf
 不需要求解，本文给出了一种判断RR达到大的条件：选择你熟悉的几个ML模型(Random forest,SVM,etc.)-->找几个几十个数据集跑一遍-->如果各个模型表现差不多，则说明RR大，
 存在简单模型，不用使用复杂模型；如果多模型差别大，则继续去探索复杂模型，因为这时候RR小，复杂模型效果更好；<br>
 **few words**:
+
 - claim: if Rashomon Set is large, --> a large-yet-accurate model is likely to exist;就像海里水越多，越有可能存在大鱼；
 - Rashomon set allows us to use a simpler model w/o lossing acc;
 **method**:
@@ -823,7 +810,47 @@ Mingkui Tan, Xinggang Wang, Wenyu Liu, and Bin Xiao from **Microsoft Research Be
 - 输入两个或者以上成对数据，学习一个度量距离的函数，在embedding space使得相似目标距离近，不相似距离远；应用：face recognition, RE-id, 
 - **孪生网络**，可以用来做one shot learning;
 
+## 多模态 multi-modal
+
+1. [Multi-modal Approach for Affective Computing](https://arxiv.org/pdf/1804.09452.pdf)<br>
+   [code](https://github.com/zhanghang1989/ResNeSt)<br>
+   本文发表在 IEEE 40th International Engineering in Medicine and Biology Conference (EMBC) 2018， 作者来自 UC san diego。<br>
+
+## 优化方法
+
+1. [Fast Exact Multiplication by the Hessian](http://www.bcl.hamilton.ie/~barak/papers/nc-hessian.pdf)<br>
+   本文是Siemens Corporate Research的一位作者在1993年发表在《*Neural Computation*》上面的文章。文章关于神经网络的二阶优化的研究，也是最近重新焕发青春的一个方向。
+   由于计算和存储Hessian矩阵（黑塞矩阵）巨大的开销，使得利用二阶梯度优化神经网络变得困难。本文提出一种巧妙的方法，可以方便的计算Hessian矩阵的很多性质，而不用计算
+   完整的Hessian矩阵。并且在backpropagation, recurrent backpropagation, Boltzmann Machines上做了实验验证本文方法的有效性。
+
+2. [Practical Gauss-Newton Optimization for Deep Learning](http://proceedings.mlr.press/v70/botev17a/botev17a.pdf)<br>
+   本文是2017年的工作，引用量目前34。
+
+3.[Do We Need Zero Training Loss
+After Achieving Zero Training Error?](https://arxiv.org/pdf/2002.08709.pdf)<br>
+2020 ICLR, **Masashi Sugiyama** et al. from **The U of Tokyo, RIKEN, NEC corporation**, citation = 1; <br>
+**summary**: 本文提出一种叫做flooding的方法，在training error为0的时候，阻止training loss -->0, 从而提高了模型的泛化效果和性能;并且，实验表明flodding带来了
+test loss double descent curve (测试loss会下降两次)。
+**method**：<br>
+
+- **只用改动一行代码**，在loss>flooding level使用梯度下降，loss<flooding level使用梯度上升，使得training loss在flooding level附近浮动，不至于接近0；
+- J(theta)' = |J(theta) - b| + b; when J(theta) > b(flooding level), then J(theta)' is the same direction of J(theta), otherwise, opposite;<br>
+
+**problem**: <br>
+
+- 本文防止training loss成为0，但是training loss --> 0是否是对于训练比较好，还是一个open issue;
+
+## data processing
+
+1.Training with streaming annotation  
+[原文](https://arxiv.org/abs/2002.04165)<br>
+[笔记](https://github.com/KilluaKukuroo/paper-reading/blob/master/Training%20with%20streaming%20annotation.pdf)<br>
+本文是Siemens Corporate Technology， UIUC， 剑桥， Information Sciences Institute的四位作者2020年2.13放在Arxiv上的文章。主要解决的问题是， 
+在带标注的数据分批次到来，并且新来的数据比以前的数据标注质量好的情况下（streaming），如何更好的利用不同质量的数据进行模型训练。实验是
+基于预训练的transformer在NLP里的event extraction task上面做的，但是思想可以很容易的扩展到其他通用领域。
+
 ## 智慧电网 smart grid
+
 1. [Application of Big Data and Machine Learning in Smart Grid, and Associated Security Concerns: A Review](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8625421)<br>
 本文2018年发表在 IEEE Access上，作者来自 Oregon Tech 等多个高校，综述了大数据机器学习在智慧电网中的应用研究，主要介绍智慧电网的安全隐患。智慧电网(smart grid)是将传统电网和
 信息通信技术相结合，实现通信和电能流动的双向性，从而增强电力系统的可靠性安全性和效率。In other words, SG is the
