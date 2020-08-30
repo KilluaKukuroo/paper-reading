@@ -1,6 +1,26 @@
 
 # 每周2篇精读论文
 
+## Topics pending to solve
+
+### bayesian 
+
+[VIDEO-bayesian data analysis](https://www.youtube.com/watch?v=3OJEae7Qb_o)
+
+[Course Notes for Bayesian Models for Machine Learning](http://www.columbia.edu/~jwp2128/Teaching/E6720/BayesianModelsMachineLearning2016.pdf)
+
+[PPT-Bayesian Methods for Machine Learning](https://www.cs.toronto.edu/~radford/ftp/bayes-tut.pdf)
+
+[BLOG-bayesian optimization](https://distill.pub/2020/bayesian-optimization/)
+
+
+
+### graph neural network (GNN)
+
+
+
+
+
 ## 2020-8-10 to 8-16
 
 1.[Multi-scale representation learning for spatial
@@ -61,7 +81,7 @@ autoencoder： “A way to implement unsupervised learning by using supervised l
 - 我们可以在模型中加入人工的constraint吗？比如会议论文推荐系统，我们想要尽可能的推荐学生的文章。
   - 可以。方法就是把我们的先验限制放在objective function内部。
 - Can we learn word embedding using vision?
-  - Yes. 我们实验室有学生做：首先将word在谷歌搜索相对应的图片，然后对word和image做embedding，然后做结合。类似的论文: "Learning Multilingual Word Embeddings Using Image-Text Data";
+  - Yes. 我们实验室有学生做：首先将word在谷歌搜索相对应的图片，然后对word和image做embedding，并将embedding做结合。类似的论文: "Learning Multilingual Word Embeddings Using Image-Text Data";
 
 2.[Attention is all you need](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)<br>
 [Blog for Transfomer](https://towardsdatascience.com/illustrated-guide-to-transformers-step-by-step-explanation-f74876522bc0)<br>

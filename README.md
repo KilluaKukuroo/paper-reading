@@ -28,6 +28,7 @@
 - [Lijun Sun](https://lijunsun.github.io/) AP at McGill Univ, machine learning + smart city <br>
 - [Xue (Steve) Liu](https://www.cs.mcgill.ca/~xueliu/site/intro.html) FIEEE, McGill Univ, *IoT,CPS,ML,smart energy system* <br>
 - [Xiaohui Yu](http://www.yorku.ca/xhyu/) Associate Prof, York University, *data mining, transportation,location-based services,social network*<br>
+- [Mi Zhang](https://www.egr.msu.edu/~mizhang/index.html) Associate Professor, in MSU, On-device ML for mobile, IoT, FL, ML for systems, AI for health;
 
 ### review
 
@@ -98,7 +99,7 @@ citation = 216;<br>
 
 ### mobility embedding
 
-6.[Identifying Human Mobility via Trajectory Embeddings](https://www.ijcai.org/Proceedings/2017/0234.pdf)<br>
+1.[Identifying Human Mobility via Trajectory Embeddings](https://www.ijcai.org/Proceedings/2017/0234.pdf)<br>
 2017,IJCAI. Qiang Gao, Fan Zhou, Kunpeng Zhang, Goce Trajcevski, Xucheng Luo, Fengli Zhang from **UESTC, U Maryland, Northwesten U**, citation = 42; <br>
 
 **summary**: 传统工作是将轨迹数据分类为不同行为，而本文提出解决trajectory user linking (TUL),将轨迹与产生轨迹的人结合起来，面对的挑战是类别数太多(人多) + 数据稀疏；为了解决这些问题，提出RNN-based semi-supervised 
@@ -106,23 +107,70 @@ model; <br>
 **method**: 1)trajectory segmentation 2)check-in embedding 3)RNN-based semi-supervised model; <br>
 **contribution**： 1)第一个解决TUL问题的工作； 2)提出了RNN-based 半监督模型(**获取embedding的过程是半监督**)，在两个公开数据集取得了SoA成绩； <br>
 
-[MPE: A Mobility Pattern Embedding Model for Predicting Next Locations](https://arxiv.org/pdf/2003.07782.pdf)<br>
+2.[MPE: A Mobility Pattern Embedding Model for Predicting Next Locations](https://arxiv.org/pdf/2003.07782.pdf)<br>
 2020 WWW, Meng Chen · Xiaohui Yu (**York University**) · Yang Liu. citation = 9;   <br>
 **keywork**: human mobility modeling, embedding learning, next location prediction, **traffic trajectory data**;   <br>
 **summary**: 使用embedding（没有使用神经网络）对交通轨迹数据进行分析，可以运用到next location prediction, visualization; <br>
 **contribution**: <br>
+
 - 第一个使用embedding method to model mobility pattern from **traffic trajectory data**;    
 - ocnsidering sequential, temporal and personal information when embedding data into vector; 
 - VPR data and taxi trajectory data 数据集上取得了很好的成绩； 
 
-
-[Personalized Ranking Metric Embedding for Next New POI Recommendation](https://www.ijcai.org/Proceedings/15/Papers/293.pdf)<br>
+3.[Personalized Ranking Metric Embedding for Next New POI Recommendation](https://www.ijcai.org/Proceedings/15/Papers/293.pdf)<br>
 2015 IJCAI, Shanshan Feng,1 Xutao Li,2 Yifeng Zeng,3 Gao Cong,2 Yeow Meng Chee,4 Quan Yuan from **NTU**;  <br>
 
-
-[A General Multi-Context Embedding Model for Mining Human Trajectory Data](https://ieeexplore.ieee.org/document/7447767)<br>
+[4.A General Multi-Context Embedding Model for Mining Human Trajectory Data](https://ieeexplore.ieee.org/document/7447767)<br>
 2016, TKDE.     <br>
 
+
+
+[5.General-Purpose User Embeddings based on Mobile App Usage](https://arxiv.org/pdf/2005.13303.pdf)
+
+[short video intro](https://www.kdd.org/kdd2020/accepted-papers/view/general-purpose-user-embeddings-based-on-mobile-app-usage)
+
+2020 KDD, Junqi Zhang: Tencent; Bing Bai: Tencent; Ye Lin: Tencent; Jian Liang: Tencent; Kun Bai: Tencent; Fei Wang: Cornell University;
+
+**summary**: This paper is proposed by Tencent Group to address the general purpose user embedding via mobile APP usage. 
+
+**problem**: Model user long term and short-term interest is important for many downstream task, e.g., reconmendation, advertising.
+
+**SoA and limitation**: 
+
+- traditional method relies on human-crafted features, therefore, ---> it takes huge amount of human effort for different tasks; 
+
+**chellenge**:
+
+- Retention, installation and uninstallation for different APPs should be modeled at the same time;
+- Actions of (un)installing apps are low-frequency and unevenly distributed over time
+- Long-tailed apps suffer from sparsity. 很多小众app安装人数非常少;
+
+**Method**: propose a  tailored AutoEncoder-coupled Transformer Network (AETN)  to analyze usr behavior based on mobile app usage.
+
+[6.Incremental Mobile User Profiling: Reinforcement Learning with Spatial Knowledge Graph for Modeling Event Streams](https://dl.acm.org/doi/pdf/10.1145/3394486.3403128)
+
+2020 KDD, Pengyang Wang, Kunpeng Liu (U of central Florida), Lu Jiang (Northeast Normal U), Xiaolin Li (Nanjin U), Yanjie Fu (U of Central Florida). 
+
+**summary**: 本文是结合了强化学习和时空图网络来做移动用户数据（轨迹数据、check-in数据）的embedding，从而得到未来location 的预测。we integrated spatial KG to reinforcement learning to incrementally learn user representations and generate the next-visit prediction。**state**： 用户和时空网络的结合；**policy**：模仿用户来generate next-visit location. 
+
+**Mobile user profiling**, 移动用户分析， is to extract a user’s interest and behavioral patterns from mobile behavioral data； 常见应用场景：customer segmentation, fraud detection, recommendation, user identification; 
+
+[7.Characterizing and Learning Representation on Customer Contact Journeys in Cellular Services](https://dl.acm.org/doi/pdf/10.1145/3394486.3403377)
+
+2020 KDD, Shuai Zhao from (New Jersey Institute of Technology), Wen-Ling Hsu, George Ma, Tan Xu, Guy Jacobson, Raif Rustamov from **AT&T**; 
+
+**summary**: 
+
+**Problem**:   **什么是customer contact journey**:Customer journey refers to the complete path of experiences that customers go through when interacting with a company—a record of how customers interact with multiple touch points via different channels ;  **目的**： provide better customer service and improve customer satisfaction；减少公司的开支；提供定制化的服务；
+
+**contribution**：
+
+- (1) We **define a new problem** of learning customer contact journey representations
+- (2) We cast this problem into an attributed sequence embedding problem, and propose an effective sequence-to-sequence model solution accordingly。
+- 给模型加入了Wasserstein divergence regularization to learn a disentangled representation of the data
+- 
+
+**data**: 一个. Communication service providers (CSPs)公司连续6个月几百万用户的三个类型的chennel数据：call (c), chat (t), and store visits (s)；每个信道数据：s **anonymized customer id, contact channel, contact reason as well as date and time**； 
 
 9.[Route prediction for instant delivery](https://dl.acm.org/doi/pdf/10.1145/3351282) <br>
 2019 Ubicomp, Yan Zhang, Yunhuai Liu, Genjian Li, Yi Ding, Ning Chen, Hao Zhang, Tian He, and Desheng Zhang.    <br>
@@ -236,6 +284,38 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 **summary**: 利用GNN预测origin-destination flow. 
 
 
+
+
+
+### others
+
+[1.Data-Driven Model Predictive Control of Autonomous Mobility-on-Demand Systems](https://arxiv.org/pdf/1709.07032.pdf)
+
+2017 **Jure Leskovec** et al., citation=41;
+
+**summary**: This paper proposes a data-driven end-to-end  Autonomous Mobility-on Demand systems (共享经济分享系统，比如共享单车和DIDI)(AMoD, i.e. fleets of self-driving vehicles) control framework, to reduce average customer waiting time via LSTM to predict customer demand.
+
+**Problem**： 共享单车中很流行，但是核心问题是“imbalance problem”;
+
+**contribution**:
+
+- We propose an optimal dispatching policy if the trip demand is known ahead of time. (this provides the upper bound of the system)
+- We propose a method to run the system in real time by predicting short-term customer demand.
+- We validate our algorithm on DIDI dataset.
+
+[2.Friendship and Mobility: User Movement In Location-Based Social Networks](https://cs.stanford.edu/people/jure/pubs/mobile-kdd11.pdf)
+
+2011 KDD, Eunjoon Cho, Seth A. Myers and Jure Leskovec from **Stanford**, citation = 2522;
+
+**summary**: This paper studied the pattern of human mobility in terms of regular mobility and social relationship-related mobility.
+
+**lesson learned**:
+
+- human mobility = periodic movement (constrined by geographic) + random jumps related with their social networks
+- social relationship accounts for 10%~30% of human moement; regular behavior explains 50~70%;
+- Short-ranged travel is periodic both spatially and temporally and not effected by the social network structure, while long-distance travel is more influenced by social network ties
+
+**dataset**: cell phone location data + 2 online-based social networks;
 
 
 ## privacy
@@ -471,7 +551,7 @@ backdoor attack: keep the model a good performance on overall task but let the m
 
 [Graph Representation Learning](https://web.stanford.edu/class/cs246/slides/12-graphs2.pdf)
 
-[course video for this tutorial](https://www.youtube.com/watch?v=YrhBZUtgG4E)
+[course video for this tutorial](https://www.youtube.com/watch?v=uEPPnR22fxg&list=PL-Y8zK4dwCrQyASidb2mjj_itW2-YYx6-)
 
 2019 by **Jure Leskovec**, from Stanford University. 
 
@@ -491,10 +571,62 @@ backdoor attack: keep the model a good performance on overall task but let the m
 
 
 
-[2.]
+[2.Fast Graph Construction Using Auction Algorithm](https://arxiv.org/ftp/arxiv/papers/1210/1210.4917.pdf)
 
+2012, UAI , [Jun Wang](https://arxiv.org/search/cs?searchtype=author&query=Wang%2C+J), [Yinglong Xia](https://arxiv.org/search/cs?searchtype=author&query=Xia%2C+Y), from IBM Watson Reasearch. citation=12;
+
+
+
+[3.Learning Effective Road Network Representation with Hierarchical Graph Neural Networks](https://www.kdd.org/kdd2020/accepted-papers/view/learning-effective-road-network-representation-with-hierarchical-graph-neur)
+
+2020 KDD, Ning Wu: Beihang University; Xin Zhao: Renmin University of China; Jingyuan Wang: Beihang University; Dayan Pan: Beihang University;
+
+**summary**: This paper proposes a hierarchical representation GNN model （“functional zones” → “structural regions” → “road segments”. ） to model road network to generate road network representation for downstream tasks, e.g., 
+
+**Input and output**: 输入是将轨迹数据转为road network，通过map matching；输出是根据任务不同而不同，比如label classification: 将road segmen分类为桥梁、道路，等；
+
+![avatar](pic/kdd2020-road-network.png)
+
+**experiments**: destination prediction;next location prediction;label classification;route planning
+
+**future work**:
+
+- **静态转为动态表征**：As future work, we will consider extending our model to learn time-varying representations
+- 直接利用trajectory data来学习表征： Currently, we utilize trajectory data as supervision signal for network reconstruction. We will investigate how to explicitly incorporate trajectory data in the representation model
+
+[4.Graph Structure Learning for Robust Graph Neural Networks](https://dl.acm.org/doi/pdf/10.1145/3394486.3403049)
+
+KDD 2020, Wei Jin, Jiliang Tang, etc. from **MSU and PSU**. 
+
+**summary**: This paper proposes a method to defend graph adversarial attacks. The idea is based on the observation that the attacked graph violates some intrinsic properties of original true graph, e.g., sparse and low rank. Based on this idea, the authors design a method which could achieve very good representation learning even with strong perturbed graph.
+
+[5.GPT-GNN: Generative Pre-Training of Graph Neural Networks](https://arxiv.org/pdf/2006.15437.pdf)
+
+2020 KDD, Ziniu Hu (UCLA), Yuxiao Dong, Kuansan Wang (Microsoft), Kai-Wei Chang and Yizhou Sun (UCLA); 
+
+**summary** : This paper presents a GNN pretraining method : GTP-GNN, GPT-GNN introduces a self-supervised attributed graph generation task to pre-train a GNN . 类似于BERT把某个单词遮盖然后来预测，本文将节点和边部分遮盖，然后求最大似然，来学习强有力的GNN。
+
+![avatar](pic/kdd2020-gpt-gnn.png)
+
+
+
+[6.Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks](https://arxiv.org/pdf/2005.11650.pdf)
+
+2020 KDD, Zonghan Wu (UTS), Shirui Pan (Monash Univerisity), Guodong Long, Jing Jiang, Xiaojun Chang(Monash), Chengqi Zhang from (UTS)
+
+**summary**:  本文利用图网络做multi-variate时间序列的预测；Our approach automatically extracts the uni-directed relations among variables through a graph learning module, into which external knowledge like variable attributes can be easily integrated.
+
+**challenge**:
+
+- Unknown Graph structure, 时间序列的关系需要从从数据中发掘，而不是提前定义好；
+- Graph learning and GNN learning: 图网络的结构应该要随时间变化；
+
+**data**:
+
+![avatar](pic/kdd2020-time-series-gnn.png)
 
 ## deep learning
+
 1.[ResNeSt: Split-Attention Networks](https://hangzhang.org/files/resnest.pdf)<br>
 发表于2020年 arxiv，作者来自 Amason, UC Davis, 包括 Hang Zhang, Mu Li. 网上传言史上最强resnet魔改版。 <br>
 **Problem**：目前大部分视觉的任务, e.g., obeject detection and semantic segmentation 还是使用ResNet的变体作为backbone，因为网络结构的简单和结构化。但是ResNet是为了image classification设计，在CV的其他下游任务性能不是很好，可能因为limited receptive-field and lack of cross-channel interaction. 并且resnet的各种变体往往只能在特定的任务上取得较好性能。而且，最近的cross-channel information在下游任务被证明很有效，而image classification的模型大都缺乏cross-channel interation，所以本文提出一种带有cross-channel representation的网络模型，目标是*打造一个versatile backbone with universally improved feature representation*, 从而同时提高多个任务的性能。 <br>
@@ -642,6 +774,18 @@ Networks with Extremely Noisy Labels](https://arxiv.org/abs/1804.06872)<br>
 1998 "Computational Learning Theory", citaion = 
 **summary**: **co-train最早的论文**;在一个label对应两个描述角度（x1,x2）的场景下，本文提供一种学习方法，用labeled data分别利用x1,x2训练两个模型，对unlabeled data做预测，预测
 的标签用来扩充labelled data数据集；<br>
+
+### training technique
+
+[1.Multi-Source Deep Domain Adaptation with Weak Supervision for Time-Series Sensor Data](https://dl.acm.org/doi/pdf/10.1145/3394486.3403228)
+
+2020 KDD, Garrett Wilson, Janardhan Rao Doppa, Diane J. Cook from Washington state U; 
+
+**summary**: This paper studies the semi-supervised domain adaption in time series data. **虽然图像领域domain adaption做的很多，但是时序数据很少**；
+
+**domain adaption**:  方便复用数据，Domain adaptation (DA) offers a valuable means to reuse data and models for new problem domains；
+
+
 
 ## 小样本学习 && 类别不均衡
 1.[decoupling representation AND classifier FOR LONG-TAILED RECOGNITION](https://arxiv.org/pdf/1910.09217.pdf)<br>
@@ -849,6 +993,12 @@ test loss double descent curve (测试loss会下降两次)。
 在带标注的数据分批次到来，并且新来的数据比以前的数据标注质量好的情况下（streaming），如何更好的利用不同质量的数据进行模型训练。实验是
 基于预训练的transformer在NLP里的event extraction task上面做的，但是思想可以很容易的扩展到其他通用领域。
 
+2.[SELECTION VIA PROXY: EFFICIENT DATA SELECTION FOR DEEP LEARNING](https://arxiv.org/pdf/1906.11829.pdf)
+
+2020 ICML splotlight, Cody Coleman∗ , Christopher Yeh, Stephen Mussmann, Baharan Mirzasoleiman, Peter Bailis, Percy Liang, Jure Leskovec, Matei Zaharia from **stanford**. 
+
+**summary**: Data selection is an important task for downstream deep learning tasks to reduce training samples. This paper proposes an efficient data selection method via a small proxy model. Compared to traditional data selection method (**active learning, core-set selection**), traditional method depends on feature representation learning using deep neural network therefore introduces huge computation. In this paper, the authors propose a small proxy network to select data for downstream task. With minor accuracy decrease, this method is 10 times faster than other active learning methods on ImageNet, CIFAR10, etc.  **On CIFAR10, this method could remove 50% of data without harming the accuracy**.
+
 ## 智慧电网 smart grid
 
 1. [Application of Big Data and Machine Learning in Smart Grid, and Associated Security Concerns: A Review](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8625421)<br>
@@ -865,3 +1015,46 @@ nearly all the technical fields of smart grids.
 
 
 
+## others
+
+[CICLAD: A Fast and Memory-efficient Closed Itemset Miner for Streams]
+
+2020 KDD, 	Tomas Martin, Guy Francoeur, Petko Valtchev from Centre de recherche en intelligence artificielle (CRIA), UQÀM, Canada;
+
+**summary**: This paper proposes a new intersection-based sliding-window (frequent closed itemset )FCI miner, to mine the association rules. 
+
+**看不懂**
+
+
+
+[Parameterized Correlation Clustering in Hypergraphs and Bipartite Graphs]
+
+2020 KDD, Nate Veldt (Cornell University), Anthony Wirth (U of Melbourne), David F. Gleich (Purdue); 
+
+**summary**: This paper solves clustering problem in Hypergraphs and Bipartite Graphs.
+
+
+
+[A Non-Iterative Quantile Change Detection Method in Mixture Model with Heavy-Tailed Components]
+
+2020 KDD,Yuantong Li from Purdue, Qi Ma and Sujit K. Ghosh from North Carolina State University;
+
+**summary**: This is a proof-of-concept paper. This paper proposes a data-driven method for parameter estimation in mixture models with heavy-tailed component. While traditionally, most litereatures use iterative Expectation Maximization (EM) method, this paper proposes Non-Iterative Quantile Change Detection (NIQCD) by using change-point detection methods. 
+
+
+
+[Learning based distributed tracking]
+
+2020 KDD, Hao Wu, Junhao Gan, Rui Zhang from **U of Melbourne**; 
+
+**summary**: This paper studies the fundamental problem called Distributed Tracking. WIth the popularity of machine learning, people starts to explore the theory of ML via data distribution. This paper follows this line of research and proposes two methods, i.e., w and w/o known of data distribution in advance, to minimize the communication cost in coordinator and players.
+
+
+
+[Stable Learning via Differentiated Variable Decorrelation]
+
+2020 KDD, Zheyean Shen: Tsinghua University; Peng Cui: Tsinghua University; Jiashuo Liu: Tsinghua University; Tong Zhang: Hong Kong University of Science and Technology; Bo Li: Tsinghua University; Zhitang Chen: Huawei Noah's Ark Lab
+
+**summary**: This paper studies model robustness, i.e., the model could achieve similar performance in the chaning wild environment. 
+
+**Method**: This paper incorporates the **unlabelled data** from multiple environment in the variable decorrelation framework.

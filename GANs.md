@@ -210,9 +210,11 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 
 
 
+[7.Hide-and-Seek Privacy Challenge Synthetic Data Generation vs. Patient Re-identification with Clinical Time-series Data](https://arxiv.org/pdf/2007.12087.pdf)
 
+[website](https://www.vanderschaar-lab.com/privacy-challenge/)
 
-
+NIPS 2020 challenge. 
 
 
 ## GAN with fancy ideas
@@ -232,7 +234,11 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 2018, Phillip Isola Jun-Yan Zhu Tinghui Zhou Alexei A. Efros from **UC Berkeley**,citation=5600; <br>
 **summary**: **PATCH-GAN**; 将生成图片分成很多patch，对每个patch用D判断是否是真图片；可以更好抓住局部特征（传统GAN都是对整个图片进行判断）；
 
+[2.Catalysis Clustering with GAN by Incorporating Domain Knowledge](https://dl.acm.org/doi/pdf/10.1145/3394486.3403187)
 
+2020 KDD, Olga Andreeva (University of Massachusetts Boston) etc.
+
+**summary**: This paper utilizes GAN to incorporate domain-knowledge in clustering task. 传统的聚类任务选择距离函数很麻烦；并且针对不同的任务需要设计不同的距离函数，很困难。所以要想解决这个问题，就需要把domain-knowledge融入到聚类的过程中。本文通过用GAN生成部分数据参与聚类的方法，来实现这个目标。**GAN生成的数据最后会去掉，所以是一个催化剂的作用：“Catalysis”**；
 
 
 
