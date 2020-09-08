@@ -19,6 +19,25 @@
 
 
 
+## Before reading a paper
+
+[1.How to read a Technical paper -- Jason Eisner from JHU](file/How to Read a Technical Paper-Jason Eisner 2009.pdf)
+
+2009年的一个文章，建议了读什么，怎么读，什么时候读，为什么要做笔记等，写的很好；
+
+[2.Lessons from My First Two Years of AI Research](file/Lessons from My First Two Years of AI Research.pdf)
+
+by Tom Silver, Ph.D. student at MIT. 介绍了自己刚开始读博的两年总结的经验教训：
+
+- 包括寻找几个可以随意问傻问题的人；
+- 在不同的地方思考研究问题：
+  - 和不同领域的学者交流，发现他们领域的痛点；
+  - 思考问题的时候，先用代码实现一个baseline，写的过程会发现很多新的问题，更深的理解；
+  - 实现或者扩展别人论文中你感兴趣的部分；
+- 如何读论文：**Conversations >> videos > papers > conference talks**
+- Write！多写技术博客、总结、论文，并且write down your idea throughout the day;
+- 保持健康：mental health and physical health are prerequists for research;
+
 
 ## Mobile && smart city && spatial-temporal mining
 ### scholars
@@ -48,7 +67,6 @@
 
 3.[Urban Computing: Concepts, Methodologies, and Applications](https://dl.acm.org/doi/pdf/10.1145/2629592)<br>
 2014《ACM Transactions on Intelligent Systems and Technology》，citation=971,   <br>
-
 
 4.[Urban Computing: Building Intelligent Cities Using Big Data and AI](http://urban-computing.com/pdf/urban%20computing-AAAI%202019.pdf)<br>
 2019 AAAI keynote, PDF tutorial, Yu Zheng from **JD.com**, citation = 8; <br>
@@ -260,7 +278,6 @@ semantic location, point-of-interest recommendation; <br>
 [Hybrid Spatio-Temporal Graph Convolutional Network: Improving Traffic Prediction with Navigation Data](https://arxiv.org/pdf/2006.12715.pdf)<br>
 2020 KDD, Rui Dai, Shenkun Xu, Qian Gu, Chenguang Ji, Kaikui Liu from **Alibaba Gaode**; <br>
 
-
 [Collaborative Motion Prediction via Neural Motion Message Passing](https://arxiv.org/pdf/2003.06594.pdf)<br>
 2020 CVPR, Yue Hu (SJTU), Siheng Chen (**Mitsubishi Electric Research Laboratories**) and Xiao Gu (**SJTU**) ; <br> 
 **summary**:轨迹预测;
@@ -279,11 +296,54 @@ Based on Bird’s Eye View Maps](https://arxiv.org/pdf/2003.06754.pdf)<br>
 
 [Predicting Origin-Destination Flow via Multi-Perspective Graph Convolutional Network](https://conferences.computer.org/icde/2020/pdfs/ICDE2020-5acyuqhpJ6L9P042wmjY1p/290300b818/290300b818.pdf)
 
-ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (Google Inc.), Lingyu Zhang and Jieping Ye (DiDi Chuxing), Yong Li (Tsinghua) and Yan Liu (USC).
+ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (Google Inc.), Lingyu Zhang and Jieping Ye (DiDi Chuxing), Yong Li (Tsinghua) and **Yan Liu (USC).**
 
 **summary**: 利用GNN预测origin-destination flow. 
 
 
+
+### network (cellular network, wifi, etc.)
+
+1.[CellPred: A Behavior-aware Scheme for Cellular Data Usage Prediction](https://dl.acm.org/doi/pdf/10.1145/3380982)
+
+2020 Ubicomp, Zhou Qin etc. from **Rutgers**;
+
+**summary**: 本文研究了individual-level的cellular data 使用情况预测；设计了一个预测网络，输入是历史的cellular data得到的user trace和user tag数据，输出是prediction future location, future data usage。潜在的应用：location service, network optimization, cellular services;
+
+**contribution**：
+
+- the first work to study cellular data usage prediction from individual-level with user behavior tag data; 
+- 提出prediction framework， cellPred: encoder：两个模块，分别embed 历史的轨迹信息（从cellular data得到）和历史的user tag信息；decoder：输出mobility and data usage prediction; 
+
+**data**:
+
+- cellular data： 合肥一家运营商的数据；300多万用户；2万多基站；
+- tag data: 来源于一种新的商业模式，IT公司和运营商合作，使用特定的网络应用可以获得更低的网络价格。所以可以获取反应用户行为的tag信息，比如car, stocks(finantial), ...
+
+![avatar](pic/cellpred-data.png)
+
+**problem**：
+
+- Signalling Type: the related signaling protocol this record belongs to
+- 
+
+[2.CellRep:Usage Representativeness Modeling and Correction Based on Multiple City-Scale Cellular Networks](https://dl.acm.org/doi/abs/10.1145/3366423.3380141)
+
+2020 WWW oral, Zhihan Fang etc. from **Rutgers, Peking U, Southeast U, iFlytek**;
+
+**summary**: 这篇文章是第一个研究城市中所有cellular 网络的文章，研究切入点是分析单个网络的representativeness（代表性），从而说明单个cellular network存在bias。进而提出一种基于贪心算法和diversity-driven contextual information的数据选择算法，在单个cellular network中选择diversity更大的数据来代表整个network，提高了40%以上的representativeness。
+
+**Pros**: 1)This paper is well written and has very clear logic. It is a very good measurement paper in the field of cellular network. 2)The study of multiple cellular network and the representativeness of single network, the factors which could influence network representativeness could have possitive impact for both research community and cellular cervice providers.
+
+**contribution**:
+
+- diversity-driven data sampling: 有点类似于机器学习中的hard sample mining, 比如在imagenet中通过寻找有代表性的数据，只需要50%的数据，训练的模型不会损失精度和召回率(*ICML 2020, SELECTION VIA PROXY: EFFICIENT DATA SELECTION FOR DEEP LEARNING*); 
+- 本文是第一个研究cellular usage representative on multiple cellular networks in the same city 的工作；
+
+**concept**:
+
+- **cellular network usage representativeness**, which is defined as the degree that a single network can be a representative of operational patterns of all cellular users in a region.
+- contextual data: POI, mobility data (e.g., subway, bus, personal car), population
 
 
 
@@ -295,7 +355,7 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 
 **summary**: This paper proposes a data-driven end-to-end  Autonomous Mobility-on Demand systems (共享经济分享系统，比如共享单车和DIDI)(AMoD, i.e. fleets of self-driving vehicles) control framework, to reduce average customer waiting time via LSTM to predict customer demand.
 
-**Problem**： 共享单车中很流行，但是核心问题是“imbalance problem”;
+**Problem**： 共享单车很流行，但是核心问题是“imbalance problem”;
 
 **contribution**:
 
