@@ -315,6 +315,8 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 - the first work to study cellular data usage prediction from individual-level with user behavior tag data; 
 - 提出prediction framework， cellPred: encoder：两个模块，分别embed 历史的轨迹信息（从cellular data得到）和历史的user tag信息；decoder：输出mobility and data usage prediction; 
 
+![avatar](pic/cellpred-model.png)
+
 **data**:
 
 - cellular data： 合肥一家运营商的数据；300多万用户；2万多基站；
@@ -475,7 +477,6 @@ Adversarial Machine Learning](https://arxiv.org/pdf/1805.04810.pdf)<br>
 Networks](https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_The_Secret_Revealer_Generative_Model-Inversion_Attacks_Against_Deep_Neural_Networks_CVPR_2020_paper.pdf)<br>
 2020 CVPR, <br>
 
-
 15.[Beyond Inferring Class Representatives: User-Level
 Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)<br>
 2019 INFOCOM, citation = 64;<br>
@@ -483,6 +484,12 @@ Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)<b
 也可以实现对特定用户隐私信息的重现；<br>
 
 **problem**: **如果都可以重构用户信息图片了，为什么还要单独推测用户的隐私信息？**<br>
+
+**[16.Anonymization of Location Data Does Not Work: A Large-Scale Measurement Study](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.651.44&rep=rep1&type=pdf)**
+
+2011 Mobicom,Hui Zang (from Sprint), Jean Bolot from Technocolor, citation = 346;
+
+
 
 [PATE-GAN: GENERATING SYNTHETIC DATA WITH DIFFERENTIAL PRIVACY GUARANTEES](https://openreview.net/pdf?id=S1zk9iRqF7)<br>
 2019 ICLR, citation=22; <br>
