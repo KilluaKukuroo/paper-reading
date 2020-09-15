@@ -190,7 +190,7 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 
 **Q**： 使用CGAN，和我每次训练一种类型的数据有啥区别？？
 
-[5.Generating High-fidelity, Synthetic Time Series Datasets with DoppelGANger](https://arxiv.org/abs/1909.13403)
+**[5.Generating High-fidelity, Synthetic Time Series Datasets with DoppelGANger](https://arxiv.org/abs/1909.13403)**
 
 2020 IMC, with another title "**Using GANs for Sharing Networked Timeseries Data: Challenges, Initial Promise, and Open Questions**";  **[Zinan Lin](http://www.andrew.cmu.edu/user/zinanl/)**, [Alankar Jain](https://www.linkedin.com/in/alankar-jain-5835ab5a/) **CMU**, [Chen Wang](https://wangchen615.github.io/) (from **IBM**), [Giulia Fanti](https://www.andrew.cmu.edu/user/gfanti/), [Vyas Sekar](https://users.ece.cmu.edu/~vsekar/) from **CMU**;  citation=1;
 
@@ -204,6 +204,15 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 - geographically distributed broadband measurement (家庭网络使用数据)
 - compute cluster usage measurement (机房机器使用数据)
 
+**detail**： 
+
+- generator：生成attribute：用MLP，生成feature：用RNN；
+- discriminator： 两个判别器：一个MLP判别器判断feature，效果不好；加一个判别器只判断属性attribute；
+
+**problem**：
+
+- 文章的atribute和label有啥区别？后面说可以根据需要生成不同attribute的数据，感觉和CGAN很像；
+
 [6.Learning to Simulate Human Mobility](https://dl.acm.org/doi/pdf/10.1145/3394486.3412862)
 
 2020 KDD, Jie Feng, Zeyu Yang, Fengli Xu, Haisu Yu, Mudan Wang, Yong Li from **Tsinghua University**. 
@@ -216,6 +225,38 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 
 NIPS 2020 challenge. 
 
+[8.CorGAN: Correlation-Capturing Convolutional Generative Adversarial Networks for Generating Synthetic Healthcare Records](https://arxiv.org/pdf/2001.09346v2.pdf)
+
+2020, Amirsina Torfi, Edward A. Fox from Verginia Tech.
+
+CODE: https://github.com/astorfi/cor-gan   
+
+https://github.com/astorfi/cor-gan
+
+
+
+[9.Synthetic Event Time Series Health Data Generation](https://arxiv.org/pdf/1911.06411.pdf)
+
+2019 NIPS workshop, Machine learning for Health; 
+
+
+
+
+
+## GAN privacy
+
+
+
+1.[LOGAN: Membership Inference Attacks Against Generative Models](https://arxiv.org/pdf/1705.07663.pdf)
+
+2018, UCL, citation = 68;
+
+**summary**: 很好的文章，讲了生成模型的membership inference attack， defence的分析；
+
+
+
+
+
 
 ## GAN with fancy ideas
 1.[Progressive Growing of GANs for Improved Quality, Stability, and Variation](https://arxiv.org/abs/1710.10196)<br>
@@ -224,7 +265,6 @@ NIPS 2020 challenge.
 
 **contribution**: <br>
 - 本文简化了minibatch discrimination大学习，不用超参数和学习的参数，提高GAN生成数据的多样性；
-
 
 [Autoregressive Generative Adversarial networks](https://openreview.net/pdf?id=Hyo9zDuIz)<br>
 2018 ICLR workshop, Yasin Yazıcı, Kim-Hui Yap (**NTU**) and Stefan Winkler (**UIUC**) citation=2; <br>
@@ -260,10 +300,67 @@ Dynamic Generative Adversarial Networks] (https://arxiv.org/pdf/1709.07592.pdf)<
 [MoCoGAN: Decomposing Motion and Content for Video Generation](https://arxiv.org/pdf/1707.04993.pdf)<br>
 2017, citation = 318; <br>
 
-
 [**DVD-GAN**-ADVERSARIAL VIDEO GENERATION
 ON COMPLEX DATASETS](https://arxiv.org/pdf/1907.06571.pdf)(br)
 2019, citation = 15; <br>
+
+
+
+## tabular data generation
+
+tabular data
+
+![avatar](pic/data-tabular-data.png)
+
+1.[TabNet: Attentive Interpretable Tabular Learning](https://arxiv.org/pdf/1908.07442.pdf)
+
+2020, Sercan O. Arık and Tomas Pfister from Google Cloud AI, citation = 10;
+
+**summary**: 结合decision tree和DNN的优点，设计一个处理raw tabular data的网络TabNet，处理分类和回归问题。实现高性能和可解释性的效果，并且吊打以前很多模型。最后，验证了self-supervised learning在tabular data上可以提高模型的效果。
+
+**contribution**:
+
+- 第一次在tabular data做self-supervised learning（**通过predict masked features**）; 并且通过自监督提高了神经网络的效果。
+- 应用了 sequential attention 机制在每个decision step选择feature，提高模型的效果；We employ a learnable mask M[i] ∈ for soft selection of the salient features; 
+- 设计了一个tree+DNN的神经网络结构（**利用tree和神经网络各自的优点：可解释性，快速 VS 端到端和表征学习**），和传统的tree-based DNN 不一样：
+- 网络结构如下图：每一个decision step，和tree一样，对样本进行分割，每个step的feature transformer应该是一样的？和LSTM每个时间步一样？
+
+
+
+![avatar](pic/tabgan-encoder.png)
+
+
+
+2.[Modeling Tabular Data using Conditional GAN](https://papers.nips.cc/paper/8953-modeling-tabular-data-using-conditional-gan.pdf)
+
+2019 **NIPS**, Lei Xu et al. , from MIT, citation = 25;
+
+
+
+**contribution**: 
+
+- 设计了一个conditional GAN，生成tabular data；可以学习比bayasian network更好的distribution；
+
+- 可以指定生成某一个column的feature数据，并且调节某个feature值出现的概率；比如：
+
+- > ```
+  > samples = ctgan.sample(1000, "workclass", "Private")
+  > ```
+
+- 提供一个benchmark system ， tabular data生成的benchmark；
+
+- **（作者说是本文invent mode-normalization）设计了 mode-specific normalization, 对不用的mode使用不同的normalization**方法；
+
+**tabular data特点**：
+
+- mixed data type: 离散的和连续的
+- non-Gaussian distribution: 和图片的pixel不一样，Continuous values in tabular data are
+  usually non-Gaussian where min-max transformation will lead to vanishing gradient problem.
+- Learning from sparse one-hot-encoded vectors： 会影响discriminator的判断，可能只根据数据的sparsity判断真假；
+- **Highly imbalanced categorical columns**. In our datasets we noticed that 636=1048 of the categorical columns are highly imbalanced,
+- multimodal: 数据多模态
+
+**problem**： 衡量标准是：(likelihood fitness) data distribution and machine learning utility; 没考虑privacy；
 
 ## GAN loss functions
 
@@ -279,24 +376,57 @@ ON COMPLEX DATASETS](https://arxiv.org/pdf/1907.06571.pdf)(br)
 
 ## GAN application - image to image translation
 
+[1.pix2pix-Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/pdf/1611.07004.pdf)
 
-1.[Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](https://arxiv.org/pdf/1703.10593.pdf)<br>
+2017 CVPR, Phillip Isola Jun-Yan Zhu Tinghui Zhou Alexei A. Efros from **UC Berkeley**.
+
+**summary**: 本文基于CGAN，做通用的general-purpose的image-to-image translation（白天黑夜转换，素描到图片，颜色转换，labels to street scene）；需要成对的图片作为训练数据；CGAN 适合做图片转换的问题，因为：we condition on an input image and generate a corresponding output image.这里的condition不是分类问题中的label，而实一张图片；
+
+**method**:
+
+- G: U-net 做为生成器，D：patchGAN作为判别器，在image patch的级别做图像的判别，而不是完整的图片，可以生成更清楚的图片，**capture local style statistics**；
+- loss: D的loss分为两个，L1loss和patch loss. 因为L1可以捕捉全局低频的关系，但是无法model 高频的细节，所以作者提出patch loss捕捉高频局部的特征，对N/* N 个patch分类real 和fake；
+- 传统做成对训练的cGAN都是输入z,y（条件图片），作者考虑到z一般没啥用，就没有用z，只输出源图x给G，生成的G(x),和真实的目标图片y给D；
+- ![avatar](pic/gan-pix2pix.png)
+
+**contribution**：
+
+- 证明了在很广泛的问题上，CGAN可以获得很好的结果；提出了一个很简单的框架来进行图像转换；
+- 
+
+2.[CycleGAN-Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks](https://arxiv.org/pdf/1703.10593.pdf)<br>
 2017 ICCV, Jun-yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros from **UC Berkeley**, citation =5000; <br>
-**summary**: This paper solve the image to image problem without the presence of paired images. To be specific, this paper design a GAN framework
-to **transfer the style **of image set A to image set B without using paired images. TO solve the problem of 1) unpaired mapping betweeen a specific image 
-in set A and set B, 2) mode collapse during training, the authors design two mappings, G: X --> Y, and F: Y-->X;
-exploiting the idea from machine translation **"cycle translation"**, i.e., when translating 
-English into French, the algorithm should be able to translate the French back to English and  the English sentence should be the same as the original one. 
+**summary**: 本文是pix2pix后续的一个工作,解决图像翻译需要成对训练数据的问题。This paper solve the image to image problem without the presence of paired images. To be specific, this paper design a GAN framework to **transfer the style **of image set A to image set B without using paired images. TO solve the problem of 
 
+1) unpaired mapping betweeen a specific image in set A and set B, 
 
+2) mode collapse during training, the authors design two mappings, G: X --> Y, and F: Y-->X;
+exploiting the idea from machine translation **"cycle translation"**, i.e., when translating  English into French, the algorithm should be able to translate the French back to English and  the English sentence should be the same as the original one. 
 
+**contribution**：
 
-2.[GeoGAN: A Conditional GAN with Reconstruction
-and Style Loss to Generate Standard Layer of Maps
-from Satellite Images] (https://arxiv.org/pdf/1902.05611.pdf)<br>
+- 1）不需要成对的训练数据训练，是对pix2pix的改进，因为很多场景是得不到成对的数据的；
+- 2) 提出cycle consistence loss, X = F(G(X)), 类似于语言翻译，图片从x空间翻译到y空间，还要能翻译回来，才是一个好的翻译；
+- ![avatar](pic/gan-cyclegan.png)
+
+[3.pix2pixHD-High-Resolution Image Synthesis and Semantic Manipulation with Conditional GANs](https://arxiv.org/abs/1711.11585)
+
+2018 CVPR, Ting-Chun Wang1 Ming-Yu Liu1 Jun-Yan Zhu2 Andrew Tao1 Jan Kautz1 Bryan Catanzaro from **UC Berkeley**;
+
+**summary**: 本文是CycleGAN之后的工作，解决的是生成高清图像+逼真图像的问题，2048\*1014的图像。
+
+**method**：
+
+- 两级生成网络G：在G2中嵌入G1，和progressive GAN很像。G1生成1024\* 512, 输入给G2，输出2048\*1024； 
+
+![avatar](pic/gan-pix2pixhd.png)
+
+4.[GeoGAN: A Conditional GAN with Reconstruction and Style Loss to Generate Standard Layer of Maps from Satellite Images] (https://arxiv.org/pdf/1902.05611.pdf)
+
 2019, Swetava Ganguli, Pedro Garzon, Noa Glaser from **Stanford U**, citation = 10; <br>
 **summary**: CGAN + **style loss** ，以谷歌地图和谷歌地球的数据源来**生成地图**；
 **Question**: 
+
 - 生成的效果怎么样？ 图片好像看不出有啥特点？
 
 
@@ -334,6 +464,28 @@ citation = 3051; <br>
 
 
 
+5.[InfoGAN-Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets](https://arxiv.org/abs/1606.03657)
+
+code： https://github.com/raahii/infogan-pytorch
+
+2016, NIPS，**OpenAI**, citation = 2000;
+
+**summary**: 本文通过改进loss function提出一种新的InfoGAN,学习distangled representation，这是无监督学习中的一个痛点。
+
+**method**：无监督学习是从没有标签的数据中学习出有用价值。representation learning 是无监督学习一个流行的框架：learning a representation that exposes useful semantic information from unlabelled data, 从没有标签的数据中学习出一个表征，可以反应数据的语义信息。因为无监督学习下游任务的不确定，如果能学习出不同特征分别对应的表征(distangled representation)就可以大大的提高下游任务（classification, segmentation...）的效果。我们相信，如果能够生成很好的数据，就说明模型对数据非常理解，所以本文提出了infogan来学习分离的表征。
+
+传统的GAN输入噪声Z不能控制输出的特点，z的不同维度不知道分别对应于输出图片的哪些特征。本文将z分成噪声z和不同的latent code，c1,c2...分别控制输出图片的内容和图片的不同风格特征。比如人脸生成，c1,c2,c3分别代表hair style, eye color, identity of a person... 控制图像特征的c1,c2..应该要与图像内容的关系越小越好，也就是c, G(z,c)互信息越大越好， I(c, G(z,c)) 越大越好。于是，作者在G的loss中加入互信息控制量。
+
+![avatar](pic/gan-infogan.png) 
+
+**problem**: 互信息？ 和CGAN有啥关系？
+
+**experiment**:
+
+采用DC-GAN的网络结构；MINIST，chair，face实验结果表明，无监督学习到的不同的latent code可以分别控制不同的图片特征，c1,c2,c3分别表示数字类别，倾斜角度，画笔宽度：
+
+![avatart](pic/gan-infogan2.png)
+
 
 
 
@@ -343,12 +495,18 @@ citation = 3051; <br>
 - 当用一类图片训练的时候，生成这一类图片，否则是混合的效果；
 - 
 
-**DCGAN**: 2015, GAN+CNN, 反卷积生成清晰的图像； 
+**DCGAN**: 2015, GAN+CNN, 把CNN引入GAN，反卷积生成清晰的图像；
+
+ [DCGAN](https://arxiv.org/pdf/1511.06434.pdf)
 
 **CGAN**: 
+
+[Conditional Generative Adversarial Nets](https://arxiv.org/pdf/1411.1784.pdf)
+
 - 将标签向量和噪声向量拼接，生成指定标签类别的图片；
 
 **CycleGAN**: <br>
+
 - 两个生成器两个判别器，图像风格迁移;
 
 **CoGAN**: <br>
