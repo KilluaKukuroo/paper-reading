@@ -780,6 +780,14 @@ and Long Short-Term Memory (LSTM) Network] (https://arxiv.org/pdf/1808.03314.pdf
 2015, Rupesh Kumar Srivastava, Klaus Greff, **Jurgen Schmidhuber** from **The Swiss AI Lab IDSIA**, citation=1215; <br>
 **summary**: resnet的前身，都是通过跨层链接来实现网络更容易训练，网络容量比resnet更大，但是效果却没有resnet好；<br>
 
+12.[HyperNetworks](https://arxiv.org/pdf/1609.09106.pdf)
+
+2017 ICLR,David Ha∗ , Andrew Dai, Quoc V. Le from **Google Brain**, citation = 470;
+
+**summary**: 使用一个小的网络（HyperNet）为其他的大型网络（deep CNN and long RNN）生成权重，得到很好的效果。
+
+![avatar](pic/hypernet.png)
+
 ## transfer learning
 
 
@@ -841,6 +849,29 @@ Networks with Extremely Noisy Labels](https://arxiv.org/abs/1804.06872)<br>
 1998 "Computational Learning Theory", citaion = 
 **summary**: **co-train最早的论文**;在一个label对应两个描述角度（x1,x2）的场景下，本文提供一种学习方法，用labeled data分别利用x1,x2训练两个模型，对unlabeled data做预测，预测
 的标签用来扩充labelled data数据集；<br>
+
+
+
+3.[Learning from Noisy Labels with Distillation](https://arxiv.org/abs/1703.02391)
+
+2017, Yuncheng Li, Jianchao Yang, Yale Song, Liangliang Cao, **Jiebo Luo**, Li-jia Li, citation = 210;
+
+**summary**: 受到 Hinton distillation的启发，本文提出 use large amount of noisy data to augment small clean dataset to learn a better visual representation and classifier. The key contributions are as follows:
+
+- under some conditions, we have theoretical analysis of the distillation process;
+- 通过维基百科构建texual knowledge graph (labels are related by their definitions, **encode label space**), 并且通过构建的图谱指导蒸馏学习；(**好像就是利用了一个将图片的tag链接到维基百科的entity的一个工具**)
+- 收集了包含480K图片、几百个类别的多领域数据集，as benchmakr datasets for realworld labeling noises;
+
+**key**：
+
+- 知识图谱的作用：将在small clean dataset 上训练得到的模型产生的输出 soft label --> 变成new soft label;
+- 获取noisy label：收集 YFCC100M 数据集（photo,title,tag）(没有clean annotation，有noisy label (**soft label**)) --》 利用DBpedia Spotlight 工具，link a photo's title and tags with a wikipedia entity  --> noisy labels （**new soft labels**）;
+- 获取clean label: 众包；或者拿imageNet的部分数据；
+
+**future work**:
+
+- 除了knowledge graph，用其他来源来指导蒸馏学习；
+- 将learning from noisy labels 应用到其他场景（比如网络的图片搜索）；
 
 ### training technique
 
