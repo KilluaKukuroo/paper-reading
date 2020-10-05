@@ -22,7 +22,13 @@
 - 介绍了GAN的几个应用场景：image processing and computer vision(image and video); sequantial data (NLP, Music); 
 
 2.[Generative Adversarial Networks (GANs): Challenges, Solutions, and Future Directions](https://arxiv.org/ftp/arxiv/papers/2005/2005.00065.pdf)<br>
-2020 , Divya Saxena and Jiannong Gao from ** The Hong Kong Polytechnic University**; <br> 
+2020 , Divya Saxena and Jiannong Gao from **The Hong Kong Polytechnic University**; <br> 
+
+3.[An Introduction to Image Synthesis with Generative Adversarial Nets](https://arxiv.org/pdf/1803.04469.pdf)
+
+2018, He Huang, Philip S. Yu and Changhu Wang, citation=72;
+
+**summary**: 很好的综述文章。详细介绍了**不同的GAN 模型**，GAN 生成图片的模型分类；text-to-image synthesis, image-to-image translation； 并且介绍了生成image的评价指标；
 
 
 ## GAN synthetic data evaluation
@@ -188,7 +194,9 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 - 给CGAN不同的condition来训练，比如continuous and categorical label joint distribution 作为condition (**可以捕捉全局和局部信息**)；
 - 捕捉时序数据的second order information;
 
-**Q**： 使用CGAN，和我每次训练一种类型的数据有啥区别？？
+**Q**： **使用CGAN，和我每次训练一种类型的数据有啥区别**？？
+
+
 
 **[5.Generating High-fidelity, Synthetic Time Series Datasets with DoppelGANger](https://arxiv.org/abs/1909.13403)**
 
@@ -204,14 +212,31 @@ dependent sturctures of different time series data;3)可以很好的对时序数
 - geographically distributed broadband measurement (家庭网络使用数据)
 - compute cluster usage measurement (机房机器使用数据)
 
+![avatar](pic/gan-deppolgan-data.png)
+
 **detail**： 
 
 - generator：生成attribute：用MLP，生成feature：用RNN；
 - discriminator： 两个判别器：一个MLP判别器判断feature，效果不好；加一个判别器只判断属性attribute；
+- 生成的attribute：Figure 15,16,17, 生成WWT 的access type, agent 统计信息和真实信息的对比；（应该是预测的未来50的情况）
 
-**problem**：
+**experiment验证生成数据**：
+
+- 真实数据 = A + A‘，（1：1）； 用A 训练GAN， 生成B 和B’； （1：1）； 用A 和 B 分别训练model，在 A' B' 分别测试；   
+- 预测未来机房网络会产生什么类型的任务数据：predict the task and event type on GCUT data; 
+- WWT： forecasting the page views in the next 50 days; （train on B, test on A'）预测的是feature，
+- 根据生成的机房数据feature，预测机房的failure：
+- ![avatar](pic/gan-deppogan-app.png)
+
+**Q**：
 
 - 文章的atribute和label有啥区别？后面说可以根据需要生成不同attribute的数据，感觉和CGAN很像；
+- 比如维基百科访问数据，attribute：agent（spider..）,access type(mobile-web, desktop...); 这些属性值都是有实际意义的，而且可能的数值也有限，GAN生成的结果是否检查了这种语义？
+- 实验验证中： B 训练的模型，有没有在真实数据A‘ 上做测试？ 还是只是在 生成的B’ 上测试？ 
+  - 好像是在A‘ 真实数据做的测试？ Figure 11; 那么B’ 有啥作用？
+- 本文的GAN生成的是attribute，还是feature？还是两个都有？
+  - 因为同时生成attribute和feature太难（根据naive GAN的经验），我们先生成attribute，then features conditioned on the attributes;
+- section 5.2：felxibility，生成指定分布的attribute？ 还是给定attribute生成 features？
 
 [6.Learning to Simulate Human Mobility](https://dl.acm.org/doi/pdf/10.1145/3394486.3412862)
 
@@ -254,6 +279,12 @@ https://github.com/astorfi/cor-gan
 **summary**: 很好的文章，讲了生成模型的membership inference attack， defence的分析；
 
 
+
+2.[GAN-Leaks: A Taxonomy of Membership Inference Attacks against Generative Models](https://arxiv.org/pdf/1909.03935.pdf)
+
+2020 **CCS**, from Dingfan Chen, Ning Yu, Yang Zhang, Mario Fritz from **CISPA Helmholtz Center for Information Security, Germany**, **MPI and U of Maryland**;
+
+**summary**: 本文对生成模型的membership inference attack做了一个分类，并且研究了对三种数据的攻击：, images, medical data, and location data。
 
 
 
@@ -488,10 +519,30 @@ code： https://github.com/raahii/infogan-pytorch
 
 
 
+## GAN - image generation
 
+1.[Diverse Image Generation via Self-Conditioned GANs](https://openaccess.thecvf.com/content_CVPR_2020/papers/Liu_Diverse_Image_Generation_via_Self-Conditioned_GANs_CVPR_2020_paper.pdf)
+
+2020 CVPR, Steven Liu, Tongzhou Wang, David Bau, Jun-Yan Zhu, Antonio Torralba from **MIT and Adobe**; 
+
+**summary**: **CGAN**:本文不用手工的标签，而是基于判别器D的特征空间中的聚类得到的不同cluster， 来生成逼真并且**diverse**的图片。本文的方法可以减少mode collapse，并且再ImageNet等大型数据集上的多个指标表现很好（diversity, other metrics）。
+
+![avatar](pic/gan-cgan-2020cvpr.png)
+
+2.[Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss](Tag2Pix: Line Art Colorization Using Text Tag With SECat and Changing Loss)
+
+2019 ICCV, from Seoul National U, citation=8;
+
+**summary**: 本文基于文本的tag(blonde_hair, purple eyes...)信息，给灰色的卡通图画上色。
+
+
+
+**discriminator**：input：彩色的图片；out：real or fake; 还有对使用哪种CIT (color invariant tag）和CVT (color variant tag)的猜测；（收到ACGAN的启发，multi-label classification 起到了很重要的作用）；
 
 ## GAN development
+
 **GAN**: 2014, MLP  <br>
+
 - 当用一类图片训练的时候，生成这一类图片，否则是混合的效果；
 - 
 
@@ -503,7 +554,16 @@ code： https://github.com/raahii/infogan-pytorch
 
 [Conditional Generative Adversarial Nets](https://arxiv.org/pdf/1411.1784.pdf)
 
-- 将标签向量和噪声向量拼接，生成指定标签类别的图片；
+- [1]-将标签向量和噪声向量拼接，生成指定标签类别的图片；
+
+- [2]-输入是image+tags（来自不同用户的模糊tag，语义信息）+label； 输出是对每种图片生成一堆文本tags，挑选最好的20个；
+
+  - 作用：an effitient way to normalize tags and labels from different users; 
+  - future work: 现在是一次赛一个image+一个tag训练；以后可以一次塞进多个tags+一个image；
+
+  ![avatar](pic/gan-cgan.png)
+
+
 
 **CycleGAN**: <br>
 
