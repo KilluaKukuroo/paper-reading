@@ -86,6 +86,7 @@ by Tom Silver, Ph.D. student at MIT. 介绍了自己刚开始读博的两年总�
 2019 WWW keynote, **Filippo Simini **(University of Bristol), Gianni Barlacchi (Uni of Trento, Italy), Roberto Pellungrini (Uni Pisa), Luca Pappalardo(ISTI-CNR, Pisa);<br>
 **summary**: 
 **content**: <br>
+
 - 介绍了CDR, GPS，location-based social network (LSN)等数据的特点，预处理方式，优点和缺点，公开的数据集，相关的研究文献，可以应用的场景;
 - **privacy**：
 	- why mobility data privacy is a concern? -- mobility data可以反映个人的很多信息，比如habit,health condition, religious preference; mobility data is abundant and readily 
@@ -94,10 +95,24 @@ by Tom Silver, Ph.D. student at MIT. 介绍了自己刚开始读博的两年总�
 - preprocessin, privacy risk assessment, mobility measures and simulation,generative models
 - 开源了scikit mobility: predictive model, visualization methods, map matching, anonymization techniques;
 
-
 8.[Trajectory Data Mining: An Overview](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/TrajectoryDataMining-tist-yuzheng_published.pdf)<br>
 2015, **Yu Zheng** from Microsoft Research, citaion = 1046; <br>
 
+**summary**: A very solid review. explores the connections, correlations, and differences among existing techniques. 同时，本文介绍了将tajectory data表示成 tensor，graph，matrix的方法，从而可以更方便的利用机器学习的技术来做轨迹数据挖掘。
+
+**content**:
+
+- 1.trajectory 数据的产生来源：（四个来源）：mobility of people (**cell tower ID from phone**), transportation (GPS data), animal(保护研究动物), natural phonomena; 
+- 2.trajectory data preprocessing： 噪声过滤；stay point detection (restaurant, tourist point...); trajectory compression; trajectory segmentation; map matching;
+- 3.
+- 4.uncertainty and privacy
+- 5.
+
+**future direction**: 
+
+- data management: effitient retrieval and mining multi-modal data; 
+- cross-domain machine learning : 
+- visualization techniques that can suggest insights across different sources;
 
 4.[DeepTransport: Prediction and Simulation of Human Mobility and Transportation Mode at a City wide Level](https://www.ijcai.org/Proceedings/16/Papers/372.pdf)<br>
 2016 IJCAI, Xuan Song, Hiroshi Kanasugi and Ryosuke Shibasaki (**The university of Tokyo**). citation = 109; <br>
@@ -195,6 +210,12 @@ model; <br>
 
 **summary**: 通过对骑手路径选择的预测，制定不同的订单分发系统，从而减少平均的外卖派送时间，减少延误率； <br>
 
+10.[Deep Multimodal Embedding: Manipulating Novel Objects with Point-clouds, Language and Trajectories](https://cs.stanford.edu/people/asaxena/papers/robobarista_deepmultimodalembedding.pdf)
+
+2017 **ICRA, finalist for ICRA Best cognitive robotics paper award**, [Jaeyong Sung](https://arxiv.org/search/cs?searchtype=author&query=Sung%2C+J), [Ian Lenz](https://arxiv.org/search/cs?searchtype=author&query=Lenz%2C+I), [Ashutosh Saxena](https://arxiv.org/search/cs?searchtype=author&query=Saxena%2C+A) from Cornell University. citation = 18;
+
+**summary**: 机器人与现实世界交互需要处理视觉，语言，还有轨迹数据。本文提出一个算法，将这三种模态的数据embed 到同一个shared embedding space. 在机器人的任务上取得了很好的结果，acc 和inference time。
+
 
 ### ETA estimation of time of arrival
 10.[Learning to Estimate the Travel Time](https://dl.acm.org/doi/pdf/10.1145/3219819.3219900)<br>
@@ -202,6 +223,7 @@ model; <br>
 **summary**: 将车辆从A到B的estimated time of arrival(ETA) 转化为机器学习的回归问题，利用大量的历史数据，设计 Wide-Deep-Recurrent (WDR) learning model预测旅行时间，
 并且在DIDI上验证了这个方法； <br>
 **method**: <br>
+
 - feature extraction: spatial info, temporal info, traffic info, personalized info (driver profile, etc.), augmented info (whether condition, traffic restriction, etc.); <br>
 - transform ETA as a machine learning problem, design loss function; <br>
 - wide-deep-recurrent learning model design; <br>
@@ -237,18 +259,38 @@ Shengnan Wu(JD), Zhongyuan Jiang(XD), **Yu Zheng(XD)**;<br>
 
 
 
-
 ### location and trajectory prediction
+
+#### useful materials
+
+1.[Human Mobility from theory to practice:Data, Models and Applications](https://www.researchgate.net/publication/333075305_Human_Mobility_from_theory_to_practiceData_Models_and_Applications?enrichId=rgreq-76f6194e2f133d556b554f57dad3accb-XXX&enrichSource=Y292ZXJQYWdlOzMzMzA3NTMwNTtBUzo3NTk2ODA0NTIyODQ0MTZAMTU1ODEzMzM0MjEwMQ%3D%3D&el=1_x_3&_esc=publicationCoverPdf)
+
+2019 tutorial, Luca Pappalardo and Gianni Barlacchi (Università degli Studi di Trento), ;
+
+**summary**: 对mobility的dataset, models, applications 做了很详细的介绍，写的很好。比如：CDR 数据的好处坏处，预处理方法等等；
+
+**content**:
+
+- 介绍了privacy risk 评估的内容；
+  - Why privacy for mobility data is a concern?   
+    - **Mobility is a sensitive type of information**：Depending on the location visited, one could infer religious preferences, daily habits, health problems
+    - Mobility data is abundant and readily available ： Location based services, social media access etc
+  - Privacy actors
+    • Data respondent: individuals
+    • Data holder: businesses, enterprises etc.
+    • Adversary or attacker: malicious third party
+  - 
+
 [NLPMM: a Next Location Predictor with Markov Modeling](https://arxiv.org/pdf/2003.07037.pdf)<br>
 2020,    citation=64; <br>
 **keywords**: moving pattern, next location prediction, time factor;  <br>
-
 
 [Where will you go? Mobile Data Mining for Next Place Prediction](https://www.idiap.ch/project/mdc/publications/files/nov13_08_nextPlace-dawak2013.pdf)<br>
 2013, Jo˜ao B´artolo Gomes, Clifton Phua, Shonali Krishnaswamy from **A Star**, citation=47; <br>
 **summary**: 基于手机GPS和其他信息(e.g., accelerometer,bluetooth and call/sms logs),在单个用户的数据上预测该用户下一个位置(不关心semantic location,i.e., tagged as home,etc.)；<br>
 **data**: Nokia Mobile Data Challenge (MDC):70 users for one year smartphone data; <br>
 **contribution**: <br>
+
 - privacy preserving: 对每个用户只使用他们自己的数据在本地（手机）训练模型，不需要将数据分享出去；<br>
 - rich *context information* are exploited for personalization <br>
 - 做了特征选择(based on information gain, and cross-validated best feature subset)，发现几乎所有特征都对预测有用，使用92%的特征取得了最好结果并且与使用所有特征类似；<br>
@@ -258,7 +300,6 @@ Shengnan Wu(JD), Zhongyuan Jiang(XD), **Yu Zheng(XD)**;<br>
 
 [Mining moving patterns for predicting next location](http://www.yorku.ca/xhyu/papers/infosys2015.pdf)<br>
 2015, Information Systems,  citation=44; <br>
-
 
 [A Survey of Location Prediction on Twitter](https://arxiv.org/pdf/1705.03172.pdf)<br>
 2018 TKDE,  Xin Zheng(NTU), Jialong Han(Tencent), and Aixin Sun(NTU), citation=93; <br>
@@ -273,7 +314,6 @@ semantic location, point-of-interest recommendation; <br>
 
 [Introduction to Trajectory Data Mining](https://mycourses.aalto.fi/pluginfile.php/461972/mod_folder/content/0/Lecture%204%20slides.pdf?forcedownload=1)<br>
 2017 lecture notes, Kirsi Virrantaus from **Aalto University **; <br>
-
 
 [Hybrid Spatio-Temporal Graph Convolutional Network: Improving Traffic Prediction with Navigation Data](https://arxiv.org/pdf/2006.12715.pdf)<br>
 2020 KDD, Rui Dai, Shenkun Xu, Qian Gu, Chenguang Ji, Kaikui Liu from **Alibaba Gaode**; <br>
@@ -308,11 +348,12 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 
 2020 Ubicomp, Zhou Qin etc. from **Rutgers**;
 
-**summary**: 本文研究了individual-level的cellular data 使用情况预测；设计了一个预测网络，输入是历史的cellular data得到的user trace和user tag数据，输出是prediction future location, future data usage。潜在的应用：location service, network optimization, cellular services;
+**summary**: 本文研究了individual-level的1）cellular data 使用情况预测；2）mobility pattern；设计了一个预测网络，输入是历史的cellular data得到的user trace和user tag数据，输出是prediction future location, future data usage。潜在的应用：location service, network optimization, cellular services;
 
 **contribution**：
 
 - the first work to study cellular data usage prediction from individual-level with user behavior tag data; 
+- 通过实验验证：考虑tag data，会提高“mobility 和 data usage prediction的效果；
 - 提出prediction framework， cellPred: encoder：两个模块，分别embed 历史的轨迹信息（从cellular data得到）和历史的user tag信息；decoder：输出mobility and data usage prediction; 
 
 ![avatar](pic/cellpred-model.png)
@@ -327,13 +368,18 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 **problem**：
 
 - Signalling Type: the related signaling protocol this record belongs to
-- 
+- 有 tag  和没 tag 有对比效果差别吗？cellpred-wo是不带tag和mobility、usage feature吗？
+
+**实验**:
+
+- evaluation: 对每个人预测data usage，然后把同一个tower的用户使用预测加起来，得到整个tower的预测，和真实值做对比；
+- mobility prediction：根据grid index from a hash table; 计算MAPE；
 
 [2.CellRep:Usage Representativeness Modeling and Correction Based on Multiple City-Scale Cellular Networks](https://dl.acm.org/doi/abs/10.1145/3366423.3380141)
 
 2020 WWW oral, Zhihan Fang etc. from **Rutgers, Peking U, Southeast U, iFlytek**;
 
-**summary**: 这篇文章是第一个研究城市中所有cellular 网络的文章，研究切入点是分析单个网络的representativeness（代表性），从而说明单个cellular network存在bias。进而提出一种基于贪心算法和diversity-driven contextual information的数据选择算法，在单个cellular network中选择diversity更大的数据来代表整个network，提高了40%以上的representativeness。
+**summary**: 这篇文章是第一个研究城市中所有cellular（所有的通信运营商数据） 网络的文章，研究切入点是分析单个网络的representativeness（代表性），从而说明单个cellular network存在bias。进而提出一种基于贪心算法和diversity-driven contextual information的数据选择算法，在单个cellular network中选择diversity更大的数据来代表整个network，提高了40%以上的representativeness。
 
 **Pros**: 1)This paper is well written and has very clear logic. It is a very good measurement paper in the field of cellular network. 2)The study of multiple cellular network and the representativeness of single network, the factors which could influence network representativeness could have possitive impact for both research community and cellular cervice providers.
 
@@ -376,8 +422,14 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 - human mobility = periodic movement (constrined by geographic) + random jumps related with their social networks
 - social relationship accounts for 10%~30% of human moement; regular behavior explains 50~70%;
 - Short-ranged travel is periodic both spatially and temporally and not effected by the social network structure, while long-distance travel is more influenced by social network ties
+- 虽然cellular location data和社交网络的数据很不同，但是他们却表现出了想同的mobility pattern；
+- 模型：基于day-to-day movement pattern, 和来自朋友网络的social movement effect --》 得到更好的mobility prediction 模型；（什么粒度？）
 
 **dataset**: cell phone location data + 2 online-based social networks;
+
+**Q**:
+
+- Cell phone location data, social network data 怎么结合起来？ ---》 好像没有结合，只是单独的验证？
 
 
 ## privacy
@@ -386,6 +438,17 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 - [Cynthia Dwork](https://scholar.google.com/citations?user=y2H5xmkAAAAJ&hl=zh-CN), distinguished scientist in **Microsoft Research**, citation>30,000;
 - [Aaron Roth](https://scholar.google.com/citations?user=kLUQrrYAAAAJ&hl=zh-CN), Associate professor in **U Pennsylvania**, citation > 7,000;
 - [Jie Feng](https://vonfeng.github.io/publications/) Ph.D candidate in THU<br>
+- [Yang Cao](https://www.db.soc.i.kyoto-u.ac.jp/~cao/research.html) AP at **Kyoto U**, privacy-preserving data release
+
+### privacy-preserving data release
+
+1.[P3GM: Private High-Dimensional Data Release via Privacy Preserving Phased Generative Model](https://arxiv.org/pdf/2006.12101.pdf)
+
+2020, 2021 ICDE, Shun Takagi, Tsubasa Takahashi, **Yang Cao** and Masatoshi Yoshikawa from **kyoto U**;
+
+**summary**: 基于VAE，用生成模型的方法，来做data-release;
+
+
 
 
 ### trajectory privacy
@@ -397,13 +460,11 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 2.[Unique in the Crowd: The privacy bounds of human mobility](https://www.nature.com/articles/srep01376)<br>
 2013 **Nature**, citation = 1252; <br>
 
-
 3.[De-anonymization of Mobility Trajectories: Dissecting the Gaps between Theory and Practice](https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_06B-3_Wang_paper.pdf)<br>
 2018 NDSS. 
 
 4.[Trajectory Privacy in Location-based Services and Data Publication](https://www.cs.cityu.edu.hk/~chiychow/papers/Explorations_2011.pdf)<br>
 2011 KDD, Chi-Yin Chow from **cityU**, Mohamed F. Mokbel from **U of Minnesota**, citation = 197; <br>
-
 
 1.[Plausible Deniability for Privacy Preserving Data Synthesis](http://www.vldb.org/pvldb/vol10/p481-bindschaedler.pdf)<br>
 2017 VLDB, 作者来自UIUC(Vincent Bindschaedler, Carl A.Gunter), Cornell Tech(Reza Shokri). 目前引用次数61. <br>
@@ -412,7 +473,6 @@ ICDE 2020, Hongzhi Shi (Tsinghui U), Quanming Yao (4Paradigm Inc.), Yaguang Li (
 **Opportunity**: 本文提出一种privacy-preserving 的方法来生成synthetic data; <br>
 **Challenges**:          <br>
 **Contributions**:          <br>
-
 
 2.[Data Synthesis based on Generative Adversarial Networks](http://www.vldb.org/pvldb/vol11/p1071-park.pdf)<br>
 2018年VLDB, 作者来自UNCC, Georgy Mason Unviersity, ETRI(South Korea), 目前引用=24. 提出tableGAN生成假的table数据，在保证数据隐私性的同时满足数据分享质量的要求。<br>
@@ -428,17 +488,15 @@ privacy两个角度验证生成的数据；    <br>
 
 
 
-
-
 5.[Enhancing Gradient-based Attacks with Symbolic Intervals](https://arxiv.org/pdf/1906.02282.pdf)<br>
 2019 **ICML workshop** on *Security and privacy of Machine learning*, Shiqi Wang, Yizheng Chen , Ahmed Abdou, Suman Jana from **Columbia U and PSU**, citation = 4; <br>
-
 
 6.[A Data Mining Approach to Assess Privacy Risk in Human Mobility Data]() <br>
 [paper slides](https://pdfs.semanticscholar.org/5711/dc77a4fa972e3c4781397fa51e9689a03bd2.pdf) <br>
 2017 ACM Transactions on Intelligent Systems and Technology, Roberto Pellungrini, Luca  Pappalardo ,Francesca  Pratesi, Anna  Monreale from ***University of Pisa, Italy***, citation=13;<br>
 **summary**: 通过攻击模型构建车辆GPS数据集individual privacy risk level 标签，基于random forest对**隐私风险进行分类**；   <br>
 **datasets**:    <br>
+
 - GPS data covering two Italian cities, i.e., Florence (9715 individuals) and Pisa (2280 individuals) ; <br>
 - 利用多种攻击方法，得出individual的离散隐私风险，进一步将离散风险归类到6个区间，形成六分类问题的标签；<br>
 **problem**: 没有读懂文章用的是什么data mining 的方法来做分类 ---> 更正：用的random forest classifier； <br>
@@ -477,8 +535,7 @@ Adversarial Machine Learning](https://arxiv.org/pdf/1805.04810.pdf)<br>
 Networks](https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_The_Secret_Revealer_Generative_Model-Inversion_Attacks_Against_Deep_Neural_Networks_CVPR_2020_paper.pdf)<br>
 2020 CVPR, <br>
 
-15.[Beyond Inferring Class Representatives: User-Level
-Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)<br>
+15.[Beyond Inferring Class Representatives: User-Level Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)<br>
 2019 INFOCOM, citation = 64;<br>
 **summary**: 利用multi-task GAN让D同时预测real or fake, class label, and identity of user; 在联邦学习只更新参数的场景下，不仅实现recondtruction攻击，
 也可以实现对特定用户隐私信息的重现；<br>
@@ -490,6 +547,61 @@ Privacy Leakage From Federated Learning](https://arxiv.org/pdf/1812.00535.pdf)<b
 2011 Mobicom,Hui Zang (from Sprint), Jean Bolot from Technocolor, citation = 346;
 
 
+
+17.[A Predictive Model for User Motivation and Utility Implications of Privacy-Protection Mechanisms in Location Check-Ins](https://www.computer.org/csdl/journal/tm/2018/04/08013715/13rRUxASu1o)
+
+2018, TMC, Kevin Huguenin et al. , University of Lausanne, NUS, Google; citation = 18;
+
+**data**: 拿到用户24个月的Foursquare数据，通过在线问卷并且给与金钱奖励的方式，**让用户对自己的历史check-in数据标记自己的意图**，比如：share food, wish people to join me, ...; 
+
+18.[]()
+
+**summary**:
+
+**future challenges and directions**:
+
+- 自适应的动态保护：很少有工作基于semantics of visited locations 进行动态的保护；
+- dataset：This lack of large datasets strongly limit the ability of researchers to test their solutions under real condition.
+
+- 
+
+18.[The Long Road to Computational Location Privacy: A Survey](https://arxiv.org/abs/1810.03568)
+
+2018 IEEE Communications Surveys & Tutorials. citation = 47;
+
+**summary**: This survey focuses on computational location privacy, i.e., ignore privacy issues brought by human brain, only focuses on privacy issue brought by algorithms. This survey divides the data lifecycle into two phases: data collection and data publication. Also, it partitions the scenario into 3 categories, online protection, batch protection, and offline protection (data publication).  Firstly, this survey introduces the possible threats to location privacy; Secondly, evaluation metrics for Location Privacy Protection Mechenism (LPPM) are discussed; Thirdly, different LPPM are introduced (6 categories, each consists of online and offline scenario).  
+
+**threats and attack**:
+
+- adversarial attack
+- POI inference
+- social relationship 
+- **re-identification： associate an identity to each trace, re-identify physical users**
+  - 包括了membership inference attack
+- Future mobility prediction
+
+**evaluation metrics**:
+
+- privacy metric
+  - formal theoratical guarantee
+  - data distortion: entrophy of protected data; evaluating whether POIs can be retrieved after protection;
+  - attack correctness; (各种攻击方法的成功程度；)
+- utility metric
+- performance metric
+
+**LPPM**:(保护隐私的方法)
+
+- Mixed-zones
+- Generalization-based mechanisms
+- Dummies-based mechanisms: generate fake users
+- perturbation-based mechanisms
+- protocal-based mechanism
+- rule-based mechanism
+
+**SoA and limitation**:
+
+- Most existing surveys have not covered the evaluation of privacy protection mechenism, and when they cover privacy metric, only one of privacy, performance, utility is taken into consideration.
+- Previous work often focus on either online or offline scenario. But we cover both.
 
 [PATE-GAN: GENERATING SYNTHETIC DATA WITH DIFFERENTIAL PRIVACY GUARANTEES](https://openreview.net/pdf?id=S1zk9iRqF7)<br>
 2019 ICLR, citation=22; <br>
